@@ -1,8 +1,8 @@
 import { useState } from "react"
-import { Link } from "react-router-dom"
-
+import { useNavigate } from "react-router-dom"
 
 const LoginForm = () => {
+    const navigate = useNavigate() //maybe this would have to be moved to Homepage, and may have to be passed in as a prop? But typescripe?
     const [ username, setUsername ] = useState("")
     const [ password, setPassword ] = useState("")
     const [ errorMessage, setErrorMessage ] = useState("")
@@ -18,7 +18,7 @@ const LoginForm = () => {
             //button for keyboard events
           if (event.type === "click" || (event as React.KeyboardEvent<HTMLInputElement>).key === 'Enter' ) {
             setErrorMessage('')
-            // navigate(`/homepage`)
+            navigate(`/home`)
           }
         }
       }
@@ -42,10 +42,8 @@ const LoginForm = () => {
       value={password}
       onChange={(e) => setPassword(e.target.value)}
       ></input>
-    
-    <Link to='/home'>
-        <button tabIndex={0} data-test='submit-button' type="submit" value='submit'>Sign in</button>
-    </Link>
+
+     <button tabIndex={0} data-test='submit-button' type="submit" value='submit'>Sign in</button>
 
     {errorMessage && <h2 data-test='search-error-message' className='error-message'>{errorMessage}</h2>}
     </form>
