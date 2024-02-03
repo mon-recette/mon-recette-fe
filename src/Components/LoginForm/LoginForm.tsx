@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+// import { getUsers } from "../apiCalls"
 
 const LoginForm = () => {
     const navigate = useNavigate() //maybe this would have to be moved to Homepage, and may have to be passed in as a prop? But typescripe?
@@ -42,6 +43,7 @@ const LoginForm = () => {
       value={password}
       onChange={(e) => setPassword(e.target.value)}
       ></input>
+
      <button tabIndex={0} data-test='submit-button' type="submit" value='submit' onClick={(event) => navigateLogin(event)}>Sign in</button>
 
     {errorMessage && <h2 data-test='search-error-message' className='error-message'>{errorMessage}</h2>}
