@@ -1,11 +1,15 @@
-import './HomePage.css'
+import Header from '../Header/Header';
+import MainLogo from '../MainLogo/MainLogo';
+import SearchInput from '../SearchInput/SearchInput';
 
 const HomePage = () => {
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <main>
+      <Header />
+      <MainLogo />
+      <SearchInput/>
+    </main>
+  );
+};
 
-export default HomePage
+export default HomePage;
