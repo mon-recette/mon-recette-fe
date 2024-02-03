@@ -42,8 +42,7 @@ const LoginForm = () => {
       value={password}
       onChange={(e) => setPassword(e.target.value)}
       ></input>
-
-     <button tabIndex={0} data-test='submit-button' type="submit" value='submit'>Sign in</button>
+     <button tabIndex={0} data-test='submit-button' type="submit" value='submit' onClick={(event) => navigateLogin(event)}>Sign in</button>
 
     {errorMessage && <h2 data-test='search-error-message' className='error-message'>{errorMessage}</h2>}
     </form>
