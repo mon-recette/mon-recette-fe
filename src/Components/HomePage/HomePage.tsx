@@ -5,8 +5,8 @@ import SearchInput from '../SearchInput/SearchInput';
 const HomePage = () => {
   return (
     <main>
-      <Header />
-      <MainLogo />
+      <Header/>
+      <MainLogo/>
       <SearchInput/>
     </main>
   );

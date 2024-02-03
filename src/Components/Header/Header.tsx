@@ -5,12 +5,12 @@ const Header = () => {
   return (
     <header>
       <img src={SmallLogo} alt="small-mon-recette-logo" />
-      {/* <Link to="/saved"> */}
+      <Link to="/saved">
         <button className="saved-recipes-btn">Saved Recipes</button>
-      {/* </Link> */}
-      {/* <Link to="/"> */}
+      </Link>
+      <Link to="/">
         <button className="log-out-btn">Logout</button>
-      {/* </Link> */}
+      </Link>
     </header>
   );
 };
