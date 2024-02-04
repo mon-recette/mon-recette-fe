@@ -6,31 +6,33 @@ import HomePage from '../HomePage/HomePage';
 import SavedRecipesPage from '../SavedRecipePage/SavedRecipePage'
 import FilteredRecipePage from '../FilteredRecipePage/FilteredRecipePage';
 import ErrorPage from '../ErrorPage/ErrorPage'
-import { filteredRecipePageProps } from '../../types'
+import { Recipe, filteredRecipePageProps } from '../../types'
+import recipesData from '../recipeData';
+import { useState } from 'react';
 
 function App() {
+  const [filteredRecipes, setFilteredRecipes] = useState<Recipe[]>([]);
+
+  const filterRecipesResults = (searchTerm: string) => {
+    const filteredResults = recipesData.data.attributes.recipes.filter((recipe) => 
+    recipe.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  setFilteredRecipes(filteredResults)
+  }
+
   return (
     <div className="App">
      <Routes>
-        <Route path='/' element={<LoginPage/>}></Route>
-        <Route path='/home' element={<HomePage/>}></Route>
-        <Route path='/saved' element={<SavedRecipesPage/>}></Route>
-        <Route path='/allrecipes' element={<FilteredRecipePage
-            recipe={[
-              {
-                name: "Recipe Name",
-                instructions: "Recipe Instructions",
-                image_url: "recipe_image_url",
-                ingredients: ['ingredient1', 'ingredient2'],
-              }
-              
-            ]}
-           
-
+        <Route path='/' element={<LoginPage/>} />
+        <Route path='/home' element={<HomePage filterRecipesResults={filterRecipesResults} />} />
+        <Route path='/saved' element={<SavedRecipesPage/>} />
+        <Route path='/filteredrecipes' element={<FilteredRecipePage
+            recipes={filteredRecipes}
           />
           }
         />
-        <Route path='*' element={<ErrorPage/>}/>
+        <Route path='*' element={<ErrorPage/>} />
         
       </Routes>
     </div>

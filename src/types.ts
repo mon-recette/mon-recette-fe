@@ -8,22 +8,6 @@ export interface RecipesData {
   };
 }
 
-// export interface RecipesData {
-//   data: {
-//     attributes: {
-//       recipes: Recipe[];
-//     };
-//   };
-// }
-
-// export interface RecipesData  {
-//   id: number | null;
-//   type: string;
-//   attributes: {
-//     recipes: Recipe[];
-//   };
-// };
-
 export interface Recipe {
   name: string;
   instructions: string;
@@ -32,12 +16,12 @@ export interface Recipe {
 }
 
 export interface SearchInputProps {
-  recipes: Recipe[];
+  filterRecipesResults: (searchTerm: string) => void;
   // onSearchResults: (filteredRecipes: Recipe[]) => void;
 }
 
 export interface filteredRecipePageProps {
-  recipe: Recipe[];
+  recipes: Recipe[];
   // name: string;
   // instructions: string;
   // image_url: string | null;
@@ -50,4 +34,8 @@ export interface smallRecipePageProps {
   instructions: string;
   image_url: string | null;
   ingredients: string[];
+}
+
+export interface homePageProps {
+  filterRecipesResults: (searchTerm: string) => void;
 }
