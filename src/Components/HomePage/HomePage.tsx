@@ -16,8 +16,6 @@ const HomePage = () => {
     console.log(recipesData);
   }, []);
 
-  
-
   // const handleSearchResults = (filteredRecipes: Recipe[]) => {
   //   setFilteredRecipes(filteredRecipes);
   // };
