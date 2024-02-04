@@ -1,4 +1,3 @@
-import Header from '../Header/Header';
 import { filteredRecipePageProps } from '../../types';
 import SmallRecipeCard from '../SmallRecipeCard/SmallRecipeCard';
 
