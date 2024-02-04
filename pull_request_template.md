@@ -1,5 +1,5 @@
 
-## Neccessary checkmarks:
+## Necessary checkmarks:
 
     [] All Tests are Passing in all environments
 
