@@ -8,17 +8,11 @@ import { useEffect } from 'react';
 
 const HomePage = () => {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
-  // State to hold filtered recipes
-  // const [filteredResults, setFilteredResults] = useState<Recipe[]>([]);
 
   useEffect(() => {
     setRecipes(recipesData.data.attributes.recipes)
     console.log(recipesData);
   }, []);
-
-  // const handleSearchResults = (filteredRecipes: Recipe[]) => {
-  //   setFilteredRecipes(filteredRecipes);
-  // };
 
   return (
     <main>

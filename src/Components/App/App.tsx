@@ -7,7 +7,6 @@ import SavedRecipesPage from '../SavedRecipePage/SavedRecipePage'
 import FilteredRecipePage from '../FilteredRecipePage/FilteredRecipePage';
 import ErrorPage from '../ErrorPage/ErrorPage'
 
-//Server
 function App() {
   return (
     <div className="App">
