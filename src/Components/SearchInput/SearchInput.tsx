@@ -30,7 +30,7 @@ const SearchInput: React.FC<SearchInputProps> = ({recipes}) => {
   // };
 
   return (
-    <div className='search-bar'>
+    <form className='search-bar'>
       <input
         type='text'
         className='search-input'
@@ -43,6 +43,7 @@ const SearchInput: React.FC<SearchInputProps> = ({recipes}) => {
       //hide it
       <div className='hidden'>{displayFilteredRecipes}</div>
     </div>
+    </form>
   );
 };
 

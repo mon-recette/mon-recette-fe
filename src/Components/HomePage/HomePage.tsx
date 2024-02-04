@@ -6,13 +6,16 @@ import { Recipe } from '../../types';
 import recipesData from '../recipeData';
 import { useEffect } from 'react';
 
+//Server error
 const HomePage = () => {
-  const [recipes, setRecipes] = useState<Recipe[]>([]);
 
   useEffect(() => {
     setRecipes(recipesData.data.attributes.recipes)
     console.log(recipesData);
   }, []);
+
+  //will have to create function and savedRecipe -> find recipe that is saved then reset recipes to pass into saved recipe
+  const [recipes, setRecipes] = useState<Recipe[]>([]);
 
   return (
     <main>
