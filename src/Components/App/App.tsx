@@ -6,6 +6,7 @@ import HomePage from '../HomePage/HomePage';
 import SavedRecipesPage from '../SavedRecipePage/SavedRecipePage'
 import FilteredRecipePage from '../FilteredRecipePage/FilteredRecipePage';
 import ErrorPage from '../ErrorPage/ErrorPage'
+import { filteredRecipePageProps } from '../../types'
 
 function App() {
   return (
@@ -22,7 +23,10 @@ function App() {
                 image_url: "recipe_image_url",
                 ingredients: ['ingredient1', 'ingredient2'],
               }
+              
             ]}
+           
+
           />
           }
         />
