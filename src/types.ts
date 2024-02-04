@@ -1,12 +1,28 @@
-export interface RecipesData {
-  data: {
-    id: null | string;
-    type: string;
-    attributes: {
-      recipes: Recipe[];
-    };
+// export interface RecipesData {
+//   data: {
+//     id: null | string;
+//     type: string;
+//     attributes: {
+//       recipes: Recipe[];
+//     };
+//   };
+// }
+
+// export interface RecipesData {
+//   data: {
+//     attributes: {
+//       recipes: Recipe[];
+//     };
+//   };
+// }
+
+export interface RecipesData  {
+  id: number | null;
+  type: string;
+  attributes: {
+    recipes: Recipe[];
   };
-}
+};
 
 export interface Recipe {
   name: string;
@@ -15,6 +31,7 @@ export interface Recipe {
   ingredients: string[];
 }
 
-interface SearchInputProps {
+export interface SearchInputProps {
   recipes: Recipe[];
+  // onSearchResults: (filteredRecipes: Recipe[]) => void;
 }
