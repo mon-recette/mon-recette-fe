@@ -13,7 +13,6 @@ export interface Recipe {
   image_url: null | string;
   ingredients: string[];
 }
-
 export interface SearchInputProps {
   filterRecipesResults: (searchTerm: string) => void;
 }
@@ -26,7 +25,6 @@ export interface filteredRecipePageProps {
 }
 
 export interface SmallRecipeCardProps {
-  // recipe: Recipe;
   name: string;
   instructions: string;
   image_url: string | null;
@@ -34,15 +32,12 @@ export interface SmallRecipeCardProps {
   isSaved: boolean; 
   toggleSavedRecipes: (recipe: { name: string; instructions: string; image_url: string | null; ingredients: string[] }) => void;
 }
-
 export interface homePageProps {
   filterRecipesResults: (searchTerm: string) => void;
 }
-
 export interface SavedRecipesPageProps {
   savedRecipes: Recipe[];
   toggleSavedRecipes: (recipe: Recipe) => void;
-
 }
 export interface SaveIconProps {
   toggleSavedRecipes: () => void;

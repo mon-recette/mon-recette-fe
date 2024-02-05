@@ -3,7 +3,7 @@ import { SavedRecipesPageProps } from '../../types';
 import SmallRecipeCard from '../SmallRecipeCard/SmallRecipeCard';
 import Header from '../Header/Header';
 import ScrollToTopButton from '../ScrollToTopButton/ScrollToTopButton'
-// import ReturnToSearchButton from '../ReturnToSearchButton/ReturnToSearchButton'
+import ReturnToSearchButton from '../ReturnToSearchButton/ReturnToSearchButton'
 
 const SavedRecipesPage: React.FC<SavedRecipesPageProps> = ({ savedRecipes, toggleSavedRecipes }) => {
   console.log('Saved Recipes:', savedRecipes)
@@ -22,13 +22,13 @@ const SavedRecipesPage: React.FC<SavedRecipesPageProps> = ({ savedRecipes, toggl
   return (
     <main className='saved-recipes-page'>
       <Header />
-      {/* <ReturnToSearchButton />  */}
+      <ReturnToSearchButton /> 
       {displaySavedRecipes.length > 0 ? (
         displaySavedRecipes
         ) : (
           <p>No saved recipes found! Add some!</p>
           )}
-      {/* <ScrollToTopButton />  */}
+      <ScrollToTopButton /> 
     </main>
   );
 };

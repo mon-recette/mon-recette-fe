@@ -12,7 +12,7 @@ import { useState } from 'react';
 
 function App() {
   const [filteredRecipes, setFilteredRecipes] = useState<Recipe[]>([]);
-  const [savedRecipes, setSavedRecipes] = useState<Recipe[]>([]); // Add state for saved recipes
+  const [savedRecipes, setSavedRecipes] = useState<Recipe[]>([]); 
   const filterRecipesResults = (searchTerm: string) => {
     const filteredResults = recipesData.data.attributes.recipes.filter((recipe) => 
     recipe.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -23,7 +23,6 @@ function App() {
 
   const toggleSavedRecipes = (recipe: Recipe) => {
     const isSaved = savedRecipes.some((savedRecipe) => savedRecipe.name === recipe.name);
-    // console.log('Saved?', isSaved)
     if (isSaved) {
       const updatedSavedRecipes = savedRecipes.filter((savedRecipe) => savedRecipe.name !== recipe.name);
       setSavedRecipes(updatedSavedRecipes);
