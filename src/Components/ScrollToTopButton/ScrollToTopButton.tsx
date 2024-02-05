@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import './ScrollFollowButton.scss';
+import './ScrollToTopButton.css';
+import { useEffect, useState } from 'react'
 
-const ScrollFollowButton = () => {
+const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -30,4 +30,4 @@ const ScrollFollowButton = () => {
   );
 };
 
-export default ScrollFollowButton;
+export default ScrollToTopButton;

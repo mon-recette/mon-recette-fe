@@ -27,29 +27,42 @@
 // FilteredRecipePage.tsx
 
 import { filteredRecipePageProps } from '../../types';
+import Header from '../Header/Header';
 import SmallRecipeCard from '../SmallRecipeCard/SmallRecipeCard';
 
-const FilteredRecipePage: React.FC<filteredRecipePageProps> = ({ recipes, toggleSavedRecipes, savedRecipes }) => {
+const FilteredRecipePage: React.FC<filteredRecipePageProps> = ({
+  recipes,
+  toggleSavedRecipes,
+  savedRecipes,
+}) => {
   console.log('recipe', recipes);
-  
-  const displayFilteredRecipes = recipes.map((singleRecipe) => {
-    const isSaved = savedRecipes.some((savedRecipe) => savedRecipe.name === singleRecipe.name);
+
+  const displayFilteredRecipes = recipes.map(singleRecipe => {
+    const isSaved = savedRecipes.some(
+      savedRecipe => savedRecipe.name === singleRecipe.name,
+    );
 
     return (
-      <SmallRecipeCard
-        key={singleRecipe.name}
-        name={singleRecipe.name}
-        instructions={singleRecipe.instructions}
-        image_url={singleRecipe.image_url}
-        ingredients={singleRecipe.ingredients}
-        isSaved={savedRecipes.some((savedRecipe) => savedRecipe.name === singleRecipe.name)} // Determine saved status dynamically
-        toggleSavedRecipes={() => toggleSavedRecipes(singleRecipe)}
-      />
+      <main className='filtered-recipe-page'>
+        
+        <SmallRecipeCard
+          key={singleRecipe.name}
+          name={singleRecipe.name}
+          instructions={singleRecipe.instructions}
+          image_url={singleRecipe.image_url}
+          ingredients={singleRecipe.ingredients}
+          isSaved={savedRecipes.some(
+            savedRecipe => savedRecipe.name === singleRecipe.name,
+          )} // Determine saved status dynamically
+          toggleSavedRecipes={() => toggleSavedRecipes(singleRecipe)}
+        />
+      </main>
     );
   });
 
   return (
     <main className='filtered-recipe-page'>
+      <Header />
       {displayFilteredRecipes.length > 0 ? (
         displayFilteredRecipes
       ) : (
@@ -60,4 +73,3 @@ const FilteredRecipePage: React.FC<filteredRecipePageProps> = ({ recipes, toggle
 };
 
 export default FilteredRecipePage;
-
