@@ -30,7 +30,7 @@ const HomePage = () => {
     <main>
       <Header />
       <MainLogo />
-      <SearchInput recipes={recipes}/>
+      <SearchInput filterRecipesResults={filterRecipesResults} />
     </main>
   );
 };

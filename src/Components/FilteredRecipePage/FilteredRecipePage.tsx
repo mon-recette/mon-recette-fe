@@ -28,9 +28,9 @@
 import { filteredRecipePageProps } from '../../types';
 import SmallRecipeCard from '../SmallRecipeCard/SmallRecipeCard';
 
-const FilteredRecipePage: React.FC<filteredRecipePageProps> = ({ recipe }) => {
-  console.log('recipe', recipe)
-  const displayFilteredRecipes = recipe.map((singleRecipe) => (
+const FilteredRecipePage: React.FC<filteredRecipePageProps> = ({ recipes }) => {
+  console.log('recipe', recipes)
+  const displayFilteredRecipes = recipes.map((singleRecipe) => (
     <SmallRecipeCard
       key={singleRecipe.name}
       name={singleRecipe.name}
