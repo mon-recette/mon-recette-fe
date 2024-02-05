@@ -47,6 +47,7 @@ const FilteredRecipePage: React.FC<filteredRecipePageProps> = ({ recipe }) => {
       ) : (
         <p>No recipes found</p>
       )}
+      
     </main>
   );
 };

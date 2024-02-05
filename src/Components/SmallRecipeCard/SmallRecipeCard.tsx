@@ -2,6 +2,7 @@ import { smallRecipePageProps } from '../../types';
 
 const SmallRecipeCard: React.FC<smallRecipePageProps> = ({ name, instructions, image_url, ingredients }) => {
   return (
+    //
     <div className='small-recipe-card'>
       <h3>{name}</h3>
       {image_url ? (
@@ -18,6 +19,9 @@ const SmallRecipeCard: React.FC<smallRecipePageProps> = ({ name, instructions, i
       )}
       <p>{ingredients}</p>
       <p>{instructions}</p>
+      //Link to ShowRecipePage
+      <button>More Details</button>
+      
     </div>
   );
 };

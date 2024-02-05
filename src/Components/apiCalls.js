@@ -3,7 +3,7 @@
 // never expose apiKey 
 
 // export const getAllRecipes = () => {
-//     return fetch(`endpoint add here`)
+//     return fetch(`https://mon-recette-be.herokuapp.com/api/v1/searches?term=`)
 //     .then(response => {
 //         if (!response.ok) {
 //             throw new Error(`${response.status}: ${response.message}`);
@@ -12,6 +12,15 @@
 //     })
 // }
 
+export const getRecipeOrwebScrapeRecipe = (searchInput) => {
+    return fetch(`https://mon-recette-be.herokuapp.com/api/v1/searches?term=${searchInput}`)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`${response.status}: ${response.message}`);
+        }
+        return response.json();
+    })
+}
 // export const getUsers = () => {
 //     return fetch(`end point ?`)
 //     .then(response => {
