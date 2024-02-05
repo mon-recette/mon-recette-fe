@@ -8,15 +8,6 @@ import { homePageProps } from '../../types';
 
 //Server error
 const HomePage: React.FC<homePageProps> = ({filterRecipesResults}) => {
-  //will have to create function and savedRecipe -> find recipe that is saved then reset recipes to pass into saved recipe
-  // const [recipes, setRecipes] = useState<Recipe[]>([]);
-
-  // useEffect(() => {
-  //   setRecipes(recipesData.data.attributes.recipes)
-  //   console.log(recipesData);
-  // }, []);
-
-
   return (
     <main>
       <Header />
