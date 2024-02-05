@@ -10,6 +10,7 @@
     [] New feature
     [] Bug Fix
     [] Refactor
+    [] Testing
 
 ## Description of Change:
 

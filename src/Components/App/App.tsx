@@ -3,7 +3,7 @@ import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import LoginPage from '../LoginPage/LoginPage'
 import HomePage from '../HomePage/HomePage';
-import SavedRecipesPage from '../SavedRecipePage/SavedRecipePage'
+import SavedRecipesPage from '../SavedRecipePage/SavedRecipesPage'
 import FilteredRecipePage from '../FilteredRecipePage/FilteredRecipePage';
 import ErrorPage from '../ErrorPage/ErrorPage'
 import { Recipe, filteredRecipePageProps } from '../../types'
@@ -12,7 +12,7 @@ import { useState } from 'react';
 
 function App() {
   const [filteredRecipes, setFilteredRecipes] = useState<Recipe[]>([]);
-
+  const [savedRecipes, setSavedRecipes] = useState<Recipe[]>([]); // Add state for saved recipes
   const filterRecipesResults = (searchTerm: string) => {
     const filteredResults = recipesData.data.attributes.recipes.filter((recipe) => 
     recipe.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -21,17 +21,30 @@ function App() {
   setFilteredRecipes(filteredResults)
   }
 
+  const toggleSavedRecipes = (recipe: Recipe) => {
+    const isSaved = savedRecipes.some((savedRecipe) => savedRecipe.name === recipe.name);
+    // console.log('Saved?', isSaved)
+    if (isSaved) {
+      const updatedSavedRecipes = savedRecipes.filter((savedRecipe) => savedRecipe.name !== recipe.name);
+      setSavedRecipes(updatedSavedRecipes);
+    } else {
+      setSavedRecipes([...savedRecipes, recipe]);
+    }
+  };
+
   return (
     <div className="App">
      <Routes>
         <Route path='/' element={<LoginPage/>} />
         <Route path='/home' element={<HomePage filterRecipesResults={filterRecipesResults} />} />
-        <Route path='/saved' element={<SavedRecipesPage/>} />
+        <Route path='/saved' element={<SavedRecipesPage savedRecipes={savedRecipes} toggleSavedRecipes={toggleSavedRecipes} />} />
         <Route path='/filteredrecipes' element={<FilteredRecipePage
-            recipes={filteredRecipes}
-          />
-          }
-        />
+          recipes={filteredRecipes}
+          toggleSavedRecipes={toggleSavedRecipes}
+          savedRecipes={savedRecipes} 
+          isSaved={true}
+
+        />} />
         <Route path='*' element={<ErrorPage/>} />
         
       </Routes>
@@ -41,7 +54,6 @@ function App() {
 
 export default App;
 
-//QUESTION ON PERSON WITH TYPESCRIPT KNOWLEDGE: MEET ALEX:
 // When you use the component in your Routes, you need to provide the expected recipe prop with the correct type, which is an array of Recipe objects.
 
 //If you have a TypeScript component with specific prop types, and you are using it in another part of your application (such as in your routes), TypeScript will enforce that you provide the correct props according to the defined types. However, how you pass the props can depend on the specific structure and requirements of your application.
