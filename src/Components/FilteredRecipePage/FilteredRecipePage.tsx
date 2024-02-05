@@ -24,21 +24,29 @@
 
 // export default FilteredRecipePage;
 // /////
+// FilteredRecipePage.tsx
 
 import { filteredRecipePageProps } from '../../types';
 import SmallRecipeCard from '../SmallRecipeCard/SmallRecipeCard';
 
-const FilteredRecipePage: React.FC<filteredRecipePageProps> = ({ recipes }) => {
-  console.log('recipe', recipes)
-  const displayFilteredRecipes = recipes.map((singleRecipe) => (
-    <SmallRecipeCard
-      key={singleRecipe.name}
-      name={singleRecipe.name}
-      instructions={singleRecipe.instructions}
-      image_url={singleRecipe.image_url}
-      ingredients={singleRecipe.ingredients}
-    />
-  ));
+const FilteredRecipePage: React.FC<filteredRecipePageProps> = ({ recipes, toggleSavedRecipes, savedRecipes }) => {
+  console.log('recipe', recipes);
+  
+  const displayFilteredRecipes = recipes.map((singleRecipe) => {
+    const isSaved = savedRecipes.some((savedRecipe) => savedRecipe.name === singleRecipe.name);
+
+    return (
+      <SmallRecipeCard
+        key={singleRecipe.name}
+        name={singleRecipe.name}
+        instructions={singleRecipe.instructions}
+        image_url={singleRecipe.image_url}
+        ingredients={singleRecipe.ingredients}
+        isSaved={savedRecipes.some((savedRecipe) => savedRecipe.name === singleRecipe.name)} // Determine saved status dynamically
+        toggleSavedRecipes={() => toggleSavedRecipes(singleRecipe)}
+      />
+    );
+  });
 
   return (
     <main className='filtered-recipe-page'>
@@ -52,3 +60,4 @@ const FilteredRecipePage: React.FC<filteredRecipePageProps> = ({ recipes }) => {
 };
 
 export default FilteredRecipePage;
+
