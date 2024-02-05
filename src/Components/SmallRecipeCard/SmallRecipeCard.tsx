@@ -1,12 +1,30 @@
+import './SmallRecipeCard.scss'
 import { smallRecipePageProps } from '../../types';
-
-const SmallRecipeCard: React.FC<smallRecipePageProps> = ({name, instructions, image_url, ingredients}) => {
-  //{name, instructions, image_url, ingredients}
+import CookingPot from '../../Images /Cooking-pot.jpg'
+const SmallRecipeCard: React.FC<smallRecipePageProps> = ({ name, instructions, image_url, ingredients }) => {
   return (
     <div className='small-recipe-card'>
-      <h3>recipe card</h3>
+      {/* // onClick={} */}
+      <h3>{name}</h3>
+      {image_url ? (
+        <img
+          className='recipe-thumbnail'
+          src={image_url}
+          alt={name}
+        />
+        ) : (
+          <div className='placeholder-image'>
+          <img
+          className='cooking-pot'
+          src={CookingPot}
+          alt='cooking pot'
+            />
+        </div>
+      )}
+      {/* <p>{ingredients}</p> */}
+      {/* <p>{instructions}</p> */}
     </div>
-  )
-}
+  );
+};
 
-export default SmallRecipeCard
+export default SmallRecipeCard;
