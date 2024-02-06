@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 // import { getUsers } from "../apiCalls"
 
 const LoginForm = () => {
-    const navigate = useNavigate() //maybe this would have to be moved to Homepage, and may have to be passed in as a prop? But typescripe?
+    const navigate = useNavigate()
     const [ username, setUsername ] = useState("")
     const [ password, setPassword ] = useState("")
     const [ errorMessage, setErrorMessage ] = useState("")
@@ -11,12 +11,10 @@ const LoginForm = () => {
     function navigateLogin(event: React.MouseEvent<HTMLButtonElement> | React.KeyboardEvent<HTMLInputElement>) {
         event.preventDefault()
         if (username === '' || username === ' ' || password === '' || password === ' ') {
-            //inputElement as click events
           if  (event.type === "click" || (event as React.KeyboardEvent<HTMLInputElement>).key === 'Enter') {
             setErrorMessage('Please fill out all input fields.')
           }
         } else {
-            //button for keyboard events
           if (event.type === "click" || (event as React.KeyboardEvent<HTMLInputElement>).key === 'Enter' ) {
             setErrorMessage('')
             navigate(`/home`)

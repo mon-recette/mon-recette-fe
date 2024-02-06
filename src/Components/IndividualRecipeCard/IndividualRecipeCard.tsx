@@ -1,4 +1,4 @@
-//maybe not even need - CAN BE DELETED!!!
+
 const IndividualRecipeCard = () => {
 
   return (

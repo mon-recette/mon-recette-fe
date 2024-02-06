@@ -3,7 +3,7 @@ import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import LoginPage from '../LoginPage/LoginPage'
 import HomePage from '../HomePage/HomePage';
-import SavedRecipesPage from '../SavedRecipePage/SavedRecipePage'
+import SavedRecipesPage from '../SavedRecipePage/SavedRecipesPage'
 import FilteredRecipePage from '../FilteredRecipePage/FilteredRecipePage';
 import ErrorPage from '../ErrorPage/ErrorPage'
 import { Recipe, RecipesData } from '../../types'

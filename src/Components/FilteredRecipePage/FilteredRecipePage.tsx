@@ -1,4 +1,6 @@
 import { filteredRecipePageProps } from '../../types';
+import Header from '../Header/Header';
+import ReturnToSearchButton from '../ReturnToSearchButton/ReturnToSearchButton';
 import SmallRecipeCard from '../SmallRecipeCard/SmallRecipeCard';
 
 const FilteredRecipePage
@@ -18,6 +20,8 @@ const FilteredRecipePage
 
   return (
     <main className='filtered-recipe-page'>
+      <Header />
+      <ReturnToSearchButton /> 
       {displayFilteredRecipes.length > 0 ? (
         displayFilteredRecipes
       ) : (

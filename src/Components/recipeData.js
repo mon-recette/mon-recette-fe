@@ -5,6 +5,7 @@ const recipes = {
       attributes: {
         recipes: [
           {
+            id: 1,
             name: "Chicken Handi",
             instructions: "Take a large pot or wok, big enough to cook all the chicken, and heat the oil in it. Once the oil is hot, add sliced onion and fry them until deep golden brown. Then take them out on a plate and set aside.\r\nTo the same pot, add the chopped garlic and sauté for a minute. Then add the chopped tomatoes and cook until tomatoes turn soft. This would take about 5 minutes.\r\nThen return the fried onion to the pot and stir. Add ginger paste and sauté well.\r\nNow add the cumin seeds, half of the coriander seeds and chopped green chillies. Give them a quick stir.\r\nNext goes in the spices – turmeric powder and red chilli powder. Sauté the spices well for a couple of minutes.\r\nAdd the chicken pieces to the wok, season it with salt to taste and cook the chicken covered on medium-low heat until the chicken is almost cooked through. This would take about 15 minutes. Slowly sautéing the chicken will enhance the flavor, so do not expedite this step by putting it on high heat.\r\nWhen the oil separates from the spices, add the beaten yogurt keeping the heat on lowest so that the yogurt doesn't split. Sprinkle the remaining coriander seeds and add half of the dried fenugreek leaves. Mix well.\r\nFinally add the cream and give a final mix to combine everything well.\r\nSprinkle the remaining kasuri methi and garam masala and serve the chicken handi hot with naan or rotis. Enjoy!",
             image_url: null,
@@ -28,6 +29,7 @@ const recipes = {
             ]
           },
           {
+            id: 2,
             name: "Chicken Congee",
             instructions: "STEP 1 - MARINATING THE CHICKEN\r\nIn a bowl, add chicken, salt, white pepper, ginger juice and then mix it together well.\r\nSet the chicken aside.\r\nSTEP 2 - RINSE THE WHITE RICE\r\nRinse the rice in a metal bowl or pot a couple of times and then drain the water.\r\nSTEP 2 - BOILING THE WHITE RICE\r\nNext add 8 cups of water and then set the stove on high heat until it is boiling. Once rice porridge starts to boil, set the stove on low heat and then stir it once every 8-10 minutes for around 20-25 minutes.\r\nAfter 25 minutes, this is optional but you can add a little bit more water to make rice porridge to make it less thick or to your preference.\r\nNext add the marinated chicken to the rice porridge and leave the stove on low heat for another 10 minutes.\r\nAfter an additional 10 minutes add the green onions, sliced ginger, 1 pinch of salt, 1 pinch of white pepper and stir for 10 seconds.\r\nServe the rice porridge in a bowl\r\nOptional: add Coriander on top of the rice porridge.",
             image_url: null,
@@ -44,6 +46,7 @@ const recipes = {
             ]
           },
           {
+            id:3,  
             name: "Spicy Shrimp Pasta",
             instructions: "Cook the linguine according to package instructions. In a pan, heat olive oil and sauté garlic until fragrant. Add shrimp and cook until pink. Sprinkle red pepper flakes. Pour in diced tomatoes and simmer for 5 minutes. Stir in heavy cream, season with salt and pepper. Toss the cooked linguine in the sauce and garnish with fresh parsley.",
             image_url: null,
@@ -60,6 +63,7 @@ const recipes = {
             ]
           },
           {
+            id: 4,
             name: "Vegetarian Chickpea Curry",
             instructions: "Heat olive oil in a pot, sauté onions until golden brown. Add curry powder, cumin, and coriander, stir well. Pour in diced tomatoes and cook until softened. Add chickpeas, spinach, and coconut milk. Simmer for 15 minutes. Season with salt and serve over rice or with naan bread.",
             image_url: null,
@@ -77,6 +81,7 @@ const recipes = {
             ]
           },
           {
+            id: 5,
             name: "Grilled Lemon Herb Chicken",
             instructions: "In a bowl, mix olive oil, lemon juice, lemon zest, minced garlic, rosemary, and thyme. Season chicken breasts with salt and pepper. Marinate chicken in the lemon herb mixture for at least 30 minutes. Preheat the grill and cook chicken for 6-8 minutes per side. Serve with a side of roasted vegetables or a fresh salad.",
             image_url: null,
@@ -91,6 +96,7 @@ const recipes = {
             ]
           },
           {
+            id: 6,
             name: "Mushroom Risotto",
             instructions: "Sauté sliced mushrooms in butter until golden. In a separate pot, cook Arborio rice with vegetable broth, stirring constantly. Add white wine, Parmesan cheese, and the sautéed mushrooms. Continue to stir until the risotto is creamy. Garnish with fresh parsley.",
             image_url: null,
@@ -106,6 +112,7 @@ const recipes = {
             ]
           },
           {
+            id: 7,
             name: "Teriyaki Salmon",
             instructions: "Marinate salmon fillets in a mixture of soy sauce, honey, garlic, and ginger. Grill or bake until salmon is cooked through. Serve over a bed of steamed rice and drizzle with extra teriyaki sauce. Garnish with sesame seeds and green onions.",
             image_url: null,
@@ -120,6 +127,7 @@ const recipes = {
             ]
           },
           {
+            id: 8,
             name: "Caprese Salad",
             instructions: "Slice ripe tomatoes and fresh mozzarella. Arrange them on a plate, alternating with basil leaves. Drizzle with balsamic glaze and olive oil. Season with salt and pepper. Serve as a refreshing salad or a side dish.",
             image_url: null,
@@ -133,6 +141,7 @@ const recipes = {
             ]
           },
           {
+            id: 9,
             name: "Spinach and Feta Stuffed Chicken",
             instructions: "Butterfly chicken breasts and stuff with a mixture of spinach, feta cheese, and garlic. Secure with toothpicks and bake until the chicken is cooked through. Serve with a side of roasted vegetables.",
             image_url: null,
@@ -146,6 +155,7 @@ const recipes = {
             ]
           },
           {
+            id: 10,
             name: "Pesto Pasta with Cherry Tomatoes",
             instructions: "Cook your favorite pasta. Toss with a homemade or store-bought pesto sauce. Add halved cherry tomatoes and stir. Garnish with grated Parmesan cheese and pine nuts. Enjoy a quick and flavorful pasta dish!",
             image_url: null,
@@ -158,6 +168,7 @@ const recipes = {
             ]
           },
           {
+            id: 11,
             name: "BBQ Pulled Pork Sliders",
             instructions: "Slow-cook pork shoulder with your favorite BBQ sauce until it's easily shredded. Toast slider buns and pile on the pulled pork. Top with coleslaw for a delicious and satisfying meal.",
             image_url: null,
@@ -169,6 +180,7 @@ const recipes = {
             ]
           },
           {
+            id:12,
             name: "Lemon Garlic Shrimp Skewers",
             instructions: "Marinate shrimp in a mixture of lemon juice, minced garlic, olive oil, and herbs. Thread onto skewers and grill until shrimp are cooked. Serve with a side of couscous or a fresh salad.",
             image_url: null,
