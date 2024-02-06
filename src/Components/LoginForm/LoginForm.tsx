@@ -7,7 +7,28 @@ const LoginForm = () => {
     const [ username, setUsername ] = useState("")
     const [ password, setPassword ] = useState("")
     const [ errorMessage, setErrorMessage ] = useState("")
+
+    const approvedUsers = [
+      { username: 'amy@turing.edu', password: 'kitties' },
+      { username: 'jen@gmail.com', password: 'bunnies' },
+      { username: 'nate@gmail.com', password: 'llamas' },
+      { username: 'allan@gmail.com', password: 'dogs' },
+      { username: 'sooyung@gmail.com', password: 'birds' }
+  ];
+
+    const loginUsers = (username: string, password: string) => {
+      const user = approvedUsers.find(user => user.username === username && user.password === password);
+      return user !== undefined;
+    }  
     
+    const loginHandling = () => {
+      if (loginUsers(username, password)) {
+        setErrorMessage('');
+        navigate(`/home`);
+      } else {
+        setErrorMessage('Invalid username or password.');
+    }
+    }
     function navigateLogin(event: React.MouseEvent<HTMLButtonElement> | React.KeyboardEvent<HTMLInputElement>) {
         event.preventDefault()
         if (username === '' || username === ' ' || password === '' || password === ' ') {
@@ -15,10 +36,11 @@ const LoginForm = () => {
             setErrorMessage('Please fill out all input fields.')
           }
         } else {
-          if (event.type === "click" || (event as React.KeyboardEvent<HTMLInputElement>).key === 'Enter' ) {
-            setErrorMessage('')
-            navigate(`/home`)
-          }
+          loginHandling()
+          // if (event.type === "click" || (event as React.KeyboardEvent<HTMLInputElement>).key === 'Enter' ) {
+          //   setErrorMessage('')
+          //   navigate(`/home`)
+          // }
         }
       }
   
@@ -36,7 +58,7 @@ const LoginForm = () => {
     <input
       data-test='password'
       tabIndex={0}
-      type="text"
+      type="password"
       placeholder="Enter password..."
       value={password}
       onChange={(e) => setPassword(e.target.value)}

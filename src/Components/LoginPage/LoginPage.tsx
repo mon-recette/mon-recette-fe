@@ -1,8 +1,8 @@
 import './LoginPage.css'
 import LoginForm from '../LoginForm/LoginForm'
-import MainLogo from '../MainLogo/MainLogo'
 
 const LoginPage = () => {
+
   return (
     <div>
         <section className='logo-signin'>
