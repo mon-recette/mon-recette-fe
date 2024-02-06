@@ -12,15 +12,34 @@
 //     })
 // }
 
-export const getRecipeOrwebScrapeRecipe = (searchInput) => {
-    return fetch(`https://mon-recette-be.herokuapp.com/api/v1/searches?term=${searchInput}`)
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`${response.status}: ${response.message}`);
-        }
-        return response.json();
-    })
+export const getRecipeOrwebScrapeRecipe = (searchTerm) => {
+    return fetch(`https://mon-recette-be-8176efe67145.herokuapp.com/api/v1/searches?term=${searchTerm}`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`${response.status}: ${response.statusText}`);
+            }
+            return response.json();
+        })
+        .catch(error => {
+            console.error('Error fetching recipe:', error);
+            throw error; // Rethrow the error to be caught by the calling code
+        });
 }
+
+// export const getRecipeOrwebScrapeRecipe = (searchQuery) => {
+//     return fetch(`https://mon-recette-be-8176efe67145.herokuapp.com/api/v1/searches?term=${searchQuery}`)
+//         .then(response => {
+//             if (!response.ok) {
+//                 throw new Error(`${response.status}: ${response.statusText}`);
+//             }
+//             return response.json();
+//         })
+//         .catch(error => {
+//             console.error('Error fetching recipe:', error);
+//             throw error; // Rethrow the error to be caught by the calling code
+//         });
+// }
+
 // export const getUsers = () => {
 //     return fetch(`end point ?`)
 //     .then(response => {

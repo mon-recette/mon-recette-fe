@@ -38,4 +38,14 @@ export interface smallRecipePageProps {
 
 export interface homePageProps {
   filterRecipesResults: (searchTerm: string) => void;
+  singleRecipe: Recipe; 
+  recipes: Recipe[];
 }
+
+export interface ShowRecipePageProps {
+  singleRecipe: Recipe;
+}
+
+// export interface Ingredient {
+//   name: string;
+// }

@@ -1,4 +1,4 @@
-import './SmallRecipeCard.scss'
+import './SmallRecipeCard.css'
 import { smallRecipePageProps } from '../../types';
 import CookingPot from '../../Images /Cooking-pot.jpg'
 const SmallRecipeCard: React.FC<smallRecipePageProps> = ({ name, instructions, image_url, ingredients }) => {

@@ -6,32 +6,78 @@ import HomePage from '../HomePage/HomePage';
 import SavedRecipesPage from '../SavedRecipePage/SavedRecipePage'
 import FilteredRecipePage from '../FilteredRecipePage/FilteredRecipePage';
 import ErrorPage from '../ErrorPage/ErrorPage'
-import { Recipe, filteredRecipePageProps } from '../../types'
-import recipesData from '../recipeData';
+import { Recipe } from '../../types'
 import { useState } from 'react';
+import ShowRecipePage from '../ShowRecipePage/ShowRecipePage';
+import { useEffect } from 'react';
+import { getRecipeOrwebScrapeRecipe } from '../apiCalls';
+import { useNavigate, useParams } from 'react-router-dom';
 
 function App() {
-  const [filteredRecipes, setFilteredRecipes] = useState<Recipe[]>([]);
+  const [ recipes, setRecipes] = useState<Recipe[]>([]);
+  const [ filteredRecipes, setFilteredRecipes] = useState<Recipe[]>([]);
+  const [ singleRecipe, setSingleRecipe] = useState<Recipe>({
+    name: '',
+    instructions: '',
+    image_url: null,
+    ingredients: [],
+  });
+  const navigate = useNavigate()
+ 
+  const searchQuery = useParams<string>()?.searchQuery
 
-  const filterRecipesResults = (searchTerm: string) => {
-    const filteredResults = recipesData.data.attributes.recipes.filter((recipe) => 
-    recipe.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       if (searchQuery) {
+  //         console.log("searchTerm",searchQuery)
+  //         getRecipeOrwebScrapeRecipe(searchQuery)
+  //         .then(recipeData => {
+  //           console.log("recipeData",recipeData)
+  //           //for never type, explicitly tell TypeScript that searchQuery will always have a value.
+  //           //Explicitly assert the type of searchQuery to be a string inside your useEffect function.
+  //           if (typeof searchQuery === 'string' && searchQuery.startsWith('https://')) {
+  //             console.log("searchQuery", searchQuery)
+  //             setSingleRecipe(recipeData)
+  //             // navigate(`/${searchTerm}`)
+  //           } else {
+  //             setRecipes(recipeData.data.attributes.recipes)
+  //             // navigate(`/filteredRecipes`)
+  //           }
+  //         })
+  //     }
+  //   } catch(error) {
+  //       console.error('Error fetching recipe:', error);
+  //     };
+  //   }
+  //   fetchData();
+  // }, [searchQuery]);
 
-  setFilteredRecipes(filteredResults)
-  }
+  // console.log("recipes on App", recipes)
+  
+  // const filterRecipesResults = (searchTerm: string) => {
+  //   const filteredResults = recipes.filter((recipe) => 
+  //   recipe.name.toLowerCase().includes(searchTerm.toLowerCase())
+  // );
+  // setFilteredRecipes(filteredResults)
+  // }
 
   return (
     <div className="App">
      <Routes>
         <Route path='/' element={<LoginPage/>} />
-        <Route path='/home' element={<HomePage filterRecipesResults={filterRecipesResults} />} />
+        <Route path='/home' element={<HomePage 
+        
+        // filterRecipesResults={filterRecipesResults} singleRecipe={singleRecipe} recipes={filteredRecipes}
+        
+        />} />
         <Route path='/saved' element={<SavedRecipesPage/>} />
-        <Route path='/filteredrecipes' element={<FilteredRecipePage
+        <Route path='/filteredRecipes' element={<FilteredRecipePage
             recipes={filteredRecipes}
           />
           }
         />
+        <Route path='/:searchQuery' element={<ShowRecipePage singleRecipe={singleRecipe} />} />
         <Route path='*' element={<ErrorPage/>} />
         
       </Routes>

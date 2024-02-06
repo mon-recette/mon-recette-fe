@@ -4,25 +4,21 @@ import SearchInput from '../SearchInput/SearchInput';
 import { useState } from 'react';
 import { Recipe } from '../../types';
 // import recipesData from '../recipeData';
-import { useEffect } from 'react';
-import { getRecipeOrwebScrapeRecipe } from '../apiCalls';
 //Server error
+import { homePageProps } from '../../types';
 
-const HomePage = () => {
-  const [recipes, setRecipes] = useState<Recipe[]>([]);
+import ShowRecipePage from '../ShowRecipePage/ShowRecipePage';
+import FilteredRecipePage from '../FilteredRecipePage/FilteredRecipePage';
 
-  useEffect(() => {
-    getRecipeOrwebScrapeRecipe(SearchInput)
-    .then(recipeData => {
-      // if (string starts with Http...)
-      //then navigate to showRecipe Page
-      //else 
-      //filteredRecipe page....
-      // console.log("recipeData", recipeData)
-      // setRecipes(recipeData.data.attributes.recipes)
-
-    })
-  }, []);
+const HomePage
+// : 
+// React.FC<homePageProps>
+= (
+  // {filterRecipesResults, singleRecipe, recipes}
+  ) => {
+  // const [recipes, setRecipes] = useState<Recipe[]>([]);
+  // console.log("recipes", recipes)
+  // console.log("singleRecipe after search and click", singleRecipe)
 
   //will have to create function and savedRecipe -> find recipe that is saved then reset recipes to pass into saved recipe
 
@@ -30,7 +26,15 @@ const HomePage = () => {
     <main>
       <Header />
       <MainLogo />
-      <SearchInput filterRecipesResults={filterRecipesResults} />
+      <SearchInput 
+      // filterRecipesResults={filterRecipesResults} 
+      />
+      {/* <ShowRecipePage 
+      singleRecipe={singleRecipe}
+      />
+      <FilteredRecipePage
+      //  recipes={recipes}
+       /> */}
     </main>
   );
 };
