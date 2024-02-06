@@ -8,26 +8,27 @@ const LoginForm = () => {
     const [ password, setPassword ] = useState("")
     const [ errorMessage, setErrorMessage ] = useState("")
 
-    const approvedUsers = [
-      { username: 'amy@turing.edu', password: 'kitties' },
-      { username: 'jen@gmail.com', password: 'bunnies' },
-      { username: 'nate@gmail.com', password: 'llamas' },
-      { username: 'allan@gmail.com', password: 'dogs' },
-      { username: 'sooyung@gmail.com', password: 'birds' }
-  ];
-
-    const loginUsers = (username: string, password: string) => {
-      const user = approvedUsers.find(user => user.username === username && user.password === password);
-      return user !== undefined;
-    }  
+    const approveduser = 
+    // [ //will be users for part 2
+      { username: 'test@test.com', password: '1234' }
+      // { username: 'jen@gmail.com', password: 'bunnies' },
+      // { username: 'nate@gmail.com', password: 'llamas' },
+      // { username: 'allan@gmail.com', password: 'dogs' },
+      // { username: 'sooyung@gmail.com', password: 'birds' }
+  // ];
+    // const loginUsers = (username: string, password: string) => {
+    //   const user = approveduser.find(user => user.username === username && user.password === password);
+    //   return user !== undefined;
+    // }  
     
     const loginHandling = () => {
-      if (loginUsers(username, password)) {
+      // if (loginUsers(username, password))
+      if (approveduser.username === username && approveduser.password === password) {
         setErrorMessage('');
         navigate(`/home`);
       } else {
         setErrorMessage('Invalid username or password.');
-    }
+      }
     }
     function navigateLogin(event: React.MouseEvent<HTMLButtonElement> | React.KeyboardEvent<HTMLInputElement>) {
         event.preventDefault()

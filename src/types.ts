@@ -45,10 +45,17 @@ export interface ShowRecipePageProps {
 //   name: string;
 // }
 
-// export interface SavedRecipesPageProps {
-//   savedRecipes: Recipe[];
-//   toggleSavedRecipes: (recipe: Recipe) => void;
-// }
+export interface SavedRecipesPageProps {
+  savedRecipes: Recipe[];
+  // toggleSavedRecipes: (recipe: Recipe) => void;
+}
+
+export interface postDataProp {
+  user_id: number; 
+  name: string | undefined; 
+  ingredients: string[] | undefined; 
+  instructions: string | undefined; 
+}
 // export interface SaveIconProps {
 //   toggleSavedRecipes: () => void;
 //   isSaved: boolean;

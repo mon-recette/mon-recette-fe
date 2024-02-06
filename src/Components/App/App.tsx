@@ -44,6 +44,7 @@ function App() {
     setRecipes(recipes)
   }
   console.log("singleRecipe outside updateSingleRecipe fx",singleRecipe)
+  // console.log("recipes outside recipes fx",recipes)
 
   return (
     <div className="App">
@@ -51,13 +52,13 @@ function App() {
         <Route path='/' element={<LoginPage/>} />
         <Route path='/home' element={<HomePage updateSingleRecipe={updateSingleRecipe} updateRecipes={updateRecipes}
         />} />
-        <Route path='/saved' element={<SavedRecipesPage/>} />
+        <Route path='/saved' element={<SavedRecipesPage savedRecipes={savedRecipes}/>} />
         <Route path='/filteredRecipes' element={<FilteredRecipePage recipes={recipes}/>
           }
         />
         //webscraping
         <Route path='/home/:searchQuery' element={<ShowRecipePage singleRecipe={singleRecipe} postData={postData}/>} />
-        <Route path='*' element={<ErrorPage/>} />
+        <Route path='/home/:searchQuery/*' element={<ErrorPage/>} />
         
       </Routes>
     </div>
