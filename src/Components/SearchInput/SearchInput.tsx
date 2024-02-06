@@ -10,36 +10,45 @@ const SearchInput = () => {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
   const [singleRecipe, setSingleRecipe] = useState<Recipe | undefined>();
   const [searchTerm, setSearchTerm] = useState<string>('');
+  // search term will initially be empty;
+  // this is fetching even before clicking on the button
+  // useEffect on state? create a new method that only makes the api call when the button is clicked 
+  // useEffect(() => {
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const results = await getRecipeOrwebScrapeRecipe(searchTerm);
-        //searchTerm.toLowerCase.... 
-        if (typeof searchTerm === 'string' && searchTerm.startsWith('https://')) {
-          setSingleRecipe(results);
-        } else {
-          setRecipes(results);
-        }
-      } catch (error) {
-        console.error('Error fetching search results:', error);
+  
+  const fetchData = async () => {
+    try {
+      const results = await getRecipeOrwebScrapeRecipe(searchTerm);
+      //searchTerm.toLowerCase.... 
+      if (typeof searchTerm === 'string' && searchTerm.startsWith('https://')) {
+      //this logic needs to contain rendering of the page  
+        setSingleRecipe(results);
+      } else {
+        setRecipes(results);
       }
-    };
-
-    // Fetch data when searchTerm changes
-    if (searchTerm.trim() !== '') {
-      fetchData();
+    } catch (error) {
+      console.error('Error fetching search results:', error);
     }
-  }, [searchTerm]);
+  };
+
+  // Fetch data when searchTerm changes;
+  // This seems to be always blank because on page load, the search term is empty
+  // useEffect(() => {
+  //   if (searchTerm.trim() !== '') {
+  //     fetchData();
+  //   }
+  // }, [searchTerm]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
   };
+  //we do need this, but it's not being called anywhere
 
   const clickHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
-    navigate('/filteredrecipes');
+    navigate('/filteredrecipes'); //this needs to handle either the filtered recipes or show recipes
   };
+  //this needs to make a fetch request when you click on the button, this is where you need to use the searchterm  
 
   return (
     <form className='search-bar'>
@@ -59,9 +68,9 @@ const SearchInput = () => {
       {singleRecipe && <ShowRecipePage singleRecipe={singleRecipe} />}
     </form>
   );
-};
+// };
 
-export default SearchInput;
+// export default SearchInput;
 
 
 // import { Recipe } from '../../types';
