@@ -39,6 +39,7 @@ export interface homePageProps {
 
 export interface ShowRecipePageProps {
   singleRecipe: Recipe | undefined; //may be due to multiple recipes
+  postData: ( recipes : Recipe ) => void;
 }
 
 // export interface Ingredient {

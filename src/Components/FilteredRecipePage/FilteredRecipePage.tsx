@@ -1,5 +1,4 @@
 import { filteredRecipePageProps } from '../../types';
-import { RecipesData } from '../../types';
 import SmallRecipeCard from '../SmallRecipeCard/SmallRecipeCard';
 
 const FilteredRecipePage

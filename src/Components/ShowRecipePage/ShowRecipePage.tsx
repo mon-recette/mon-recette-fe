@@ -5,9 +5,17 @@ import IndividualRecipeCard from '../IndividualRecipeCard/IndividualRecipeCard'
 import { ShowRecipePageProps } from '../../types'
 import { Recipe } from '../../types'
 
-const ShowRecipePage: React.FC<ShowRecipePageProps> = ({singleRecipe}) => {
+const ShowRecipePage: React.FC<ShowRecipePageProps> = ({singleRecipe, postData}) => {
     // const typedSingleRecipe = singleRecipe as Recipe;
     // console.log("typedSingleRecipe",singleRecipe)
+    const addToSavedRecipe = () => {
+      const newRecipe = {
+        user_id: singleRecipe?.name, //but has to be tied with the email??? how do we get the email?
+        name: singleRecipe?.name,
+        ingredients: singleRecipe?.ingredients,
+        instructions: singleRecipe?.instructions
+      }
+    }
     return (
       <div>
         <Header />
@@ -24,6 +32,7 @@ const ShowRecipePage: React.FC<ShowRecipePageProps> = ({singleRecipe}) => {
             <div>{singleRecipe?.instructions}</div>
           </section>
         </div>
+        <button onClick={()=> addToSavedRecipe()}>Saved button</button>
       </div>
     );
   };

@@ -27,11 +27,10 @@ React.FC<SearchInputProps>
           updateSingleRecipe(results)
           // setSingleRecipe(results);
           //webscraping
-          
           navigate(`/home/${searchTerm}`);
         } else {
           updateRecipes(results)
-          navigate('/filteredrecipes');
+          // navigate('/filteredrecipes');
         }
       } catch (error) {
         console.error('Error fetching search results:', error);
@@ -44,9 +43,9 @@ React.FC<SearchInputProps>
     }
   }, [searchTerm]);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(e.target.value);
-  };
+  // const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   setSearchTerm(e.target.value);
+  // };
 
   const clickHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
@@ -54,15 +53,9 @@ React.FC<SearchInputProps>
       setErrorMessage('Please fill our search input')
       return
     }
+    navigate('/filteredrecipes');
   };
 
-  // const handleUpdatedRecipes() {
-  //   const updatedRecipe = {
-
-  //   }
-  //   updateSingleRecipe(updatedRecipe)
-  // }
-  
   return (
     <form className='search-bar'>
       <input

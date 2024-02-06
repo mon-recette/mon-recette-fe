@@ -13,9 +13,7 @@ import FilteredRecipePage from '../FilteredRecipePage/FilteredRecipePage';
 const HomePage
 : 
 React.FC<homePageProps>
-= (
-  {updateSingleRecipe, updateRecipes}
-  ) => {
+= ({updateSingleRecipe, updateRecipes}) => {
   // const [recipes, setRecipes] = useState<Recipe[]>([]);
   // console.log("recipes", recipes)
   // console.log("singleRecipe after search and click", singleRecipe)
