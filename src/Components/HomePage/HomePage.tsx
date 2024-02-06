@@ -11,10 +11,10 @@ import ShowRecipePage from '../ShowRecipePage/ShowRecipePage';
 import FilteredRecipePage from '../FilteredRecipePage/FilteredRecipePage';
 
 const HomePage
-// : 
-// React.FC<homePageProps>
+: 
+React.FC<homePageProps>
 = (
-  // {filterRecipesResults, singleRecipe, recipes}
+  {updateSingleRecipe, updateRecipes}
   ) => {
   // const [recipes, setRecipes] = useState<Recipe[]>([]);
   // console.log("recipes", recipes)
@@ -26,15 +26,8 @@ const HomePage
     <main>
       <Header />
       <MainLogo />
-      <SearchInput 
-      // filterRecipesResults={filterRecipesResults} 
+      <SearchInput updateSingleRecipe={updateSingleRecipe} updateRecipes={updateRecipes}
       />
-      {/* <ShowRecipePage 
-      singleRecipe={singleRecipe}
-      />
-      <FilteredRecipePage
-      //  recipes={recipes}
-       /> */}
     </main>
   );
 };

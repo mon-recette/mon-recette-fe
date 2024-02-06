@@ -1,14 +1,14 @@
 export interface RecipesData {
   data: {
-    id: null | string;
-    type: string;
     attributes: {
       recipes: Recipe[];
     };
+    id: null | string;
+    type: string;
   };
 }
 
-export interface Recipe {
+export interface Recipe { 
   name: string;
   instructions: string;
   image_url: null | string;
@@ -16,16 +16,12 @@ export interface Recipe {
 }
 
 export interface SearchInputProps {
-  filterRecipesResults: (searchTerm: string) => void;
-  // onSearchResults: (filteredRecipes: Recipe[]) => void;
+  updateSingleRecipe: (updatedRecipe: Recipe) => void; 
+  updateRecipes: (recipes: RecipesData) => void;
 }
 
 export interface filteredRecipePageProps {
-  recipes: Recipe[];
-  // name: string;
-  // instructions: string;
-  // image_url: string | null;
-  // ingredients: string[];
+  recipes: RecipesData;
 }
 
 export interface smallRecipePageProps {
@@ -37,13 +33,12 @@ export interface smallRecipePageProps {
 }
 
 export interface homePageProps {
-  filterRecipesResults: (searchTerm: string) => void;
-  singleRecipe: Recipe; 
-  recipes: Recipe[];
+  updateSingleRecipe: (updatedRecipe: Recipe) => void; 
+  updateRecipes: (recipes: RecipesData) => void;
 }
 
 export interface ShowRecipePageProps {
-  singleRecipe: Recipe;
+  singleRecipe: Recipe | undefined; //may be due to multiple recipes
 }
 
 // export interface Ingredient {
