@@ -1,8 +1,9 @@
 import Logo from '../../Images /Main-logo.png'
+import './MainLogo.css'
 
 const MainLogo = () => {
   return (
-    <img src={Logo} alt='small-logo'/>
+    <img src={Logo} className='main-logo' alt='main-logo'/>
   )
 }
 

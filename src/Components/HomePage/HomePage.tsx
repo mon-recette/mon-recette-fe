@@ -10,10 +10,7 @@ import { homePageProps } from '../../types';
 import ShowRecipePage from '../ShowRecipePage/ShowRecipePage';
 import FilteredRecipePage from '../FilteredRecipePage/FilteredRecipePage';
 
-const HomePage
-: 
-React.FC<homePageProps>
-= (
+const HomePage: React.FC<homePageProps> = (
   {updateSingleRecipe, updateRecipes}
   ) => {
   // const [recipes, setRecipes] = useState<Recipe[]>([]);
@@ -21,6 +18,9 @@ React.FC<homePageProps>
   // console.log("singleRecipe after search and click", singleRecipe)
 
   //will have to create function and savedRecipe -> find recipe that is saved then reset recipes to pass into saved recipe
+
+//Server error
+// const HomePage: React.FC<homePageProps> = ({filterRecipesResults}) => {
 
   return (
     <main>
