@@ -1,16 +1,18 @@
+import React from 'react';
 import SmallLogo from '../../Images /Small-logo.png';
 import { Link } from 'react-router-dom';
+import './Header.css';
 
 const Header = () => {
   return (
-    <header>
-      <img src={SmallLogo} alt="small-mon-recette-logo" />
-      <Link to="/saved">
-        <button className="saved-recipes-btn">Saved Recipes</button>
-      </Link>
-      <Link to="/">
-        <button className="log-out-btn">Logout</button>
-      </Link>
+    <header className="header" >
+      <img src={SmallLogo} alt="small-mon-recette-logo" className="small-logo"/>
+        <nav className="navbar">
+          <ul className='nav_links'>
+            <li><a href="/saved">Saved Recipes</a></li>
+            <li><a href="/">Logout</a></li>
+          </ul>
+        </nav>
     </header>
   );
 };
