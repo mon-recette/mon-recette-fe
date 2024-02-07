@@ -5,7 +5,10 @@ import Header from '../Header/Header';
 import ScrollToTopButton from '../ScrollToTopButton/ScrollToTopButton'
 import ReturnToSearchButton from '../ReturnToSearchButton/ReturnToSearchButton'
 
-const SavedRecipesPage: React.FC<SavedRecipesPageProps> = ({ savedRecipes, toggleSavedRecipes }) => {
+
+
+//why is it going to this pageeeE??? when we have a search input
+const SavedRecipesPage: React.FC<SavedRecipesPageProps> = ({ savedRecipes }) => {
   console.log('Saved Recipes:', savedRecipes)
   const displaySavedRecipes = savedRecipes.map((savedRecipe) => (
     <SmallRecipeCard
@@ -15,7 +18,7 @@ const SavedRecipesPage: React.FC<SavedRecipesPageProps> = ({ savedRecipes, toggl
       image_url={savedRecipe.image_url}
       ingredients={savedRecipe.ingredients}
       isSaved={true}
-      toggleSavedRecipes={() => toggleSavedRecipes(savedRecipe)}
+      // toggleSavedRecipes={() => toggleSavedRecipes(savedRecipe)}
     />
   ));
 
