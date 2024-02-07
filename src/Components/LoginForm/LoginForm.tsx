@@ -46,7 +46,8 @@ const LoginForm = () => {
       }
   
   return (
-    <form>
+    <form className="log_form">
+      <label htmlFor="username">Username or Email</label>
       <input
       data-test='username'
       tabIndex={0}
@@ -56,6 +57,7 @@ const LoginForm = () => {
       onChange={(e) => setUsername(e.target.value)}
       ></input>
 
+    <label htmlFor='password'>Password</label>
     <input
       data-test='password'
       tabIndex={0}
