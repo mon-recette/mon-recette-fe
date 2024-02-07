@@ -2,16 +2,6 @@
 // environment variables - can be used .env files (put any secrets - this can be added to gitignore)
 // never expose apiKey 
 
-// export const getAllRecipes = () => {
-//     return fetch(`https://mon-recette-be.herokuapp.com/api/v1/searches?term=`)
-//     .then(response => {
-//         if (!response.ok) {
-//             throw new Error(`${response.status}: ${response.message}`);
-//         }
-//         return response.json();
-//     })
-// }
-
 export const getRecipeOrwebScrapeRecipe = (searchTerm) => {
     return fetch(`https://mon-recette-be-8176efe67145.herokuapp.com/api/v1/searches?term=${searchTerm}`)
         .then(response => {
@@ -20,14 +10,14 @@ export const getRecipeOrwebScrapeRecipe = (searchTerm) => {
             }
             return response.json();
         })
-        .catch(error => {
-            console.error('Error fetching recipe:', error);
-            throw error; // Rethrow the error to be caught by the calling code
-        });
+        // .catch(error => {
+        //     console.error('Error fetching recipe:', error);
+        //     throw error; // Rethrow the error to be caught by the calling code
+        // });
 }
 
 export const getSavedRecipes = () => {
-    return fetch(`endpt for saved recipe`)
+    return fetch(`https://mon-recette-be-8176efe67145.herokuapp.com/api/v1/recipes`)
         .then(response => {
             if (!response.ok) {
                 throw new Error(`${response.status}: ${response.statusText}`);
@@ -40,8 +30,8 @@ export const getSavedRecipes = () => {
         });
 }
 
-export function postAllSavedRecipes(newRecipe) {
-    return fetch('endpt for saved recipe', {
+export const postAllSavedRecipes = (newRecipe) => {
+    return fetch('https://mon-recette-be-8176efe67145.herokuapp.com/api/v1/recipes', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(newRecipe),

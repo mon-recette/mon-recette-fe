@@ -5,7 +5,7 @@ import SmallRecipeCard from '../SmallRecipeCard/SmallRecipeCard';
 
 const FilteredRecipePage
 : React.FC<filteredRecipePageProps>
- = ({ recipes }) => {
+ = ({ recipes, updateSeletedFilteredRecipe }) => {
   console.log('recipes in FilteredPage', recipes)
   
   const displayFilteredRecipes = recipes.data.attributes.recipes.map((singleRecipe) => (
@@ -13,8 +13,10 @@ const FilteredRecipePage
       key={singleRecipe.name}
       name={singleRecipe.name}
       instructions={singleRecipe.instructions}
-      image_url={singleRecipe.image_url}
+      image_url={singleRecipe.image_url} //may need to take out
       ingredients={singleRecipe.ingredients}
+      recipes={recipes}
+      updateSeletedFilteredRecipe={updateSeletedFilteredRecipe}
     />
   ));
 

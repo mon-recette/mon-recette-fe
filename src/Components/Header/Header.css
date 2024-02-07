@@ -8,10 +8,11 @@
 
 .header {
   display: flex;
-  justify-content: flex-end;
   align-items: center;
   padding: 10px 10%;
-  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  justify-content: space-around;
 }
 
 .nav_links {
