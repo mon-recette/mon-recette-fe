@@ -11,21 +11,19 @@ import { useState, useEffect } from 'react';
 import ShowRecipePage from '../ShowRecipePage/ShowRecipePage';
 import { getSavedRecipes, postAllSavedRecipes } from "../apiCalls"
 import ShowSingleFilteredRecipePage from '../ShowSingleFilteredRecipePage/ShowSingleFilteredRecipePage';
+// import { getSavedRecipes } from '../apiCalls';
 
 function App() {
   const [recipes, setRecipes] = useState<RecipesData>({ data: { attributes: { recipes: [] }, id: null, type: '' } });
   const [ singleRecipe, setSingleRecipe] = useState<Recipe | undefined>();
-  // const [ savedRecipes, setSavedRecipes ] = useState<Recipe[]>([])
+  const [ savedRecipes, setSavedRecipes ] = useState<Recipe[]>([])
   const [ selectedFilteredRecipe, setselectedFilteredRecipe ] = useState<Recipe>();
-
-  //move this into saved recipe component
-
 
   const postData = (newRecipe: Recipe) => {
     postAllSavedRecipes(newRecipe)
+    updateSavedRecipes(newRecipe)
     // .then(newRecipe => {
-    //   console.log("newRecipe", newRecipe)
-    //   setSavedRecipes(savedRecipes => [...savedRecipes, newRecipe])
+    //   console.log("newRecipe in App", newRecipe)
     // })
   }
 
@@ -41,9 +39,12 @@ function App() {
     setselectedFilteredRecipe(recipe)
   }
 
-  console.log("singleRecipe outside updateSingleRecipe fx",singleRecipe)
-  // console.log("recipes outside recipes fx",recipes)
-  console.log("selectedFilterecRecipe in App",selectedFilteredRecipe)
+  const updateSavedRecipes = (userSpecificRecipes) => {
+    // setSavedRecipes(savedRecipes)
+    setSavedRecipes(savedRecipes => [...savedRecipes, userSpecificRecipes])
+    // setSavedRecipes(userSpecificRecipes);
+  }
+  console.log("savedRecipe in App", savedRecipes)
 
   return (
     <div className="App">
@@ -51,8 +52,8 @@ function App() {
         <Route path='/' element={<LoginPage/>} />
         <Route path='/home' element={<HomePage updateSingleRecipe={updateSingleRecipe} updateRecipes={updateRecipes}
         />} />
-        <Route path='/saved' element={<SavedRecipesPage 
-        // savedRecipes={savedRecipes}
+        <Route path='/saved' element={<SavedRecipesPage recipes={recipes}
+        savedRecipes={savedRecipes} updateSavedRecipes={updateSavedRecipes} updateSeletedFilteredRecipe={updateSeletedFilteredRecipe}
         />} />
         <Route path='/filteredRecipes' element={<FilteredRecipePage recipes={recipes} updateSeletedFilteredRecipe={updateSeletedFilteredRecipe}/>
           }
@@ -61,7 +62,6 @@ function App() {
         <Route path='/home/:searchQuery' element={<ShowRecipePage singleRecipe={singleRecipe} postData={postData}/>} /> //add savedRecipe button
         <Route path='/filteredRecipes/:clickedRecipe' element={<ShowSingleFilteredRecipePage selectedFilteredRecipe={selectedFilteredRecipe} postData={postData}/>} /> //add savedRecipe button
         <Route path='/*' element={<ErrorPage/>} />
-        
       </Routes>
     </div>
   );

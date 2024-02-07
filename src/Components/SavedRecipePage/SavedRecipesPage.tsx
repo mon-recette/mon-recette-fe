@@ -1,47 +1,55 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { SavedRecipesPageProps } from '../../types';
-import SmallRecipeCard from '../SmallRecipeCard/SmallRecipeCard';
+import SavedRecipeCard from '../SavedRecipeCard/SavedRecipeCard';
 import Header from '../Header/Header';
-import ScrollToTopButton from '../ScrollToTopButton/ScrollToTopButton'
-import ReturnToSearchButton from '../ReturnToSearchButton/ReturnToSearchButton'
+import ScrollToTopButton from '../ScrollToTopButton/ScrollToTopButton';
+import ReturnToSearchButton from '../ReturnToSearchButton/ReturnToSearchButton';
 import { Recipe } from '../../types';
 import { getSavedRecipes } from '../apiCalls';
-import { useEffect, useState } from 'react';
 
-//why is it going to this pageeeE??? when we have a search input
-const SavedRecipesPage = () => {
-  // console.log('Saved Recipes:', savedRecipes)
-  const [ savedRecipes, setSavedRecipes ] = useState<Recipe[]>([])
-
+const SavedRecipesPage: React.FC<SavedRecipesPageProps> = ({recipes, savedRecipes, updateSavedRecipes, updateSeletedFilteredRecipe}) => {
+  // const [savedRecipes, setSavedRecipes] = useState<Recipe[]>([]);
+  const id = 1
   useEffect(() => {
-    getSavedRecipes() 
-    .then(savedRecipeData => {
-      setSavedRecipes(savedRecipeData.data.attributes.recipes)
-    }) 
+    getSavedRecipes(id)
+    .then((savedRecipeData) => {
+      console.log('Received saved recipe data:', savedRecipeData);
+      const allSavedRecipes = savedRecipeData.data.attributes.recipes
+      const userSpecificRecipes = allSavedRecipes.filter(recipe => recipe.user_id === id)
+      console.log('User specific recipes:', userSpecificRecipes);
+      updateSavedRecipes(userSpecificRecipes)
+    });
+  }, [id]);
+
+  console.log('savedRecipes', savedRecipes);
+
+  const displayUserSpecificSavedRecipes = savedRecipes.flat().map((savedRecipe) => {
+    return (
+      <SavedRecipeCard
+        key={savedRecipe.name}
+        name={savedRecipe.name}
+        instructions={savedRecipe.instructions}
+        image_url={savedRecipe.image_url}
+        ingredients={savedRecipe.ingredients}
+        recipes={recipes}
+        updateSeletedFilteredRecipe={updateSeletedFilteredRecipe}
+        // isSaved={true}
+        // toggleSavedRecipes={() => toggleSavedRecipes(savedRecipe)}
+      />
+    )
   })
-
-  const displaySavedRecipes = savedRecipes.map((savedRecipe) => (
-    <SmallRecipeCard
-      key={savedRecipe.name}
-      name={savedRecipe.name}
-      instructions={savedRecipe.instructions}
-      image_url={savedRecipe.image_url}
-      ingredients={savedRecipe.ingredients}
-      // isSaved={true}
-      // toggleSavedRecipes={() => toggleSavedRecipes(savedRecipe)}
-    />
-  ));
-
+  
+console.log("displayUserSpecificSavedRecipes ",displayUserSpecificSavedRecipes )
   return (
     <main className='saved-recipes-page'>
       <Header />
-      <ReturnToSearchButton /> 
-      {displaySavedRecipes.length > 0 ? (
-        displaySavedRecipes
-        ) : (
-          <p>No saved recipes found! Add some!</p>
-          )}
-      <ScrollToTopButton /> 
+      <ReturnToSearchButton />
+      {displayUserSpecificSavedRecipes.length > 0 ? (
+        displayUserSpecificSavedRecipes 
+      ) : (
+        <p>No saved recipes found! Add some!</p>
+      )}
+      <ScrollToTopButton />
     </main>
   );
 };
