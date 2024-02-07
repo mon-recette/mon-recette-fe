@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getRecipeOrwebScrapeRecipe } from '../apiCalls';
-import { Recipe } from '../../types';
 import { SearchInputProps } from '../../types';
 //correct way to do it, is to not fetch everything (bc that slows down everything)
 //avoid if else
@@ -14,6 +13,7 @@ React.FC<SearchInputProps>
   // const [recipes, setRecipes] = useState<Recipe[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [errorMessage, setErrorMessage] = useState<string>('');
+  // const [ error, setError ] = useState('')
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,6 +25,7 @@ React.FC<SearchInputProps>
           updateRecipes(results)
         }
       } catch (error) {
+        // setError(error)
         console.error('Error fetching search results:', error);
       }
     };

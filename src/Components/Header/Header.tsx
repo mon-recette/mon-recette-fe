@@ -6,11 +6,17 @@ import './Header.css';
 const Header = () => {
   return (
     <header className="header" >
-      <img src={SmallLogo} alt="small-mon-recette-logo" className="small-logo"/>
+      <Link to='/home'>
+        <img src={SmallLogo} alt="small-mon-recette-logo" className="small-logo"/>
+      </Link>
         <nav className="navbar">
           <ul className='nav_links'>
-            <li><a href="/saved">Saved Recipes</a></li>
-            <li><a href="/">Logout</a></li>
+            <Link to='/saved'>
+              <li>Saved Recipes</li>
+            </Link>
+            <Link to='/'>
+              <li>Logout</li>
+            </Link>
           </ul>
         </nav>
     </header>

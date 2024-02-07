@@ -1,7 +1,7 @@
 import Ratatouille from '../../Images /Ratatouille.jpeg'
 import { useNavigate } from 'react-router-dom'
 
-const ErrorPage = () =>{
+const ErrorPage = () => {
 const navigate = useNavigate()
  
 const handleBackToLogin = () => {
