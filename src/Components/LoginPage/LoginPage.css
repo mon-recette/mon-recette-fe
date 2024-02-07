@@ -28,23 +28,6 @@ width: 200px;
 position: absolute;
 border-radius: 50%;
 }
-/* .shape:first-child{
-background: linear-gradient(
-    #80eb8e,
-    #093501
-);
-left: -80px;
-top: -80px;
-}
-.shape:last-child{
-background: linear-gradient(
-    to right,
-    #035c06,
-    #a0af18
-); */
-/* right: -30px;
-bottom: -80px; */
-/* } */
 .log_form{
 height: 350px;
 width: 400px;
@@ -93,10 +76,10 @@ font-weight: 300;
 ::placeholder{
 color: #e5e5e5;
 }
-button{
+.log_button{
 margin-top: 50px;
 width: 100%;
-background-color: #ffffff;
+background-color: #025903;
 color: #080710;
 padding: 15px 0;
 font-size: 18px;
