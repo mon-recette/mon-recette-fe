@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getRecipeOrwebScrapeRecipe } from '../apiCalls';
 import { SearchInputProps } from '../../types';
+import './SearchInput.css'
 //correct way to do it, is to not fetch everything (bc that slows down everything)
 //avoid if else
 
@@ -61,7 +62,7 @@ React.FC<SearchInputProps>
       <button type="submit" className='search-button' onClick={(event) => clickHandler(event)}>
         Search ingredient!
       </button>
-      {errorMessage && <h2>{`${errorMessage}`}</h2>}
+      {errorMessage && <h2 className='error-message'>{`${errorMessage}`}</h2>}
     </form>
   );
 };

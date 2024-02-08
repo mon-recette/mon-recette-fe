@@ -22,10 +22,11 @@ React.FC<homePageProps>
 
   return (
     <main>
-      <Header />
-      <MainLogo />
-      <SearchInput updateSingleRecipe={updateSingleRecipe} updateRecipes={updateRecipes}
-      />
+    <Header />
+      <main className='main-page'>
+        <MainLogo />
+          <SearchInput updateSingleRecipe={updateSingleRecipe} updateRecipes={updateRecipes}/>
+      </main>
     </main>
   );
 };

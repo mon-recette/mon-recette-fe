@@ -46,16 +46,19 @@ const LoginForm = () => {
       }
   
   return (
-    <form>
+    <form className="log_form">
+      <h1 className="form_heading">Sign In</h1>
+      <label htmlFor="username">Email</label>
       <input
       data-test='username'
       tabIndex={0}
       type="text"
-      placeholder="Enter username or email..."
+      placeholder="Enter your email..."
       value={username}
       onChange={(e) => setUsername(e.target.value)}
       ></input>
 
+    <label htmlFor='password'>Password</label>
     <input
       data-test='password'
       tabIndex={0}
@@ -65,7 +68,7 @@ const LoginForm = () => {
       onChange={(e) => setPassword(e.target.value)}
       ></input>
 
-     <button tabIndex={0} data-test='submit-button' type="submit" value='submit' onClick={(event) => navigateLogin(event)}>Sign in</button>
+     <button className='log_button' tabIndex={0} data-test='submit-button' type="submit" value='submit' onClick={(event) => navigateLogin(event)}>Sign in</button>
 
     {errorMessage && <h2 data-test='search-error-message' className='error-message'>{errorMessage}</h2>}
     </form>

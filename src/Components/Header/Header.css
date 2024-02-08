@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dawning+of+a+New+Day&display=swap');
 
 .small-logo {
   width: 220px;
@@ -11,8 +12,21 @@
   align-items: center;
   padding: 10px 10%;
   -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(58, 58, 58, 0.618);
   backdrop-filter: blur(10px);
-  justify-content: space-around;
+  justify-content: space-between;
+
+}
+.header_logo{
+  list-style: none;
+  font-family: 'Dawning of a New Day', cursive;
+  font-weight: bolder;
+  font-size: 35px;
+  color: rgb(255, 255, 255);
+}
+
+a {
+  text-decoration: none; 
 }
 
 .nav_links {
@@ -30,8 +44,8 @@
 .navbar a {
   font-family: 'La Belle Aurore', cursive;
   font-size: 18px;
-  color: #0E5724;
-  font-weight: 500;
+  color: #ffffff;
+  font-weight: bolder;
   text-decoration: none;
   margin-left: 20px;
   position: relative;
@@ -44,7 +58,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background:  #0E5724;
+  background:  #fbfbfb;
   transition: .3s;
 }
 

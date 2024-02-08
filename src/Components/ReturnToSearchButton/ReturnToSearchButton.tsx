@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-
+import './ReturnToSearchButton.css'
 const ReturnToSearchButton = () => {
 
   const navigate = useNavigate()
@@ -8,7 +8,7 @@ const ReturnToSearchButton = () => {
   }
   return (
     <div className='return-btn-box'>
-      <button onClick={handleReturnClick}>Return to Search</button>
+      <button className='return-to-search-btn' onClick={handleReturnClick}>Return to Search</button>
     </div>
   )
 }
