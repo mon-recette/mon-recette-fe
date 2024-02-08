@@ -1,23 +1,43 @@
 import './ShowSingleFilteredRecipePage.css'
 import Header from '../Header/Header'
 import BackToSearchBtn from '../BackToSearchBtn/BackToSearchBtn'
-import IndividualRecipeCard from '../IndividualRecipeCard/IndividualRecipeCard'
-import { ShowRecipePageProps, postDataProp } from '../../types'
-import { Recipe } from '../../types'
+import { postDataProp } from '../../types';
+import { useState } from 'react';
 
 const ShowSingleFilteredRecipePage = ({selectedFilteredRecipe, postData}) => {
-  console.log("selectedFilterecRecipe in ShowSingleRecipePage:", selectedFilteredRecipe)
-    
-    const addToSavedRecipe = () => {
-      const newRecipe = {
-        user_id: 1, //for now, q user has user_id 1
-        //but has to be tied with the email??? how do we get the email?
+  const [isSaved, setIsSaved] = useState(false);
+
+  const addToSavedRecipe = () => {
+    if (isSaved) {
+      // Delete the recipe if it's already saved
+      // You need to implement a delete functionality, e.g., deleteData(selectedFilteredRecipe.id);
+      console.log('Recipe deleted:', selectedFilteredRecipe);
+      setIsSaved(false);
+    } else {
+      // Save the recipe if it's not saved
+      const newRecipe: React.FC<postDataProp> = {
+        user_id: 1, // for now, a user has user_id 1
         name: selectedFilteredRecipe?.name,
         ingredients: selectedFilteredRecipe?.ingredients,
         instructions: selectedFilteredRecipe?.instructions
-      }
-      postData(newRecipe)
+      };
+
+      console.log('Recipe saved:', newRecipe);
+      postData(newRecipe);
+      setIsSaved(true);
     }
+  };
+
+    // const addToSavedRecipe = () => {
+    //   const newRecipe: React.FC<postDataProp> = {
+    //     user_id: 1, //for now, q user has user_id 1
+    //     name: selectedFilteredRecipe?.name,
+    //     ingredients: selectedFilteredRecipe?.ingredients,
+    //     instructions: selectedFilteredRecipe?.instructions
+    //   }
+    //   console.log("newRecipe",newRecipe)
+    //   postData(newRecipe)
+    // }
 
     return (
       <div>

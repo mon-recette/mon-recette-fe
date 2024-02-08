@@ -16,8 +16,8 @@ export const getRecipeOrwebScrapeRecipe = (searchTerm) => {
         // });
 }
 
-export const getSavedRecipes = () => {
-    return fetch(`https://mon-recette-be-8176efe67145.herokuapp.com/api/v1/recipes`)
+export const getSavedRecipes = (id) => {
+    return fetch(`https://mon-recette-be-8176efe67145.herokuapp.com/api/v1/recipes?user_id=${id}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error(`${response.status}: ${response.statusText}`);
