@@ -47,12 +47,13 @@ const LoginForm = () => {
   
   return (
     <form className="log_form">
-      <label htmlFor="username">Username or Email</label>
+      <h1 className="form_heading">Sign In</h1>
+      <label htmlFor="username">Email</label>
       <input
       data-test='username'
       tabIndex={0}
       type="text"
-      placeholder="Enter username or email..."
+      placeholder="Enter your email..."
       value={username}
       onChange={(e) => setUsername(e.target.value)}
       ></input>
