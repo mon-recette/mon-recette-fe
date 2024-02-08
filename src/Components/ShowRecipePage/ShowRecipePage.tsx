@@ -3,7 +3,6 @@ import Header from '../Header/Header'
 import BackToSearchBtn from '../BackToSearchBtn/BackToSearchBtn'
 import IndividualRecipeCard from '../IndividualRecipeCard/IndividualRecipeCard'
 import { ShowRecipePageProps, postDataProp } from '../../types'
-import { Recipe } from '../../types'
 
 const ShowRecipePage: React.FC<ShowRecipePageProps> = ({singleRecipe, postData}) => {
   console.log("singleRecipe in ShowRecipePage", singleRecipe)

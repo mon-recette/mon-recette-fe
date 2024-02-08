@@ -9,7 +9,7 @@ import { getSavedRecipes } from '../apiCalls';
 import { useEffect, useState } from 'react';
 
 //why is it going to this pageeeE??? when we have a search input
-const SavedRecipesPage = () => {
+const SavedRecipesPage: React.FC<SavedRecipesPageProps> = ({ updateSeletedFilteredRecipe }) => {
   // console.log('Saved Recipes:', savedRecipes)
   const [ savedRecipes, setSavedRecipes ] = useState<Recipe[]>([])
 
@@ -27,6 +27,8 @@ const SavedRecipesPage = () => {
       instructions={savedRecipe.instructions}
       image_url={savedRecipe.image_url}
       ingredients={savedRecipe.ingredients}
+      updateSeletedFilteredRecipe={updateSeletedFilteredRecipe}
+      // recipes={savedRecipes}
       // isSaved={true}
       // toggleSavedRecipes={() => toggleSavedRecipes(savedRecipe)}
     />

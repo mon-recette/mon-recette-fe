@@ -5,7 +5,7 @@ import HomePage from '../HomePage/HomePage';
 import SavedRecipesPage from '../SavedRecipePage/SavedRecipesPage';
 import FilteredRecipePage from '../FilteredRecipePage/FilteredRecipePage';
 import ErrorPage from '../ErrorPage/ErrorPage';
-import { Recipe, RecipesData } from '../../types';
+import { Recipe, RecipesData, postDataProp } from '../../types';
 import { useState, useEffect } from 'react';
 import ShowRecipePage from '../ShowRecipePage/ShowRecipePage';
 import { getSavedRecipes, postAllSavedRecipes } from '../apiCalls';
@@ -22,12 +22,24 @@ function App() {
 
   //move this into saved recipe component
 
-  const postData = (newRecipe: Recipe) => {
-    postAllSavedRecipes(newRecipe);
-    // .then(newRecipe => {
-    //   console.log("newRecipe", newRecipe)
-    //   setSavedRecipes(savedRecipes => [...savedRecipes, newRecipe])
-    // })
+  const postData = (newRecipe: Recipe | postDataProp) => {
+    if ('name' in newRecipe) {
+      // Assuming newRecipe is of type Recipe
+      postAllSavedRecipes(newRecipe)
+        .then((newRecipe) => {
+          console.log("newRecipe", newRecipe)
+          // Handle the response as needed
+          // setSavedRecipes(savedRecipes => [...savedRecipes, newRecipe])
+        })
+        .catch((error) => {
+          // Handle the error
+          console.error('Error posting recipe:', error);
+        });
+    } else {
+      // Handle the case when newRecipe is of type postDataProp
+      console.log("newRecipe", newRecipe);
+      // Perform any logic needed for postDataProp
+    }
   };
 
   const updateSingleRecipe = (updatedRecipe: Recipe) => {
@@ -42,9 +54,9 @@ function App() {
     setselectedFilteredRecipe(recipe);
   };
 
-  console.log('singleRecipe outside updateSingleRecipe fx', singleRecipe);
+  // console.log('singleRecipe outside updateSingleRecipe fx', singleRecipe);
   // console.log("recipes outside recipes fx",recipes)
-  console.log('selectedFilterecRecipe in App', selectedFilteredRecipe);
+  // console.log('selectedFilterecRecipe in App', selectedFilteredRecipe);
 
   return (
     <div className='App'>
@@ -59,14 +71,15 @@ function App() {
             />
           }
         />
-        <Route
+        {/* <Route
           path='/saved'
-          element={
-            <SavedRecipesPage
+          element=
+          // {
+            // <SavedRecipesPage
             // savedRecipes={savedRecipes}
-            />
-          }
-        />
+            // />
+          // }
+        /> */}
         <Route
           path='/filteredRecipes'
           element={

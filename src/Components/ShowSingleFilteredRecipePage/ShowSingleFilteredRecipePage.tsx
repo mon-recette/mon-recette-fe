@@ -2,10 +2,10 @@ import './ShowSingleFilteredRecipePage.css'
 import Header from '../Header/Header'
 import BackToSearchBtn from '../BackToSearchBtn/BackToSearchBtn'
 import IndividualRecipeCard from '../IndividualRecipeCard/IndividualRecipeCard'
-import { ShowRecipePageProps, postDataProp } from '../../types'
+import { ShowSingleFilteredRecipePageProps } from '../../types'
 import { Recipe } from '../../types'
 
-const ShowSingleFilteredRecipePage = ({selectedFilteredRecipe, postData}) => {
+const ShowSingleFilteredRecipePage: React.FC<ShowSingleFilteredRecipePageProps> = ({ selectedFilteredRecipe, postData }) => {
   console.log("selectedFilterecRecipe in ShowSingleRecipePage:", selectedFilteredRecipe)
     
     const addToSavedRecipe = () => {
