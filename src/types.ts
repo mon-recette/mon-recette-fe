@@ -52,7 +52,6 @@ export interface ShowRecipePageProps {
 export interface SavedRecipesPageProps {
   savedRecipes: Recipe[];
   updateSeletedFilteredRecipe: (recipe: Recipe) => void;
-  // toggleSavedRecipes: (recipe: Recipe) => void;
 }
 
 export interface postDataProp {
