@@ -1,0 +1,21 @@
+.recipe_info{
+  width: 60%;
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 20px; /* Add some padding for better spacing */
+  border: 1px solid #ccc; /* Add a border for visual separation */
+  border-radius: 8px; /* Optionally round the corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for depth */
+  background-color: rgba(50, 50, 50, 0.624);
+  backdrop-filter: blur(10px);
+  color: white
+}
+
+/* Optional: Style for the sections within .recipe_info */
+.recipe_info section {
+  margin-bottom: 20px; /* Add spacing between sections */
+}
+
+/* Optional: Style for the ingredients list */
+.recipe_info section div {
+  margin-bottom: 8px; /* Add spacing between ingredients */
+}

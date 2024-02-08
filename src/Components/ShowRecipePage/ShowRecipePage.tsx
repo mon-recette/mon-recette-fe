@@ -49,19 +49,22 @@ const ShowRecipePage: React.FC<ShowRecipePageProps> = ({singleRecipe, postData})
         <BackToSearchBtn />
         <h2>{singleRecipe?.data.attributes.name}</h2>
         { singleRecipe?.image_url && <img src={singleRecipe?.image_url || ''}alt="Recipe" />}
-        <div>
+        
+        <section className="recipe_info">
           <section>
+            <h3>Ingredients</h3>
             {singleRecipe?.data.attributes.ingredients.map((ingredient: string, index: number) => (
               <div key={index}>{ingredient}</div>
             ))}
           </section>
           <section>
+            <h6>Instructions</h6>
             <div>{singleRecipe?.data.attributes.instructions}
             {/* {singleRecipe?.data.attributes.ingredients.map((ingredient: string, index: number) => (
               <div key={index}>{index + 1}. {ingredient}</div> */}
             </div>
           </section>
-        </div>
+        </section>
         <button type="submit" onClick={()=> addToSavedRecipe()}>Saved button</button>
       </div>
     );
