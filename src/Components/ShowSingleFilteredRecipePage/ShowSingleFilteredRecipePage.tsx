@@ -1,11 +1,15 @@
 import './ShowSingleFilteredRecipePage.css'
 import Header from '../Header/Header'
 import BackToSearchBtn from '../BackToSearchBtn/BackToSearchBtn'
+import IndividualRecipeCard from '../IndividualRecipeCard/IndividualRecipeCard'
+import { ShowSingleFilteredRecipePageProps } from '../../types'
+import { Recipe } from '../../types'
 import { postDataProp } from '../../types';
 import { useState } from 'react';
-
-const ShowSingleFilteredRecipePage = ({selectedFilteredRecipe, postData}) => {
-  // const [isSaved, setIsSaved] = useState(false);
+        
+const ShowSingleFilteredRecipePage: React.FC<ShowSingleFilteredRecipePageProps> = ({ selectedFilteredRecipe, postData }) => {
+//   console.log("selectedFilterecRecipe in ShowSingleRecipePage:", selectedFilteredRecipe)
+  
   const [savedMessage, setSavedMessage] = useState('');
   console.log("selectedFilteredRecipe",selectedFilteredRecipe)
   // const addToSavedRecipe = () => {
@@ -28,7 +32,7 @@ const ShowSingleFilteredRecipePage = ({selectedFilteredRecipe, postData}) => {
   //     setIsSaved(true);
   //   }
   // };
-
+    
     const addToSavedRecipe = () => {
       const newRecipe: React.FC<postDataProp> = {
         user_id: 1, //for now, q user has user_id 1
@@ -36,11 +40,9 @@ const ShowSingleFilteredRecipePage = ({selectedFilteredRecipe, postData}) => {
         ingredients: selectedFilteredRecipe?.ingredients,
         instructions: selectedFilteredRecipe?.instructions
       }
-      console.log("newRecipe",newRecipe)
       postData(newRecipe)
       setSavedMessage('Recipe has been saved')
     }
-
 
     return (
       <div>

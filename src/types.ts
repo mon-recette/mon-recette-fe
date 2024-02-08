@@ -21,6 +21,7 @@ export interface SearchInputProps {
 
 export interface filteredRecipePageProps {
   recipes: RecipesData;
+  updateSeletedFilteredRecipe: (recipe: Recipe) => void;
 }
 
 export interface SmallRecipeCardProps {
@@ -28,8 +29,11 @@ export interface SmallRecipeCardProps {
   instructions: string;
   image_url: string | null;
   ingredients: string[];
-  isSaved: boolean; 
-  toggleSavedRecipes: (recipe: { name: string; instructions: string; image_url: string | null; ingredients: string[] }) => void;
+  isSaved?: boolean; 
+  toggleSavedRecipes?: (recipe: { name: string; instructions: string; image_url: string | null; ingredients: string[] }) => void;
+  recipes?: RecipesData;
+  updateSeletedFilteredRecipe: (recipe: RecipesData['data']['attributes']['recipes'][number]) => void; 
+
 }
 export interface homePageProps {
   updateSingleRecipe: (updatedRecipe: Recipe) => void; 
@@ -37,7 +41,7 @@ export interface homePageProps {
 }
 
 export interface ShowRecipePageProps {
-  singleRecipe: Recipe | undefined; //may be due to multiple recipes
+  singleRecipe: Recipe | RecipesData | undefined;
   postData: ( recipes : Recipe ) => void;
 }
 
@@ -47,16 +51,22 @@ export interface ShowRecipePageProps {
 
 export interface SavedRecipesPageProps {
   savedRecipes: Recipe[];
-  // toggleSavedRecipes: (recipe: Recipe) => void;
+  updateSeletedFilteredRecipe: (recipe: Recipe) => void;
 }
 
 export interface postDataProp {
   user_id: number; 
-  name: string | undefined; 
+  name: string | undefined
+  // image_url: null | string;
   ingredients: string[] | undefined; 
   instructions: string | undefined; 
 }
-// export interface SaveIconProps {
-//   toggleSavedRecipes: () => void;
-//   isSaved: boolean;
-// }
+export interface SaveIconProps {
+  toggleSavedRecipes: () => void;
+  isSaved: boolean;
+}
+
+export interface ShowSingleFilteredRecipePageProps {
+  selectedFilteredRecipe: Recipe | undefined;
+  postData: (recipe: postDataProp) => void;
+}

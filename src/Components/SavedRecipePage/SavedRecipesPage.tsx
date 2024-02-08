@@ -7,8 +7,6 @@ import ReturnToSearchButton from '../ReturnToSearchButton/ReturnToSearchButton';
 import { Recipe } from '../../types';
 import { getSavedRecipes } from '../apiCalls';
 
-// ... (your imports)
-
 const SavedRecipesPage: React.FC<SavedRecipesPageProps> = ({ recipes, savedRecipes, updateSavedRecipes, updateSeletedFilteredRecipe }) => {
   const id = 1;
 
