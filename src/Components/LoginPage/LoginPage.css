@@ -1,5 +1,5 @@
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
-@import url('https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+/* @import url('https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap'); */
 /* @import url("https://fonts.googleapis.com/css2?family=Poppins"); */
 /* *,
 *:before,
@@ -9,92 +9,99 @@ margin: 0;
 box-sizing: border-box;
 } */
 
-body{
-  /* background-color: #b9facd; */
+body {
   background-image: url('/src/Images /background.jpeg');
+  background-repeat: no-repeat;
   background-size: cover;
+  background-position: center; 
+  height: 100vh; 
+  margin: 0; 
 }
 
-.background{
-width: 430px;
-height: 450px;
-position: absolute;
-transform: translate(-50%,-50%);
-left: 50%;
-top: 50%;
-}
-.background .shape{
-height: 200px;
-width: 200px;
-position: absolute;
-border-radius: 50%;
-}
-.log_form{
-height: 350px;
-width: 400px;
-background-color: rgba(255,255,255,0.13);
-position: absolute;
-transform: translate(-40%,-40%);
-top: 50%;
-left: 50%;
-border-radius: 10px;
-backdrop-filter: blur(40px);
-border: 2px solid rgba(255,255,255,0.1);
-box-shadow: 0 0 40px rgba(8,7,16,0.6);
-padding: 50px 50px;
-}
-.log_form *{
-font-family: 'La Belle Aurore', cursive;
-font-weight: bolder;
-color: #ffffff;
-letter-spacing: 0.5px;
-outline: none;
-border: none;
+.background {
+  width: 430px;
+  height: 450px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
 }
 
-.log_form h3{
-font-size: 32px;
-font-family: 'La Belle Aurore', cursive;
-font-weight: 500;
-line-height: 42px;
-text-align: center;
+.background .shape {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  border-radius: 50%;
 }
 
-label{
-display: block;
-margin-top: 30px;
-font-size: 16px;
-font-family: 'La Belle Aurore', cursive;
-font-weight: 500;
+.log_form {
+  height: 350px;
+  width: 400px;
+  background-color: rgba(255, 255, 255, 0.13);
+  position: absolute;
+  transform: translate(-40%, -40%);
+  top: 50%;
+  left: 50%;
+  border-radius: 10px;
+  backdrop-filter: blur(40px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  padding: 50px 50px;
+}
+.log_form * {
+  font-family: 'La Belle Aurore', cursive;
+  /* font-family: 'Urbanist', sans-serif; */
+  font-weight: bolder;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  outline: none;
+  border: none;
+  width: 95%;
+  font-size: 1.7em;
 }
 
-input{
-display: block;
-height: 50px;
-width: 100%;
-background-color: rgba(255,255,255,0.07);
-border-radius: 5px;
-padding: 0 10px;
-margin-top: 8px;
-font-size: 14px;
-font-family: 'La Belle Aurore', cursive;
-font-weight: 300;
+.log_form h3 {
+  font-size: 32px;
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 500;
+  line-height: 42px;
+  text-align: center;
 }
 
-::placeholder{
-color: #e5e5e5;
+label {
+  font-family: 'La Belle Aurore', cursive;
+  display: block;
+  margin-top: 30px;
+  font-size: 16px;
+  font-weight: 500;
 }
 
-.log_button{
-margin-top: 50px;
-width: 100%;
-background-color: #0E5724;
-font-family: 'La Belle Aurore', cursive;
-color: #ffffff;
-padding: 15px 0;
-font-size: 18px;
-font-weight: 600;
-border-radius: 5px;
-cursor: pointer;
+input {
+  display: block;
+  height: 50px;
+  width: 120%;
+  background-color: rgba(255, 255, 255, 0.07);
+  border-radius: 5px;
+  padding: 0 10px;
+  margin-top: 8px;
+  font-size: 14px;
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 300;
 }
 
+::placeholder {
+  color: #e5e5e5;
+}
+
+.log_button {
+  margin-top: 50px;
+  width: 100%;
+  background-color: #0e5724;
+  font-family: 'La Belle Aurore', cursive;
+  color: #ffffff;
+  padding: 15px 0;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+}

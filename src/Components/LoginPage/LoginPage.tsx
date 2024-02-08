@@ -11,7 +11,6 @@ const LoginPage = () => {
             <section className='logo-signin'>
               <LoginForm/>
             </section>
-
           <div className="shape"></div>
       </div>
     </div>
