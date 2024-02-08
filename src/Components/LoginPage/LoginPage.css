@@ -28,30 +28,30 @@ body {
 }
 
 .background .shape {
-  height: 200px;
+  height: 300px;
   width: 200px;
   position: absolute;
   border-radius: 50%;
 }
 
 .log_form {
-  height: 350px;
+  height: 400px;
   width: 400px;
-  background-color: rgba(255, 255, 255, 0.13);
+  background-color: rgba(58, 58, 58, 0.618);
   position: absolute;
   transform: translate(-40%, -40%);
   top: 50%;
   left: 50%;
   border-radius: 10px;
-  backdrop-filter: blur(40px);
+  backdrop-filter: blur(10px);
   border: 2px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
   padding: 50px 50px;
 }
 .log_form * {
-  font-family: 'La Belle Aurore', cursive;
+  font-family: 'Urbanist', sans-serif;
   /* font-family: 'Urbanist', sans-serif; */
-  font-weight: bolder;
+  font-weight: 200;
   color: #ffffff;
   letter-spacing: 0.5px;
   outline: none;
@@ -69,7 +69,7 @@ body {
 }
 
 label {
-  font-family: 'La Belle Aurore', cursive;
+  font-family: 'Urbanist', sans-serif;
   display: block;
   margin-top: 30px;
   font-size: 16px;
@@ -97,11 +97,18 @@ input {
   margin-top: 50px;
   width: 100%;
   background-color: #0e5724;
-  font-family: 'La Belle Aurore', cursive;
+  font-family: 'Urbanist', sans-serif;
   color: #ffffff;
   padding: 15px 0;
   font-size: 18px;
   font-weight: 600;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.form_heading {
+  display: block;
+  margin-bottom: 0;
+  margin-top: 0;
+  font-weight: bolder;
 }

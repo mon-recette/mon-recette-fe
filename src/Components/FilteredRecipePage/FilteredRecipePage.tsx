@@ -2,12 +2,12 @@ import { filteredRecipePageProps } from '../../types';
 import Header from '../Header/Header';
 import ReturnToSearchButton from '../ReturnToSearchButton/ReturnToSearchButton';
 import SmallRecipeCard from '../SmallRecipeCard/SmallRecipeCard';
+import './FilteredRecipePage.css';
 
 const FilteredRecipePage
 : React.FC<filteredRecipePageProps>
  = ({ recipes, updateSeletedFilteredRecipe }) => {
-  console.log('recipes in FilteredPage', recipes)
-  
+  console.log("recipes in filteredpage", recipes)
   const displayFilteredRecipes = recipes.data.attributes.recipes.map((singleRecipe) => (
     <SmallRecipeCard
       key={singleRecipe.name}
@@ -24,12 +24,14 @@ const FilteredRecipePage
     <main className='filtered-recipe-page'>
       <Header />
       <ReturnToSearchButton /> 
-      {displayFilteredRecipes.length > 0 ? (
-        displayFilteredRecipes
-      ) : (
-        <p>No recipes found</p>
-      )}
-      
+      <div className='big_break'></div>
+      <div className='media-scroll'>
+        {displayFilteredRecipes.length > 0 ? (
+          displayFilteredRecipes
+        ) : (
+          <p>No recipes found</p>
+        )}
+      </div>
     </main>
   );
 };

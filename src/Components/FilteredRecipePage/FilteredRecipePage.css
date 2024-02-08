@@ -1,0 +1,34 @@
+.big_break {
+  margin-top: 15rem;
+}
+.media-scroll {
+  --_spacer: 1rem;
+  display: grid;
+  gap: var(--_spacer);
+  grid-auto-flow: column;
+  grid-auto-columns: 21%;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  background-color: rgba(40, 39, 39, 0.691);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  color: white
+}
+
+.small-recipe-card {
+  padding: var(--_spacer);
+  background: var(--surface-2);
+  border-radius: var(--radius-2);
+  display: grid;
+  gap: var(--_spacer);
+  box-shadow: var(--shadow-15);
+  color: white;
+}
+
+.snaps-inline {
+  scroll-snap-type: inline mandatory;
+}
+.snaps-inline > * {
+  scroll-snap-align: start;
+}
