@@ -21,11 +21,12 @@ React.FC<homePageProps>
   //will have to create function and savedRecipe -> find recipe that is saved then reset recipes to pass into saved recipe
 
   return (
-    <main className='main-page'>
-      <Header />
-      <MainLogo />
-      <SearchInput updateSingleRecipe={updateSingleRecipe} updateRecipes={updateRecipes}
-      />
+    <main>
+    <Header />
+      <main className='main-page'>
+        <MainLogo />
+          <SearchInput updateSingleRecipe={updateSingleRecipe} updateRecipes={updateRecipes}/>
+      </main>
     </main>
   );
 };

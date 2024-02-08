@@ -1,24 +1,24 @@
 .search-input {
   display: block;
-  background-color: rgba(255, 255, 255, 0.07);
+  background-color: rgba(47, 46, 46, 0.609);
   border-radius: 5px;
   padding: 0 10px;
   margin-top: 8px;
   font-size: 14px;
   font-family: 'Urbanist', sans-serif;
-  font-weight: 300;
+  font-weight: 500;
   margin-left: 5%;
   width: 87%;
   color: white;
 }
 
 .search-button {
-  color: #4d3603;
+  color: #1a1201;
   margin-top: 2%;
   transition: all 0.3s;
   position: relative;
   border: none;
-  background-color: blanchedalmond;
+  background-color: rgb(250, 217, 168);
   border-radius: 30px;
   font-size: 1em;
   font-family: 'Urbanist', sans-serif;
@@ -55,8 +55,13 @@
 }
 
 .error-message {
-  color: white ;
+  color: rgb(255, 255, 255) ;
   font-family: 'Urbanist', sans-serif;
-  font-size: 2em
-
+  font-size: 2em;
+  background-color: #d25454b7;
+  padding: 10px; 
+  width: 500px; 
+  height: 45px; 
+  position: center;
+  margin-left: 450px;
 }
