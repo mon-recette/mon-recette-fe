@@ -1,10 +1,10 @@
-import './ShowRecipePage.css'
-import Header from '../Header/Header'
-import BackToSearchBtn from '../BackToSearchBtn/BackToSearchBtn'
+import './ShowRecipePage.css';
+import Header from '../Header/Header';
+import BackToSearchBtn from '../BackToSearchBtn/BackToSearchBtn';
 import IndividualRecipeCard from '../IndividualRecipeCard/IndividualRecipeCard'
-import { ShowRecipePageProps, postDataProp } from '../../types'
-import { Recipe } from '../../types'
-import { useState } from 'react'
+import { ShowRecipePageProps, postDataProp } from '../../types';
+import { Recipe } from '../../types';
+import { useState } from 'react';
 
 const ShowRecipePage: React.FC<ShowRecipePageProps> = ({singleRecipe, postData}) => {
   // console.log("singleRecipe in ShowRecipePage", singleRecipe)
@@ -50,7 +50,7 @@ const ShowRecipePage: React.FC<ShowRecipePageProps> = ({singleRecipe, postData})
         <h2>{singleRecipe?.data.attributes.name}</h2>
         { singleRecipe?.image_url && <img src={singleRecipe?.image_url || ''}alt="Recipe" />}
         
-        <section className="recipe_info">
+        <div className="recipe_info">
           <section>
             <h3>Ingredients</h3>
             {singleRecipe?.data.attributes.ingredients.map((ingredient: string, index: number) => (
@@ -58,13 +58,13 @@ const ShowRecipePage: React.FC<ShowRecipePageProps> = ({singleRecipe, postData})
             ))}
           </section>
           <section>
-            <h6>Instructions</h6>
+            <h3>Instructions</h3>
             <div>{singleRecipe?.data.attributes.instructions}
             {/* {singleRecipe?.data.attributes.ingredients.map((ingredient: string, index: number) => (
               <div key={index}>{index + 1}. {ingredient}</div> */}
             </div>
           </section>
-        </section>
+        </div>
         <button type="submit" onClick={()=> addToSavedRecipe()}>Saved button</button>
       </div>
     );

@@ -10,6 +10,7 @@ import { useState, useEffect } from 'react';
 import ShowRecipePage from '../ShowRecipePage/ShowRecipePage';
 import { getSavedRecipes, postAllSavedRecipes } from '../apiCalls';
 import ShowSingleFilteredRecipePage from '../ShowSingleFilteredRecipePage/ShowSingleFilteredRecipePage';
+import SavedRecipePage from '../SavedRecipePage/SavedRecipePage';
 // import { getSavedRecipes } from '../apiCalls';
 
 function App() {
