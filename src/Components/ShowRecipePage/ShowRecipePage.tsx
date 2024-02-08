@@ -10,6 +10,7 @@ const ShowRecipePage: React.FC<ShowRecipePageProps> = ({singleRecipe, postData})
   // console.log("singleRecipe in ShowRecipePage", singleRecipe)
   // const [isSaved, setIsSaved] = useState(false);
   const [savedMessage, setSavedMessage] = useState('');
+  console.log("singleRecipe",singleRecipe)
 
   //for implementing a delete?
   // const addToSavedRecipe = () => {
@@ -59,10 +60,10 @@ const ShowRecipePage: React.FC<ShowRecipePageProps> = ({singleRecipe, postData})
             ))}
           </section>
           <section>
-            <div>{singleRecipe?.data.attributes.instructions}
-            {/* {singleRecipe?.data.attributes.ingredients.map((ingredient: string, index: number) => (
-              <div key={index}>{index + 1}. {ingredient}</div> */}
-            </div>
+            {/* <div>{singleRecipe?.data.attributes.instructions} */}
+            {/* {singleRecipe?.data.attributes.instructions.map((instructions: string, index: number) => (
+              <div key={index}>{index + 1}. {instructions}</div>
+              ))} */}
           </section>
         </div>
         <button type="submit" onClick={()=> addToSavedRecipe()}>Saved button</button>

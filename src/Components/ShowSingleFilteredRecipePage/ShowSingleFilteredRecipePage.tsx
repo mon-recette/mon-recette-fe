@@ -7,7 +7,7 @@ import { useState } from 'react';
 const ShowSingleFilteredRecipePage = ({selectedFilteredRecipe, postData}) => {
   // const [isSaved, setIsSaved] = useState(false);
   const [savedMessage, setSavedMessage] = useState('');
-
+  console.log("selectedFilteredRecipe",selectedFilteredRecipe)
   // const addToSavedRecipe = () => {
   //   if (isSaved) {
   //     // Delete the recipe if it's already saved
@@ -41,6 +41,7 @@ const ShowSingleFilteredRecipePage = ({selectedFilteredRecipe, postData}) => {
       setSavedMessage('Recipe has been saved')
     }
 
+
     return (
       <div>
         <Header />
@@ -54,7 +55,11 @@ const ShowSingleFilteredRecipePage = ({selectedFilteredRecipe, postData}) => {
             ))}
           </section>
           <section>
-            <div>{selectedFilteredRecipe?.instructions}</div>
+            {selectedFilteredRecipe?.instructions}
+            {/* {selectedFilteredRecipe?.instructions.map((instructions: string, index: number) => (
+              <div key={index}>{index + 1}. {instructions}</div>
+            ))} */}
+            {/* <div>{selectedFilteredRecipe?.instructions}</div> */}
           </section>
         </div>
         <button onClick={()=> addToSavedRecipe()}>Saved button</button>
