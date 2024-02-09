@@ -1,22 +1,18 @@
 import './ShowSingleFilteredRecipePage.css'
 import Header from '../Header/Header'
 import BackToSearchBtn from '../BackToSearchBtn/BackToSearchBtn'
-import IndividualRecipeCard from '../IndividualRecipeCard/IndividualRecipeCard'
 import { ShowSingleFilteredRecipePageProps } from '../../types'
-import { Recipe } from '../../types'
 import { postDataProp } from '../../types';
 import { useState } from 'react';
         
 const ShowSingleFilteredRecipePage: React.FC<ShowSingleFilteredRecipePageProps> = ({ selectedFilteredRecipe, postData }) => {
-//   console.log("selectedFilterecRecipe in ShowSingleRecipePage:", selectedFilteredRecipe)
   
   const [savedMessage, setSavedMessage] = useState('');
-  console.log("selectedFilteredRecipe",selectedFilteredRecipe)
   // const addToSavedRecipe = () => {
   //   if (isSaved) {
   //     // Delete the recipe if it's already saved
   //     // You need to implement a delete functionality, e.g., deleteData(selectedFilteredRecipe.id);
-  //     console.log('Recipe deleted:', selectedFilteredRecipe);
+  //      ('Recipe deleted:', selectedFilteredRecipe);
   //     setIsSaved(false);
   //   } else {
   //     // Save the recipe if it's not saved
@@ -27,7 +23,7 @@ const ShowSingleFilteredRecipePage: React.FC<ShowSingleFilteredRecipePageProps> 
   //       instructions: selectedFilteredRecipe?.instructions
   //     };
 
-  //     console.log('Recipe saved:', newRecipe);
+  //      ('Recipe saved:', newRecipe);
   //     postData(newRecipe);
   //     setIsSaved(true);
   //   }
@@ -56,7 +52,8 @@ const ShowSingleFilteredRecipePage: React.FC<ShowSingleFilteredRecipePageProps> 
         <Header />
         <BackToSearchBtn />
         <h2>{selectedFilteredRecipe?.name}</h2>
-        { selectedFilteredRecipe?.image_url && <img src={selectedFilteredRecipe?.image_url || ''}alt="Recipe" />}
+        //may have to do if image is null then also display CookingPot
+        { selectedFilteredRecipe?.image_url && <img src={selectedFilteredRecipe?.image_url || ''} alt="Recipe Image" />}
         <div>
           <section>
             {selectedFilteredRecipe?.ingredients.map((ingredient: string, index: number) => (

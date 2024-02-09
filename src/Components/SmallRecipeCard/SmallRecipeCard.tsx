@@ -6,9 +6,7 @@ import { useNavigate } from 'react-router-dom';
 const SmallRecipeCard: React.FC<SmallRecipeCardProps> = ({
   recipes,
   name,
-  instructions,
   image_url,
-  ingredients,
   updateSeletedFilteredRecipe,
 }) => {
   const navigate = useNavigate();
@@ -35,8 +33,6 @@ const SmallRecipeCard: React.FC<SmallRecipeCardProps> = ({
     );
 
     if (singleFilteredRecipe) {
-      console.log('name:', name);
-      console.log('singleFilteredRecipe:', singleFilteredRecipe);
       updateSeletedFilteredRecipe(singleFilteredRecipe);
       navigate(`/filteredRecipes/${name}`);
     } else {
@@ -47,7 +43,11 @@ const SmallRecipeCard: React.FC<SmallRecipeCardProps> = ({
   return (
     <div className='small-recipe-card'>
       <h3>{name}</h3>
-      <img src={image_url} alt={`Image of ${name}`}></img>
+      {image_url ? (
+        <img src={image_url} alt={`Image of ${name}`} />
+      ) : (
+        <img src={CookingPot} alt="Cooking Pot" />
+      )}
       <button type='submit' onClick={(event) => moreDetailClickHandler(event, name, recipes)}>More Details</button>
       {/* <button>Save Button for a delete and post?</button> */} 
     </div>

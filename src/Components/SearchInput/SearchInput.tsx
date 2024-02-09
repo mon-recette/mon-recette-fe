@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getRecipeOrwebScrapeRecipe } from '../apiCalls';
-import { SearchInputProps, RecipesData, Recipe, isRecipesData } from '../../types';
+import { SearchInputProps, RecipesData, Recipe, isRecipesData, SingleRecipeData } from '../../types';
 import './SearchInput.css'
 //correct way to do it, is to not fetch everything (bc that slows down everything)
 //avoid if else
@@ -24,7 +24,7 @@ React.FC<SearchInputProps>
       if (isRecipesData(results)) {
         updateRecipes(results);
       } else {
-        updateSingleRecipe(results as Recipe);
+        updateSingleRecipe(results as SingleRecipeData);
       }
     } catch (error) {
       console.error('Error fetching search results:', error);

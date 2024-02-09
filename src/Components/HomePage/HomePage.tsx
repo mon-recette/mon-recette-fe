@@ -15,8 +15,8 @@ const HomePage
 React.FC<homePageProps>
 = ({updateSingleRecipe, updateRecipes}) => {
   // const [recipes, setRecipes] = useState<Recipe[]>([]);
-  // console.log("recipes", recipes)
-  // console.log("singleRecipe after search and click", singleRecipe)
+  //  ("recipes", recipes)
+  //  ("singleRecipe after search and click", singleRecipe)
 
   //will have to create function and savedRecipe -> find recipe that is saved then reset recipes to pass into saved recipe
 

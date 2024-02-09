@@ -1,30 +1,24 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { SavedRecipesPageProps } from '../../types';
 import SavedRecipeCard from '../SavedRecipeCard/SavedRecipeCard';
 import Header from '../Header/Header';
 import ScrollToTopButton from '../ScrollToTopButton/ScrollToTopButton';
 import ReturnToSearchButton from '../ReturnToSearchButton/ReturnToSearchButton';
 import { getSavedRecipes } from '../apiCalls';
-
+import { SingleRecipe } from '../../types';
 const SavedRecipesPage: React.FC<SavedRecipesPageProps> = ({ recipes, savedRecipes, updateSavedRecipes, updateSeletedFilteredRecipe }) => {
   const id = 1;
 
   useEffect(() => {
     getSavedRecipes(id)
       .then((savedRecipeData) => {
-        console.log('Received saved recipe data:', savedRecipeData);
         const allSavedRecipes = savedRecipeData.data.attributes.recipes;
         const userSpecificRecipes = allSavedRecipes.filter((recipe) => recipe.user_id === id);
-        console.log('User specific recipes:', userSpecificRecipes);
         updateSavedRecipes(userSpecificRecipes);
       });
   }, [id]);
 
-  console.log('savedRecipes', savedRecipes);
-
   const uniqueRecipeNamesSet = new Set(savedRecipes.flat().map((recipe) => recipe.name));
-
-  console.log("uniqueRecipeNamesSet", uniqueRecipeNamesSet);
 
   const uniqueRecipes = Array.from(uniqueRecipeNamesSet).map((recipeName) => {
     const firstMatchingRecipe = savedRecipes.find((recipe) => recipe.name === recipeName);
@@ -33,7 +27,7 @@ const SavedRecipesPage: React.FC<SavedRecipesPageProps> = ({ recipes, savedRecip
       <SavedRecipeCard
         key={recipeName}
         name={recipeName}
-        instructions={firstMatchingRecipe?.instructions || ''}
+        instructions={firstMatchingRecipe?.instructions || []}
         image_url={firstMatchingRecipe?.image_url || ''}
         ingredients={firstMatchingRecipe?.ingredients || []}
         recipes={recipes}
@@ -41,8 +35,6 @@ const SavedRecipesPage: React.FC<SavedRecipesPageProps> = ({ recipes, savedRecip
       />
     );
   });
-
-  console.log("uniqueRecipes", uniqueRecipes);
 
   return (
     <main className='saved-recipes-page'>
