@@ -5,13 +5,12 @@ import CookingPot from '../../Images /Cooking-pot.jpg';
 
 
 const SavedRecipeCard: React.FC<SavedRecipeCardProps> =
-  ({ recipes, ingredients, instructions, name, image_url, updateSeletedFilteredRecipe }) => {
+  ({ ingredients, instructions, name, image_url }) => {
     const [showDropdown, setShowDropdown] = useState(false);
     const toggleDropdown = () => {
     setShowDropdown(!showDropdown);
   };
     
-   ("recipes outside function",recipes)
 //for now, we aren't going to navigate from the savedRecipe card to the more details page (I'd have to refactor the routing for this... and becuase we have one for webscrape and one from filteredpage to singleFilteredPage, I can't figure it out now. But maybe the routes will have to match somehow with all of them which I think is possible in Part 2)
 //   const navigate = useNavigate()
 

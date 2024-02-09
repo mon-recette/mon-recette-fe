@@ -1,17 +1,13 @@
 import './ShowSingleFilteredRecipePage.css'
 import Header from '../Header/Header'
 import BackToSearchBtn from '../BackToSearchBtn/BackToSearchBtn'
-import IndividualRecipeCard from '../IndividualRecipeCard/IndividualRecipeCard'
 import { ShowSingleFilteredRecipePageProps } from '../../types'
-import { Recipe } from '../../types'
 import { postDataProp } from '../../types';
 import { useState } from 'react';
         
 const ShowSingleFilteredRecipePage: React.FC<ShowSingleFilteredRecipePageProps> = ({ selectedFilteredRecipe, postData }) => {
-//    ("selectedFilterecRecipe in ShowSingleRecipePage:", selectedFilteredRecipe)
   
   const [savedMessage, setSavedMessage] = useState('');
-   ("selectedFilteredRecipe",selectedFilteredRecipe)
   // const addToSavedRecipe = () => {
   //   if (isSaved) {
   //     // Delete the recipe if it's already saved
