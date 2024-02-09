@@ -24,7 +24,7 @@ const postData = (newRecipe: SingleRecipe) => {
     name: newRecipe.name,
     image_url: newRecipe.image_url || '',
     ingredients: newRecipe.ingredients || [],
-    instructions: newRecipe.instructions || '',
+    instructions: newRecipe.instructions || [],
   };
 
   postAllSavedRecipes(postDataObject)

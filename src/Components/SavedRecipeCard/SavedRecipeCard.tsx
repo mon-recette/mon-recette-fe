@@ -17,13 +17,13 @@ const SavedRecipeCard: React.FC<SavedRecipeCardProps> =
   return (
     <div className='small-recipe-card'>
       <h3>{name}</h3>
-      <button onClick={toggleDropdown}>
+      <button className='show_details_btn' onClick={toggleDropdown}>
       {showDropdown ? 'Close Details' : 'Show Details'}
       </button>
       {showDropdown === true && (
         <div className='dropdown'>
           <h4>Ingredients</h4>
-          <ul>
+          <ul className='no_style'>
             {ingredients.map((ingredient, index) => (
               <li key={index}>{ingredient}</li>
             ))}
@@ -40,7 +40,7 @@ const SavedRecipeCard: React.FC<SavedRecipeCardProps> =
           {image_url ? (
             <img src={image_url} alt={`Image of ${name}`} width={550} />
           ) : (
-            <img src={CookingPot} alt="Cooking Pot" />
+            <img src={CookingPot} alt="Cooking Pot" width={550} />
           )}
         </div>
       )}

@@ -44,13 +44,15 @@ const ShowRecipePage: React.FC<ShowRecipePageProps> = ({singleRecipe, postData, 
         <BackToSearchBtn />
         <h2>{singleRecipe?.data.attributes.name}</h2>
         { singleRecipe?.image_url && <img src={singleRecipe?.image_url || ''}alt="Recipe" />}
-        <div>
+        <div className='scroll'>
           <section>
+            <h3>Ingredients</h3>
             {singleRecipe?.data.attributes.ingredients.map((ingredient: string, index: number) => (
               <div key={index}>{ingredient}</div>
             ))}
           </section>
           <section>
+            <h3>Instructions</h3>
             {renderInstructions()}
               {/* {singleRecipe?.data.attributes.instructions && (
             <section>
@@ -61,8 +63,8 @@ const ShowRecipePage: React.FC<ShowRecipePageProps> = ({singleRecipe, postData, 
           )} */}
           </section>
         </div>
-        <button className='saved_btn' type="submit"  onClick={()=> addToSavedRecipe()}>Saved button</button>
-        { savedMessage && <div>{savedMessage}</div>}
+        <button className='saved_btn' type="submit"  onClick={()=> addToSavedRecipe()}>Save Recipe</button>
+        { savedMessage && <h3>{savedMessage}</h3>}
       </div>
     );
   };
