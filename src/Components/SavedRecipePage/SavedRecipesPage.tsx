@@ -40,11 +40,13 @@ const SavedRecipesPage: React.FC<SavedRecipesPageProps> = ({ recipes, savedRecip
     <main className='saved-recipes-page'>
       <Header />
       <ReturnToSearchButton />
+      <div className='scroll'>
       {uniqueRecipes.length > 0 ? (
         uniqueRecipes
       ) : (
         <p>No saved recipes found! Add some!</p>
       )}
+      </div>
       <ScrollToTopButton />
     </main>
   );

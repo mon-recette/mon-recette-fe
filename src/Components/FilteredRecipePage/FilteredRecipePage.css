@@ -1,19 +1,22 @@
 .big_break {
-  margin-top: 15rem;
+  margin-top: 5rem;
 }
 .media-scroll {
   --_spacer: 1rem;
   display: grid;
   gap: var(--_spacer);
   grid-auto-flow: column;
-  grid-auto-columns: 21%;
+  grid-auto-columns: 20%;
   overflow-x: auto;
   overscroll-behavior-inline: contain;
   background-color: rgba(40, 39, 39, 0.691);
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   padding: 20px;
-  color: white
+  color: white;
+  margin-left: 32px;
+  margin-right: 32px;
+
 }
 
 .small-recipe-card {

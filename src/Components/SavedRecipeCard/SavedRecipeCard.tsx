@@ -38,7 +38,7 @@ const SavedRecipeCard: React.FC<SavedRecipeCardProps> =
           )}
 
           {image_url ? (
-            <img src={image_url} alt={`Image of ${name}`} />
+            <img src={image_url} alt={`Image of ${name}`} width={550} />
           ) : (
             <img src={CookingPot} alt="Cooking Pot" />
           )}

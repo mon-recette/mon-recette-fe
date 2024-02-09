@@ -61,7 +61,7 @@ const ShowRecipePage: React.FC<ShowRecipePageProps> = ({singleRecipe, postData, 
           )} */}
           </section>
         </div>
-        <button type="submit" onClick={()=> addToSavedRecipe()}>Saved button</button>
+        <button className='saved_btn' type="submit"  onClick={()=> addToSavedRecipe()}>Saved button</button>
         { savedMessage && <div>{savedMessage}</div>}
       </div>
     );
