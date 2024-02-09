@@ -6,7 +6,7 @@ import { useState } from 'react'
 
 const ShowRecipePage: React.FC<ShowRecipePageProps> = ({singleRecipe, postData}) => {
   const [savedMessage, setSavedMessage] = useState('');
-  // console.log("singleRecipe in ShowRecipePage", singleRecipe)
+  //  ("singleRecipe in ShowRecipePage", singleRecipe)
   // const [isSaved, setIsSaved] = useState(false);
   
   //for implementing a delete?
@@ -14,7 +14,7 @@ const ShowRecipePage: React.FC<ShowRecipePageProps> = ({singleRecipe, postData})
     //   if (isSaved) {
       //     // Delete the recipe if it's already saved
       //     // You need to implement a delete functionality, e.g., deleteData(selectedFilteredRecipe.id);
-      //     console.log('Recipe deleted:', singleRecipe);
+      //      ('Recipe deleted:', singleRecipe);
       //     setIsSaved(false);
       //   } else {
         //     // Save the recipe if it's not saved
@@ -25,7 +25,7 @@ const ShowRecipePage: React.FC<ShowRecipePageProps> = ({singleRecipe, postData})
           //       instructions: singleRecipe?.instructions
           //     };
           
-          //     console.log('Recipe saved:', newRecipe);
+          //      ('Recipe saved:', newRecipe);
           //     postData(newRecipe);
           //     setIsSaved(true);
           //   }
@@ -39,11 +39,11 @@ const ShowRecipePage: React.FC<ShowRecipePageProps> = ({singleRecipe, postData})
               //     instructions: singleRecipe?.instructions || '',
   //   };
   
-  //   console.log("newRecipe", newRecipe);
+  //    ("newRecipe", newRecipe);
   //   postData(newRecipe);
   //   setSavedMessage('Recipe has been saved');
   // };
-  // console.log("singleRecipe",singleRecipe)
+  //  ("singleRecipe",singleRecipe)
   const addToSavedRecipe = () => {
     if (singleRecipe && singleRecipe.data && singleRecipe.data.attributes) {
       const newRecipe: postDataProp = {

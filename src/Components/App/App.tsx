@@ -24,7 +24,7 @@ function App() {
 //       // Assuming newRecipe is of type Recipe
 //       postAllSavedRecipes(newRecipe)
 //         .then((newRecipe) => {
-//           console.log("newRecipe", newRecipe)
+//            ("newRecipe", newRecipe)
 //           // Handle the response as needed
 //           // setSavedRecipes(savedRecipes => [...savedRecipes, newRecipe])
 //         })
@@ -34,7 +34,7 @@ function App() {
 //         });
 //     } else {
 //       // Handle the case when newRecipe is of type postDataProp
-//       console.log("newRecipe", newRecipe);
+//        ("newRecipe", newRecipe);
 //       // Perform any logic needed for postDataProp
 //     }
 //   }; -->
@@ -50,7 +50,7 @@ const postData = (newRecipe: Recipe) => {
 
   postAllSavedRecipes(postDataObject)
     .then((response) => {
-      console.log('Response:', response);
+       ('Response:', response);
     })
     .catch((error) => {
       console.error('Error posting recipe:', error);

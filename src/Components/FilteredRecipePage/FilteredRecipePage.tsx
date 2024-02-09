@@ -7,7 +7,7 @@ import './FilteredRecipePage.css';
 const FilteredRecipePage
 : React.FC<filteredRecipePageProps>
  = ({ recipes, updateSeletedFilteredRecipe }) => {
-  console.log("recipes in filteredpage", recipes)
+   ("recipes in filteredpage", recipes)
   const displayFilteredRecipes = recipes.data.attributes.recipes.map((singleRecipe) => (
     <SmallRecipeCard
       key={singleRecipe.name}

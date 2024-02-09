@@ -75,6 +75,6 @@ export const postAllSavedRecipes = (newRecipe: postDataProp): Promise<any> => {
 //         return response.json();
 //     })
 //     .catch(error => {
-//         console.log(error);
+//          (error);
 //     });
 // }
