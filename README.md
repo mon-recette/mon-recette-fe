@@ -24,6 +24,9 @@ Grandma used to have a bin full of recipes written on index cards from her favor
 Enter Mon Recette. You can save and edit recipes from multiple websites. Grandma doesn't need to worry about losing or ruining her index cards, and you don't need to worry about having to visit multiple places to find that one recipe you are looking for, but couldn't remember if it belonged to this blog or that blog or allrecipes or foodnetwork, etc.
 
 
+## Preview
+
+
 ## Installation
 
 OS X & Linux:
@@ -76,6 +79,14 @@ When searching for recipes or pasting a recipe link, there will be a button to s
 ### Editing Recipes
 Feel like the recipe needs tweaking? We will be adding the ability to edit the recipe soon!
 
+## Wireframes
+1. ![Login](/src/Images%20/wireframes/Login.png)
+2. ![Dashboard](/src/Images%20/wireframes/dashboard.png)
+3. ![Recipes using key ingredient search term](/src/Images%20/wireframes/Filtered-recipes.png)
+4. ![Individual recipe](/src/Images%20/wireframes/Individual-recipe.png)
+5. ![Saved list of recipes](/src/Images%20/wireframes/Individual-recipe.png)
+5. ![Error page](/src/Images%20/wireframes/Error.png)
+
 ## 🔧 Setup
 Download both our [front end](https://github.com/mon-recette/mon-recette-fe) and [back end](https://github.com/mon-recette/mon_recette_be) applications.
 
@@ -97,6 +108,10 @@ while the front-end application should be running on PORT 3000.
 
 Check to make sure all the tests are passing by running the following code in your terminal:
 ```sh
+npm run cypress:open
+
+-or-
+
 npx cypress run
 ```
 
@@ -105,97 +120,10 @@ npx cypress run
 
 [Backend](https://mon-recette-be.herokuapp.com/) is deployed with heroku (note: there is nothing interesting to see here, as be is purely a microservice for frontend).
 
-## Gem Information
-We used the Nokogiri gem to webscrape recipe data. 
-
-Click to read more about [Nokogiri](https://nokogiri.org/index.html).
-
-Example of bootstrap code
-```    class WebScrapeService 
-  def conn(url)
-    Faraday.get(url)
-  end
-
-  def scrape(url)
-    response = conn(url)
-    Nokogiri::HTML(response.body)
-  end
-end
-```
 
 ### Testing
-Our application includes extensive testing using the [Capybara gem](https://github.com/teamcapybara/capybara) to simulate user input and interaction.
+Our application is tested using [Cypress](https://www.cypress.io/). 
 
-This application also uses the [Launchy Gem](https://github.com/copiousfreetime/launchy) to view pages in the browser without needing to start the server.
-
-The [Shoulda Matchers Gem](https://github.com/thoughtbot/shoulda-matchers) is used for one-liner testing of models.
-
-The [Orderly Gem](https://github.com/jmondo/orderly) is used to check the order in which items appear on the pages for our application.
-
-The [SimpleCov Gem](https://github.com/simplecov-ruby/simplecov) provides test coverage analysis for our application. 
-
-The back end handles API calls to the TomTom API as well as accepts post requests from the user for location moods. It simulates API calls using the [WebMock gem](https://github.com/bblimke/webmock) and the [VCR gem](https://github.com/vcr/vcr).
-
-Both use the [Pry gem](https://github.com/pry/pry) and [RSpec Rails](https://github.com/rspec/rspec-rails) within the testing environment for unit and feature testing. 
-
-## Endpoints
-1. Search recipes.
-Endpoint: `/api/v1/searches`
-Description: Fetch recipes using search terms such as "chicken." information.
-Example Request:
-```
-http://127.0.0.1:3000/api/v1/searches?term=chicken
-```
-Response will be returned in the following JSON contract format:
-```
-{
-    "data": {
-        "id": null,
-        "type": "meal",
-        "attributes": {
-            "recipes": [
-                {
-                    "name": "String",
-                    "instructions": "String",
-                    "image_url": null,
-                    "ingredients": [
-                        "String"]
-                }]
-        }
-    }
-}
-  ```
-The same endpoint is used to find recipes from other websites. Here is an example:
-```
-http://127.0.0.1:3000/api/v1/searches?term=https://www.awickedwhisk.com/homemade-chicken-ravioli-recipe-3/
-```
-The JSON response will be the same.
-
-2. Save recipes and view them
-Endpoint: `/api/v1/recipes`
-Description: Fetch user saved recipes.
-Example Request:
-```
-id_params = {
-            user_id: user.id
-            }
-
-get "/api/v1/recipes", params: id_params
-
-```
-Response will be returned in the following JSON contract format:
-```
-{:data=>
-  {:id=>"null",
-   :type=>"user_recipes",
-   :attributes=>
-    {:user_id=> integer,
-     :recipes=>[{:name=>"string", :ingredients=>["string", "string"], :instructions=>["string"]}
-     ]
-    }
-  }
-}
-```
 
 ## Contributors
 
