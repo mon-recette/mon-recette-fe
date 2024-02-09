@@ -13,7 +13,8 @@
   font-size: 1.2em;
   font-family: 'Urbanist', sans-serif;
   opacity: .9;
-  color: white
+  color: white;
+  height: 60%
 
 }
 
@@ -47,3 +48,10 @@
   transform: scale(0.1, 1);
 }
 
+.small-recipe-img {
+  width: 20vw;
+}
+
+.small-recipe-card-name {
+  font-size: 2em
+}

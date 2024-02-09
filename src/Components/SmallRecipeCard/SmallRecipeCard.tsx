@@ -42,9 +42,9 @@ const SmallRecipeCard: React.FC<SmallRecipeCardProps> = ({
 
   return (
     <div className='small-recipe-card'>
-      <h3>{name}</h3>
+      <h3 className='small-recipe-card-name'>{name}</h3>
       {image_url ? (
-        <img src={image_url} alt={`Image of ${name}`} width={260} />
+        <img className='small-recipe-img' src={image_url} alt={`Image of ${name}`}  />
       ) : (
         <img src={CookingPot} alt="Cooking Pot" width={260} />
       )}
