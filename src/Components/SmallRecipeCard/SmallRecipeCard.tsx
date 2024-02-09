@@ -47,11 +47,9 @@ const SmallRecipeCard: React.FC<SmallRecipeCardProps> = ({
   return (
     <div className='small-recipe-card'>
       <h3>{name}</h3>
-      <button
-        type='submit'
-        onClick={event => moreDetailClickHandler(event, name, recipes)}>
-        More Details
-      </button>
+      <img src={image_url} alt={`Image of ${name}`}></img>
+      <button type='submit' onClick={(event) => moreDetailClickHandler(event, name, recipes)}>More Details</button>
+      {/* <button>Save Button for a delete and post?</button> */} 
     </div>
   );
 };
