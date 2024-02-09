@@ -1,0 +1,13 @@
+div.scroll {
+  padding: 4px;
+  background-color: rgba(30, 30, 30, 0.597);
+  width: 700px;
+  height: 580px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: center;
+  margin-left: 380px;
+  border-radius: 8px;
+  color: white;
+  backdrop-filter: blur(16px);
+}
