@@ -18,5 +18,9 @@ describe('Should visit the login page', () => {
       .should('exist')
       .get('section')
       .should('exist')
+      .get('input')
+      .get('.username').type('test@test.com')
+      .get('.password').type('1234')
+
   });
 });
