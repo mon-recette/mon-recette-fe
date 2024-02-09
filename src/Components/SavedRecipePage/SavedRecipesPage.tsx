@@ -5,7 +5,7 @@ import Header from '../Header/Header';
 import ScrollToTopButton from '../ScrollToTopButton/ScrollToTopButton';
 import ReturnToSearchButton from '../ReturnToSearchButton/ReturnToSearchButton';
 import { getSavedRecipes } from '../apiCalls';
-
+import { SingleRecipe } from '../../types';
 const SavedRecipesPage: React.FC<SavedRecipesPageProps> = ({ recipes, savedRecipes, updateSavedRecipes, updateSeletedFilteredRecipe }) => {
   const id = 1;
 
@@ -35,7 +35,7 @@ const SavedRecipesPage: React.FC<SavedRecipesPageProps> = ({ recipes, savedRecip
       />
     );
   });
-git 
+
   return (
     <main className='saved-recipes-page'>
       <Header />

@@ -17,7 +17,7 @@ export interface Recipe {
 }
 
 export interface SearchInputProps {
-  updateSingleRecipe: (updatedRecipe: Recipe) => void;
+  updateSingleRecipe: (updatedRecipe: SingleRecipeData) => void;
   updateRecipes: (recipes: RecipesData) => void;
 }
 
@@ -45,13 +45,14 @@ export interface SmallRecipeCardProps {
 }
 
 export interface homePageProps {
-  updateSingleRecipe: (updatedRecipe: Recipe) => void;
+  updateSingleRecipe: (updatedRecipe: SingleRecipeData) => void;
   updateRecipes: (recipes: RecipesData) => void;
 }
 
 export interface ShowRecipePageProps {
   singleRecipe: SingleRecipeData | undefined;
   postData: (postData: postDataProp) => void;
+  updateSavedRecipes: (userSpecificRecipes: SingleRecipe[]) => void;
 }
 
 export interface SingleRecipeData {
@@ -61,20 +62,22 @@ export interface SingleRecipeData {
     type: string;
   };
   image_url?: string;
+  id?: null | string;
+  type?: string;
 }
 
 export interface SingleRecipe {
   name: string;
-  instructions: string[] | undefined;
+  instructions: string[] | string | undefined;
   image_url: null | string;
   ingredients: string[];
-  user_id: number;
+  user_id?: number;
 }
 
 export interface SavedRecipesPageProps {
   recipes: RecipesData;
-  savedRecipes: Recipe[];
-  updateSavedRecipes: (userSpecificRecipes: Recipe[]) => void; 
+  savedRecipes: SingleRecipe[];
+  updateSavedRecipes: (userSpecificRecipes: SingleRecipe[]) => void; 
   updateSeletedFilteredRecipe: (recipe: Recipe) => void;
 }
 

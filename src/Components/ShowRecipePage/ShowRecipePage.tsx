@@ -4,11 +4,72 @@ import BackToSearchBtn from '../BackToSearchBtn/BackToSearchBtn'
 import { ShowRecipePageProps, postDataProp } from '../../types'
 import { useState } from 'react'
 
-const ShowRecipePage: React.FC<ShowRecipePageProps> = ({singleRecipe, postData}) => {
+const ShowRecipePage: React.FC<ShowRecipePageProps> = ({singleRecipe, postData, updateSavedRecipes}) => {
+  console.log("singleRecipe",singleRecipe)
   const [savedMessage, setSavedMessage] = useState('');
-  //  ("singleRecipe in ShowRecipePage", singleRecipe)
-  // const [isSaved, setIsSaved] = useState(false);
+
+  const addToSavedRecipe = () => {
+    if (singleRecipe && singleRecipe.data && singleRecipe.data.attributes) {
+      const newRecipe: postDataProp = {
+        user_id: 1,
+        name: singleRecipe?.data.attributes.name || '',
+        image_url: singleRecipe.data.attributes.image_url || '',
+        ingredients: singleRecipe.data.attributes.ingredients || [],
+        instructions: singleRecipe.data.attributes.instructions || [],
+      };
+      postData(newRecipe);
+      updateSavedRecipes([newRecipe]); 
+      setSavedMessage('Recipe has been saved');
+    } else {
+      console.error("Unable to save recipe - data attributes not available:", singleRecipe);
+    }
+  };
+
+  const renderInstructions = () => {
+    const instructions = singleRecipe?.data.attributes.instructions;
   
+    if (Array.isArray(instructions)) {
+      return instructions.map((instruction, index) => (
+        <div key={index}>{index + 1}. {instruction}</div>
+      ));
+    } else if (typeof instructions === 'string') {
+      return <div>{instructions}</div>;
+    } else {
+      return <div>Sorry, unable to load instructions.</div>;
+    }
+  };
+
+    return (
+      <div>
+        <Header />
+        <BackToSearchBtn />
+        <h2>{singleRecipe?.data.attributes.name}</h2>
+        { singleRecipe?.image_url && <img src={singleRecipe?.image_url || ''}alt="Recipe" />}
+        <div>
+          <section>
+            {singleRecipe?.data.attributes.ingredients.map((ingredient: string, index: number) => (
+              <div key={index}>{ingredient}</div>
+            ))}
+          </section>
+          <section>
+            {renderInstructions()}
+              {/* {singleRecipe?.data.attributes.instructions && (
+            <section>
+              {singleRecipe.data.attributes.instructions.map((instructions: string, index: number) => (
+                <div key={index}>{index + 1}. {instructions}</div>
+              ))}
+            </section>
+          )} */}
+          </section>
+        </div>
+        <button type="submit" onClick={()=> addToSavedRecipe()}>Saved button</button>
+        { savedMessage && <div>{savedMessage}</div>}
+      </div>
+    );
+  };
+
+export default ShowRecipePage
+
   //for implementing a delete?
   // const addToSavedRecipe = () => {
     //   if (isSaved) {
@@ -39,85 +100,3 @@ const ShowRecipePage: React.FC<ShowRecipePageProps> = ({singleRecipe, postData})
               //     instructions: singleRecipe?.instructions || '',
   //   };
   
-  //    ("newRecipe", newRecipe);
-  //   postData(newRecipe);
-  //   setSavedMessage('Recipe has been saved');
-  // };
-  //  ("singleRecipe",singleRecipe)
-  const addToSavedRecipe = () => {
-    if (singleRecipe && singleRecipe.data && singleRecipe.data.attributes) {
-      const newRecipe: postDataProp = {
-        user_id: 1,
-        name: singleRecipe?.data.attributes.name || '',
-        image_url: singleRecipe.data.attributes.image_url || '',
-        ingredients: singleRecipe.data.attributes.ingredients || [],
-        instructions: singleRecipe.data.attributes.instructions || [] || '',
-      };
-      postData(newRecipe);
-      setSavedMessage('Recipe has been saved');
-    } else {
-      console.error("Unable to save recipe - data attributes not available:", singleRecipe);
-    }
-  };
-
-  // const addToSavedRecipe = () => {
-  //   if ('data' in singleRecipe!) {
-  //     const newRecipe: postDataProp = {
-  //       user_id: 1,
-  //       name: singleRecipe!.data.attributes.recipes[0].name,
-  //       image_url: singleRecipe!.data.attributes.recipes[0].image_url || '', // Add this line
-  //       ingredients: singleRecipe!.data.attributes.recipes[0].ingredients || [],
-  //       instructions: singleRecipe!.data.attributes.recipes[0].instructions || '',
-  //     };
-  //     postData(newRecipe);
-  //     setSavedMessage('Recipe has been saved');
-  //   } else {
-  //     // Handle the case when singleRecipe is of type Recipe
-  //     const newRecipe: postDataProp = {
-  //       user_id: 1,
-  //       name: singleRecipe!.name,
-  //       image_url: singleRecipe!.image_url || '', // Add this line
-  //       ingredients: singleRecipe!.ingredients || [],
-  //       instructions: singleRecipe!.instructions || '',
-  //     };
-  //     postData(newRecipe);
-  //     setSavedMessage('Recipe has been saved');
-  //   }
-  // };
-  
-    return (
-      <div>
-        <Header />
-        <BackToSearchBtn />
-        <h2>{singleRecipe?.data.attributes.name}</h2>
-        { singleRecipe?.image_url && <img src={singleRecipe?.image_url || ''}alt="Recipe" />}
-        <div>
-          <section>
-            {singleRecipe?.data.attributes.ingredients.map((ingredient: string, index: number) => (
-              <div key={index}>{ingredient}</div>
-            ))}
-          </section>
-          <section>
-            {/* <div>{singleRecipe?.data.attributes.instructions} */}
-            {/* {singleRecipe?.data.attributes.instructions.map((instructions: string, index: number) => (
-              <div key={index}>{index + 1}. {instructions}</div>
-              ))} */}
-              {singleRecipe?.data.attributes.instructions && (
-            <section>
-              {singleRecipe.data.attributes.instructions.map((instructions: string, index: number) => (
-                <div key={index}>{index + 1}. {instructions}</div>
-              ))}
-            </section>
-)}
-          </section>
-        </div>
-        <button type="submit" onClick={()=> addToSavedRecipe()}>Saved button</button>
-        { savedMessage && <div>{savedMessage}</div>}
-      </div>
-    );
-
-
-    
-  };
-
-export default ShowRecipePage
