@@ -1,0 +1,26 @@
+describe('Should visit the login page', () => {
+
+  it('should show login for username and email', () => {
+    cy.visit('http://localhost:3000');
+    cy.get('.header')
+      .should('exist')
+      .get('li')
+      .should('contain', 'Mon Recette')
+      .get('.navbar')
+      .should('exist')
+      .get('.nav_links')
+      .should('exist')
+      .get('li')
+      .should('contain', 'Saved Recipes')
+      .get('li')
+      .should('contain', 'Logout');
+    cy.get('.background')
+      .should('exist')
+      .get('section')
+      .should('exist')
+      .get('input[type=text]').type('test@test.com')
+      .get('input[type=password]').type('1234')
+      .get('button').click()
+      .url().should('include', '/home')
+  });
+});
