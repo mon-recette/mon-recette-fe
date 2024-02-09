@@ -39,19 +39,30 @@ function App() {
 //     }
 //   }; -->
 
-  const postData = (newRecipe: Recipe) => {
-    postAllSavedRecipes(newRecipe)
-    updateSavedRecipes(newRecipe)
-    // .then(newRecipe => {
-    //   console.log("newRecipe in App", newRecipe)
-    // })
-  }
+const postData = (newRecipe: Recipe) => {
+  const postDataObject: postDataProp = {
+    user_id: 1, 
+    name: newRecipe.name,
+    image_url: newRecipe.image_url || '',
+    ingredients: newRecipe.ingredients || [],
+    instructions: newRecipe.instructions || '',
+  };
 
+  postAllSavedRecipes(postDataObject)
+    .then((response) => {
+      console.log('Response:', response);
+    })
+    .catch((error) => {
+      console.error('Error posting recipe:', error);
+    });
+
+  updateSavedRecipes([newRecipe]);
+};  
 
   const updateSingleRecipe = (updatedRecipe: Recipe ) => {
     setSingleRecipe(updatedRecipe)
   }
-
+  
   const updateRecipes = (recipes: RecipesData) => {
     setRecipes(recipes)
   }
@@ -59,47 +70,16 @@ function App() {
   const updateSeletedFilteredRecipe = ( recipe: Recipe ) => {
     setselectedFilteredRecipe(recipe)
   }
-
-//   // console.log('singleRecipe outside updateSingleRecipe fx', singleRecipe);
-//   // console.log("recipes outside recipes fx",recipes)
-//   // console.log('selectedFilterecRecipe in App', selectedFilteredRecipe);
-
-//   return (
-//     <div className='App'>
-//       <Routes>
-//         <Route path='/' element={<LoginPage />} />
-//         <Route
-//           path='/home'
-//           element={
-//             <HomePage
-//               updateSingleRecipe={updateSingleRecipe}
-//               updateRecipes={updateRecipes}
-//             />
-//           }
-//         />
-//         {/* <Route
-//           path='/saved'
-//           element=
-//           // {
-//             // <SavedRecipesPage
-//             // savedRecipes={savedRecipes}
-//             // />
-//           // }
-//         /> */}
-//         <Route
-//           path='/filteredRecipes'
-//           element={
-//             <FilteredRecipePage
-//               recipes={recipes}
-//               updateSeletedFilteredRecipe={updateSeletedFilteredRecipe}
-//             />
   
-  const updateSavedRecipes = (userSpecificRecipes) => {
-    // setSavedRecipes(savedRecipes)
-    setSavedRecipes(savedRecipes => [...savedRecipes, userSpecificRecipes])
-    // setSavedRecipes(userSpecificRecipes);
-  }
-//   console.log("savedRecipe in App", savedRecipes)
+  // const updateSavedRecipes = (userSpecificRecipes: Recipe) => {
+  //   setSavedRecipes(savedRecipes => [...savedRecipes, userSpecificRecipes])
+  // }
+
+ const updateSavedRecipes = (userSpecificRecipes: Recipe[]) => {
+  setSavedRecipes(savedRecipes => [...savedRecipes, ...userSpecificRecipes]);
+};
+
+  
 
   return (
     <div className="App">

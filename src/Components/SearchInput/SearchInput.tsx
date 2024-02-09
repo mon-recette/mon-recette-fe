@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getRecipeOrwebScrapeRecipe } from '../apiCalls';
-import { SearchInputProps } from '../../types';
+import { SearchInputProps, RecipesData, Recipe, isRecipesData } from '../../types';
 import './SearchInput.css'
 //correct way to do it, is to not fetch everything (bc that slows down everything)
 //avoid if else
@@ -15,26 +15,28 @@ React.FC<SearchInputProps>
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [errorMessage, setErrorMessage] = useState<string>('');
   // const [ error, setError ] = useState('')
-
+  
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const results = await getRecipeOrwebScrapeRecipe(searchTerm);
-        if (typeof searchTerm === 'string' && searchTerm.startsWith('https://')) {
-          updateSingleRecipe(results)
-        } else {
-          updateRecipes(results)
-        }
-      } catch (error) {
-        // setError(error)
-        console.error('Error fetching search results:', error);
-      }
-    };
+  const fetchData = async () => {
+    try {
+      const results = await getRecipeOrwebScrapeRecipe(searchTerm);
 
-    if (searchTerm.trim() !== '') {
-      fetchData();
+      if (isRecipesData(results)) {
+        updateRecipes(results);
+      } else {
+        updateSingleRecipe(results as Recipe);
+      }
+    } catch (error) {
+      console.error('Error fetching search results:', error);
     }
-  }, [searchTerm, navigate]);
+  };
+
+  if (searchTerm.trim() !== '') {
+    fetchData();
+  }
+}, [searchTerm, navigate]);
+
+  
 
   const clickHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
