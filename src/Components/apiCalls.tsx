@@ -1,8 +1,10 @@
 
 // environment variables - can be used .env files (put any secrets - this can be added to gitignore)
 // never expose apiKey 
+import { RecipesData, postDataProp } from '../types'
 
-export const getRecipeOrwebScrapeRecipe = (searchTerm) => {
+export const getRecipeOrwebScrapeRecipe = (searchTerm: string): Promise<RecipesData> => {
+
     return fetch(`https://mon-recette-be-8176efe67145.herokuapp.com/api/v1/searches?term=${searchTerm}`)
         .then(response => {
             if (!response.ok) {
@@ -16,7 +18,8 @@ export const getRecipeOrwebScrapeRecipe = (searchTerm) => {
         // });
 }
 
-export const getSavedRecipes = (id) => {
+export const getSavedRecipes = (id: number): Promise<RecipesData> => {
+
     return fetch(`https://mon-recette-be-8176efe67145.herokuapp.com/api/v1/recipes?user_id=${id}`)
         .then(response => {
             if (!response.ok) {
@@ -30,7 +33,8 @@ export const getSavedRecipes = (id) => {
         });
 }
 
-export const postAllSavedRecipes = (newRecipe) => {
+export const postAllSavedRecipes = (newRecipe: postDataProp): Promise<any> => {
+
     return fetch('https://mon-recette-be-8176efe67145.herokuapp.com/api/v1/recipes', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -71,6 +75,6 @@ export const postAllSavedRecipes = (newRecipe) => {
 //         return response.json();
 //     })
 //     .catch(error => {
-//         console.log(error);
+//          (error);
 //     });
 // }

@@ -8,14 +8,16 @@ export interface RecipesData {
   };
 }
 
-export interface Recipe { 
+export interface Recipe {
   name: string;
   instructions: string;
   image_url: null | string;
   ingredients: string[];
+  user_id?: number;
 }
+
 export interface SearchInputProps {
-  updateSingleRecipe: (updatedRecipe: Recipe) => void; 
+  updateSingleRecipe: (updatedRecipe: SingleRecipeData) => void;
   updateRecipes: (recipes: RecipesData) => void;
 }
 
@@ -25,42 +27,77 @@ export interface filteredRecipePageProps {
 }
 
 export interface SmallRecipeCardProps {
+  recipes: RecipesData; 
   name: string;
-  instructions: string;
+  // instructions: string;
   image_url: string | null;
-  ingredients: string[];
-  isSaved?: boolean; 
-  toggleSavedRecipes?: (recipe: { name: string; instructions: string; image_url: string | null; ingredients: string[] }) => void;
-  recipes?: RecipesData;
-  updateSeletedFilteredRecipe: (recipe: RecipesData['data']['attributes']['recipes'][number]) => void; 
-
+  // ingredients: string[];
+  // isSaved?: boolean;
+  // toggleSavedRecipes?: (recipe: {
+  //   name: string;
+  //   instructions: string;
+  //   image_url: string | null;
+  //   ingredients: string[];
+  // }) => void;
+  updateSeletedFilteredRecipe: (
+    recipe: RecipesData['data']['attributes']['recipes'][number],
+  ) => void;
 }
+
 export interface homePageProps {
-  updateSingleRecipe: (updatedRecipe: Recipe) => void; 
+  updateSingleRecipe: (updatedRecipe: SingleRecipeData) => void;
   updateRecipes: (recipes: RecipesData) => void;
 }
 
 export interface ShowRecipePageProps {
-  singleRecipe: Recipe | RecipesData | undefined;
-  postData: ( recipes : Recipe ) => void;
+  singleRecipe: SingleRecipeData | undefined;
+  postData: (postData: postDataProp) => void;
+  updateSavedRecipes: (userSpecificRecipes: SingleRecipe[]) => void;
 }
 
-// export interface Ingredient {
-//   name: string;
-// }
+export interface SingleRecipeData {
+  data: {
+    attributes: SingleRecipe;
+    id: null | string;
+    type: string;
+  };
+  image_url?: string;
+  id?: null | string;
+  type?: string;
+}
+
+export interface SingleRecipe {
+  name: string;
+  instructions: string[] | string | undefined;
+  image_url: null | string;
+  ingredients: string[];
+  user_id?: number;
+}
 
 export interface SavedRecipesPageProps {
-  savedRecipes: Recipe[];
+  recipes: RecipesData;
+  savedRecipes: SingleRecipe[];
+  updateSavedRecipes: (userSpecificRecipes: SingleRecipe[]) => void; 
+  updateSeletedFilteredRecipe: (recipe: Recipe) => void;
+}
+
+export interface SavedRecipeCardProps {
+  recipes: RecipesData;
+  ingredients: string[];
+  instructions: string | string[];
+  name: string;
+  image_url: string | null;
   updateSeletedFilteredRecipe: (recipe: Recipe) => void;
 }
 
 export interface postDataProp {
-  user_id: number; 
-  name: string | undefined
-  // image_url: null | string;
-  ingredients: string[] | undefined; 
-  instructions: string | undefined; 
+  user_id: number;
+  name: string;
+  image_url: null | string;
+  ingredients: string[];
+  instructions: string[] | string;
 }
+
 export interface SaveIconProps {
   toggleSavedRecipes: () => void;
   isSaved: boolean;
@@ -68,5 +105,13 @@ export interface SaveIconProps {
 
 export interface ShowSingleFilteredRecipePageProps {
   selectedFilteredRecipe: Recipe | undefined;
-  postData: (recipe: postDataProp) => void;
+  postData: (postData: postDataProp) => void;
 }
+
+// type checker functions 
+export const isRecipesData = (obj: any): obj is RecipesData => (
+  typeof obj === 'object' &&
+  'data' in obj &&
+  'attributes' in obj.data &&
+  'recipes' in obj.data.attributes
+);
