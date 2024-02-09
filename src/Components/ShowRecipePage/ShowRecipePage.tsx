@@ -5,7 +5,6 @@ import { ShowRecipePageProps, postDataProp } from '../../types'
 import { useState } from 'react'
 
 const ShowRecipePage: React.FC<ShowRecipePageProps> = ({singleRecipe, postData, updateSavedRecipes}) => {
-  console.log("singleRecipe",singleRecipe)
   const [savedMessage, setSavedMessage] = useState('');
 
   const addToSavedRecipe = () => {
