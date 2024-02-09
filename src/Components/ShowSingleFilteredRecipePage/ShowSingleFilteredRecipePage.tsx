@@ -53,7 +53,6 @@ const ShowSingleFilteredRecipePage: React.FC<ShowSingleFilteredRecipePageProps> 
         <BackToSearchBtn />
         <div className='scroll'>
           <h2>{selectedFilteredRecipe?.name}</h2>
-          //may have to do if image is null then also display CookingPot
           { selectedFilteredRecipe?.image_url && <img src={selectedFilteredRecipe?.image_url || ''} alt="Recipe Image" width={550}/>}
        
           <section>
@@ -71,8 +70,8 @@ const ShowSingleFilteredRecipePage: React.FC<ShowSingleFilteredRecipePageProps> 
             {/* <div>{selectedFilteredRecipe?.instructions}</div> */}
           </section>
         </div>
-        <button onClick={()=> addToSavedRecipe()}>Saved button</button>
-        { savedMessage && <div>{savedMessage}</div>}
+        <button className='saved_btn' type="submit"  onClick={()=> addToSavedRecipe()}>Save Recipe</button>
+        { savedMessage && <h3>{savedMessage}</h3>}
       </div>
     );
   };
