@@ -51,7 +51,11 @@ const postData = (newRecipe: SingleRecipe) => {
   }
   
  const updateSavedRecipes = (userSpecificRecipes: SingleRecipe[]) => {
-  setSavedRecipes(savedRecipes => [...savedRecipes, ...userSpecificRecipes]);
+  setSavedRecipes(savedRecipes => {
+    const uniqueRecipes = [...new Set([...savedRecipes, ...userSpecificRecipes])];
+    return uniqueRecipes;
+  });
+  // setSavedRecipes(savedRecipes => [...savedRecipes, ...userSpecificRecipes]);
 };
 
   return (
