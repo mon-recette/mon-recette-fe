@@ -26,6 +26,9 @@ Enter Mon Recette. You can save and edit recipes from multiple websites. Grandma
 
 ## Preview
 
+https://github.com/mon-recette/mon-recette-fe/assets/138254468/cb2ecb34-09c3-432b-845d-76eb2ff0bd16
+
+
 
 ## Installation
 
