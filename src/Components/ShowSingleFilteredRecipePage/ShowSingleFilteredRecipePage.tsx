@@ -33,16 +33,23 @@ const ShowSingleFilteredRecipePage: React.FC<ShowSingleFilteredRecipePageProps> 
   //   }
   // };
     
-    const addToSavedRecipe = () => {
-      const newRecipe: React.FC<postDataProp> = {
-        user_id: 1, //for now, q user has user_id 1
-        name: selectedFilteredRecipe?.name,
-        ingredients: selectedFilteredRecipe?.ingredients,
-        instructions: selectedFilteredRecipe?.instructions
-      }
-      postData(newRecipe)
-      setSavedMessage('Recipe has been saved')
+  const addToSavedRecipe = () => {
+    if (!selectedFilteredRecipe) {
+      console.error('No recipe selected');
+      return;
     }
+
+    const newRecipe: postDataProp = {
+      user_id: 1, 
+      name: selectedFilteredRecipe.name || '',
+      ingredients: selectedFilteredRecipe.ingredients || [],
+      instructions: selectedFilteredRecipe.instructions || '',
+      image_url: selectedFilteredRecipe.image_url || '',
+    };
+
+    postData(newRecipe);
+    setSavedMessage('Recipe has been saved');
+  };
 
     return (
       <div>

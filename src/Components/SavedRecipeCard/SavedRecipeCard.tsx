@@ -1,11 +1,11 @@
 import './SavedRecipeCard.css'
-import { RecipesData, smallRecipePageProps } from '../../types';
+import { RecipesData, SavedRecipeCardProps } from '../../types';
 import CookingPot from '../../Images /Cooking-pot.jpg'
 import { useNavigate } from 'react-router-dom';
 
-const SavedRecipeCard = ({ recipes, name, instructions, image_url, ingredients, updateSeletedFilteredRecipe }) => {
+const SavedRecipeCard: React.FC<SavedRecipeCardProps> =
+  ({ recipes, name, image_url, updateSeletedFilteredRecipe }) => {
   console.log("recipes outside function",recipes)
-
 //for now, we aren't going to navigate from the savedRecipe card to the more details page (I'd have to refactor the routing for this... and becuase we have one for webscrape and one from filteredpage to singleFilteredPage, I can't figure it out now. But maybe the routes will have to match somehow with all of them which I think is possible in Part 2)
 //   const navigate = useNavigate()
 
