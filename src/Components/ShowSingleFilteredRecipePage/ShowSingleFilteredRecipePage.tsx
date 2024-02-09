@@ -56,7 +56,8 @@ const ShowSingleFilteredRecipePage: React.FC<ShowSingleFilteredRecipePageProps> 
         <Header />
         <BackToSearchBtn />
         <h2>{selectedFilteredRecipe?.name}</h2>
-        { selectedFilteredRecipe?.image_url && <img src={selectedFilteredRecipe?.image_url || ''}alt="Recipe" />}
+        //may have to do if image is null then also display CookingPot
+        { selectedFilteredRecipe?.image_url && <img src={selectedFilteredRecipe?.image_url || ''} alt="Recipe Image" />}
         <div>
           <section>
             {selectedFilteredRecipe?.ingredients.map((ingredient: string, index: number) => (
