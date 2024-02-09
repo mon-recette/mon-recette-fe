@@ -1,14 +1,15 @@
 .return-to-search-btn {
-  color: #4d3603;
+  color: #1a1201;
   margin-top: 2%;
   transition: all 0.3s;
   position: relative;
   border: none;
-  background-color: blanchedalmond;
+  background-color: rgb(2, 77, 8);
   border-radius: 30px;
-  font-size: 1em;
+  font-size: 1.2em;
   font-family: 'Urbanist', sans-serif;
-  opacity: .5
+  opacity: .9;
+  color: white
 }
 
 .return-to-search-btn::before {
