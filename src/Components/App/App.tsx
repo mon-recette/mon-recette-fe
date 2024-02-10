@@ -76,23 +76,3 @@ const postData = (newRecipe: SingleRecipe) => {
 
 export default App;
 
-//for delete:
-// <!--   const postData = (newRecipe: Recipe | postDataProp) => {
-//     if ('name' in newRecipe) {
-//       // Assuming newRecipe is of type Recipe
-//       postAllSavedRecipes(newRecipe)
-//         .then((newRecipe) => {
-//            ("newRecipe", newRecipe)
-//           // Handle the response as needed
-//           // setSavedRecipes(savedRecipes => [...savedRecipes, newRecipe])
-//         })
-//         .catch((error) => {
-//           // Handle the error
-//           console.error('Error posting recipe:', error);
-//         });
-//     } else {
-//       // Handle the case when newRecipe is of type postDataProp
-//        ("newRecipe", newRecipe);
-//       // Perform any logic needed for postDataProp
-//     }
-//   }; -->

@@ -54,13 +54,6 @@ const ShowRecipePage: React.FC<ShowRecipePageProps> = ({singleRecipe, postData, 
           <section>
             <h3>Instructions</h3>
             {renderInstructions()}
-              {/* {singleRecipe?.data.attributes.instructions && (
-            <section>
-              {singleRecipe.data.attributes.instructions.map((instructions: string, index: number) => (
-                <div key={index}>{index + 1}. {instructions}</div>
-              ))}
-            </section>
-          )} */}
         <button className='saved_btn' type="submit"  onClick={()=> addToSavedRecipe()}>Save Recipe</button>
           </section>
         </div>
@@ -71,33 +64,5 @@ const ShowRecipePage: React.FC<ShowRecipePageProps> = ({singleRecipe, postData, 
 
 export default ShowRecipePage
 
-  //for implementing a delete?
-  // const addToSavedRecipe = () => {
-    //   if (isSaved) {
-      //     // Delete the recipe if it's already saved
-      //     // You need to implement a delete functionality, e.g., deleteData(selectedFilteredRecipe.id);
-      //      ('Recipe deleted:', singleRecipe);
-      //     setIsSaved(false);
-      //   } else {
-        //     // Save the recipe if it's not saved
-        //     const newRecipe: React.FC<postDataProp> = {
-          //       user_id: 1, // for now, a user has user_id 1
-          //       name: singleRecipe?.name,
-          //       ingredients: singleRecipe?.ingredients,
-          //       instructions: singleRecipe?.instructions
-          //     };
-          
-          //      ('Recipe saved:', newRecipe);
-          //     postData(newRecipe);
-          //     setIsSaved(true);
-          //   }
-          // };
-          
-          // const addToSavedRecipe = () => {
-            //   const newRecipe: postDataProp = {
-              //     user_id: 1,
-              //     name: singleRecipe?.name || '',
-              //     ingredients: singleRecipe?.ingredients || [],
-              //     instructions: singleRecipe?.instructions || '',
-  //   };
+
   

@@ -4,7 +4,7 @@
 .media-scroll {
   --_spacer: 1rem;
   display: grid;
-  gap: var(--_spacer);
+  gap: 35px;
   grid-auto-flow: column;
   grid-auto-columns: 20%;
   overflow-x: auto;

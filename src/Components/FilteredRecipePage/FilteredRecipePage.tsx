@@ -11,9 +11,7 @@ const FilteredRecipePage
     <SmallRecipeCard
       key={singleRecipe.name}
       name={singleRecipe.name}
-      // instructions={singleRecipe.instructions}
       image_url={singleRecipe.image_url} //may need to take out
-      // ingredients={singleRecipe.ingredients}
       recipes={recipes}
       updateSeletedFilteredRecipe={updateSeletedFilteredRecipe}
     />
