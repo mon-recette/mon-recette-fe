@@ -61,7 +61,6 @@ Users can create an account using their email (future extension)
 Once an account has been made, the user will be able to login and see their User Dashboard.
 
 ### User dashboard
-![Mon Recette](/src/Images%20/VercelScreenshots/Dashboard.png)
 <img width="1381" alt="Screenshot 2024-02-10 at 9 51 32 AM" src="https://github.com/mon-recette/mon-recette-fe/assets/119434450/a8845065-b9c0-4a1f-abf8-3ef12db9edfc">
 
 Functionality here is very simple and straightforward. Either go to your saved recipes list, or search for a food item such as chicken (to find recipes for chicken) or paste in the url from a recipe you found at a different website.
@@ -129,6 +128,11 @@ npx cypress run
 
 ### Testing
 Our application is tested using [Cypress](https://www.cypress.io/). 
+
+## Wins/challenges
+- Implementing typescript
+- Sending requests to the back end in order for them to return the data rather than all of the data being returned and then filtering through that on the front end side.
+
 
 
 ## Contributors
