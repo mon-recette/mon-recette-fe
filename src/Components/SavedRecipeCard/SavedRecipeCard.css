@@ -15,8 +15,8 @@
   font-family: 'Urbanist', sans-serif;
   opacity: .9;
   color: white;
-  width: 24%;
-  margin-left: 40%
+  width: 200px;
+
 }
 
 .show_details_btn::before {

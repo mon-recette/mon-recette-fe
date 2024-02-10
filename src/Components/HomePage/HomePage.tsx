@@ -25,6 +25,7 @@ React.FC<homePageProps>
     <Header />
       <main className='main-page'>
         <MainLogo />
+          <h3>Links from All Recipes, Food Network, A Wicked Whisk, and Taste of Home are accepted</h3>
           <SearchInput updateSingleRecipe={updateSingleRecipe} updateRecipes={updateRecipes}/>
       </main>
     </main>

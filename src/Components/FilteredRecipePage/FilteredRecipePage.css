@@ -28,6 +28,8 @@
   box-shadow: var(--shadow-15);
   color: white;
   align-items: center;
+  align-content: center;
+  justify-content: space-around;
 }
 
 .snaps-inline {
