@@ -91,6 +91,9 @@ Feel like the recipe needs tweaking? We will be adding the ability to edit the r
 4. ![Individual recipe](/src/Images%20/wireframes/Individual-recipe.png)
 5. ![Saved list of recipes](/src/Images%20/wireframes/Individual-recipe.png)
 5. ![Error page](/src/Images%20/wireframes/Error.png)
+6. <img width="1165" alt="Screenshot 2024-02-10 at 7 07 52 AM" src="https://github.com/mon-recette/mon-recette-fe/assets/119434450/bac6c52c-fc5a-4430-be50-13daac1571d6">
+
+
 
 ## 🔧 Setup
 Download both our [front end](https://github.com/mon-recette/mon-recette-fe) and [back end](https://github.com/mon-recette/mon_recette_be) applications.
