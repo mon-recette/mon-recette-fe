@@ -9,7 +9,8 @@
   font-size: 1.2em;
   font-family: 'Urbanist', sans-serif;
   opacity: .9;
-  color: white
+  color: white;
+  width: 11%
 }
 
 .back-to-search-btn::before {

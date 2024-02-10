@@ -1,4 +1,4 @@
-div.scroll {
+div.scroll-saved-page {
   padding: 4px;
   background-color: rgba(30, 30, 30, 0.597);
   width: 850px;
@@ -6,8 +6,14 @@ div.scroll {
   overflow-x: hidden;
   overflow-y: auto;
   text-align: center;
-  margin-left: 380px;
+  margin-left: 125px;
   border-radius: 8px;
   color: white;
   backdrop-filter: blur(16px);
+}
+
+.no-recipes-text {
+  margin-top: 26%;
+  color: white;
+  font-size: 2em;
 }

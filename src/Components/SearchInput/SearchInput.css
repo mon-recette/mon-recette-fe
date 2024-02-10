@@ -20,10 +20,12 @@
   border: none;
   background-color: rgb(2, 77, 8);
   border-radius: 30px;
-  font-size: 1.2em;
+  font-size: 1.3em;
   font-family: 'Urbanist', sans-serif;
   opacity: .9;
-  color: white
+  color: white;
+  width: 29%;
+
 }
 
 .search-button::before {
@@ -65,5 +67,5 @@
   width: 500px; 
   height: 35px; 
   position: center;
-  margin-left: 460px;
+  margin-left: 7%;
 }

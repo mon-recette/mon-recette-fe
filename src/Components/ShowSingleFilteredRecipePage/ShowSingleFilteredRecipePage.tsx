@@ -51,9 +51,10 @@ const ShowSingleFilteredRecipePage: React.FC<ShowSingleFilteredRecipePageProps> 
       <div>
         <Header />
         <BackToSearchBtn />
+            <button className='saved_btn' type="submit"  onClick={()=> addToSavedRecipe()}>Save Recipe</button>
         <div className='scroll'>
           <h2>{selectedFilteredRecipe?.name}</h2>
-          { selectedFilteredRecipe?.image_url && <img src={selectedFilteredRecipe?.image_url || ''} alt="Recipe Image" width={550}/>}
+          { selectedFilteredRecipe?.image_url && <img className='filtered-page-img' src={selectedFilteredRecipe?.image_url || ''} alt="Recipe Image" />}
        
           <section>
             <h2>Ingredients</h2>
@@ -70,7 +71,6 @@ const ShowSingleFilteredRecipePage: React.FC<ShowSingleFilteredRecipePageProps> 
             {/* <div>{selectedFilteredRecipe?.instructions}</div> */}
           </section>
         </div>
-        <button className='saved_btn' type="submit"  onClick={()=> addToSavedRecipe()}>Save Recipe</button>
         { savedMessage && <h3>{savedMessage}</h3>}
       </div>
     );

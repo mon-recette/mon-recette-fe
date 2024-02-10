@@ -13,8 +13,9 @@
   font-size: 1.2em;
   font-family: 'Urbanist', sans-serif;
   opacity: .9;
-  color: white
-
+  color: white;
+  width: 69%;
+  margin-left: 14px;
 }
 
 .details-button::before {
