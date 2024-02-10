@@ -5,7 +5,6 @@
 }
 
 .show_details_btn {
-  color: #1a1201;
   margin-top: 2%;
   transition: all 0.3s;
   position: relative;
@@ -15,7 +14,9 @@
   font-size: 1.2em;
   font-family: 'Urbanist', sans-serif;
   opacity: .9;
-  color: white
+  color: white;
+  width: 24%;
+  margin-left: 40%
 }
 
 .show_details_btn::before {
@@ -45,4 +46,8 @@
 .show_details_btn:hover::after {
   opacity: 0;
   transform: scale(0.1, 1);
+}
+
+.saved-card-img {
+  width: 25%
 }

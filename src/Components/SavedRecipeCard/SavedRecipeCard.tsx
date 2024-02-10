@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './SavedRecipeCard.css'
 import { SavedRecipeCardProps } from '../../types';
 import CookingPot from '../../Images /Cooking-pot.jpg';
+import ScrollToTopButton from '../ScrollToTopButton/ScrollToTopButton';
 
 const SavedRecipeCard: React.FC<SavedRecipeCardProps> =
   ({ ingredients, instructions, name, image_url }) => {
@@ -38,12 +39,13 @@ const SavedRecipeCard: React.FC<SavedRecipeCardProps> =
           )}
 
           {image_url ? (
-            <img src={image_url} alt={`Image of ${name}`} width={550} />
+            <img className='saved-card-img' src={image_url} alt={`Image of ${name}`} />
           ) : (
             <img src={CookingPot} alt="Cooking Pot" width={550} />
           )}
         </div>
       )}
+      <ScrollToTopButton />
     </div>
   );
 };

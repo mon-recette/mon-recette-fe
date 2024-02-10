@@ -27,10 +27,11 @@ const FilteredRecipePage
       <div className='media-scroll'>
         {displayFilteredRecipes.length > 0 ? (
           displayFilteredRecipes
-        ) : (
-          <p>No recipes found</p>
-        )}
+          ) : (
+            <p>No recipes found</p>
+            )}
       </div>
+            <div className='scroll-to-see-more-text'>Scroll To See More </div>
     </main>
   );
 };

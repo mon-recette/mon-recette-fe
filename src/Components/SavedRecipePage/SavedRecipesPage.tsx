@@ -6,6 +6,8 @@ import ScrollToTopButton from '../ScrollToTopButton/ScrollToTopButton';
 import ReturnToSearchButton from '../ReturnToSearchButton/ReturnToSearchButton';
 import { getSavedRecipes } from '../apiCalls';
 import { SingleRecipe } from '../../types';
+import './SavedRecipesPage.css'
+
 const SavedRecipesPage: React.FC<SavedRecipesPageProps> = ({ recipes, savedRecipes, updateSavedRecipes, updateSeletedFilteredRecipe }) => {
   const id = 1;
 
@@ -48,14 +50,13 @@ const SavedRecipesPage: React.FC<SavedRecipesPageProps> = ({ recipes, savedRecip
     <main className='saved-recipes-page'>
       <Header />
       <ReturnToSearchButton />
-      <div className='scroll'>
+      <div className='scroll-saved-page'>
       {uniqueRecipes.length > 0 ? (
         uniqueRecipes
       ) : (
-        <p>No saved recipes found! Add some!</p>
+        <p className='no-recipes-text'>No saved recipes found! Add some!</p>
       )}
       </div>
-      <ScrollToTopButton />
     </main>
   );
 };
