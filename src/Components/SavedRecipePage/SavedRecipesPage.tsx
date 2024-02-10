@@ -11,20 +11,12 @@ const SavedRecipesPage: React.FC<SavedRecipesPageProps> = ({ recipes, savedRecip
 
   useEffect(() => {
     getSavedRecipes(id)
-    .then((savedRecipeData) => {
-      console.log(savedRecipeData); // Log the data here
-    })
-    .catch((error) => {
-      console.error('Error fetching recipes:', error);
-    });
-}, [id, updateSavedRecipes]);
-
-  //     .then((savedRecipeData) => {
-  //       const allSavedRecipes = savedRecipeData.data.attributes.recipes;
-  //       const userSpecificRecipes = allSavedRecipes.filter((recipe) => recipe.user_id === id);
-  //       updateSavedRecipes(userSpecificRecipes);
-  //     });
-  // }, [id]);
+      .then((savedRecipeData) => {
+        const allSavedRecipes = savedRecipeData.data.attributes.recipes;
+        const userSpecificRecipes = allSavedRecipes.filter((recipe) => recipe.user_id === id);
+        updateSavedRecipes(userSpecificRecipes);
+      });
+  }, [id]);
 
   const uniqueRecipeNamesSet = new Set(savedRecipes.flat().map((recipe) => recipe.name));
 
