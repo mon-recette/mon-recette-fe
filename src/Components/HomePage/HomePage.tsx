@@ -7,25 +7,23 @@ import { Recipe } from '../../types';
 //Server error
 import { homePageProps } from '../../types';
 
-import ShowRecipePage from '../ShowRecipePage/ShowRecipePage';
-import FilteredRecipePage from '../FilteredRecipePage/FilteredRecipePage';
-
-const HomePage
-: 
-React.FC<homePageProps>
-= ({updateSingleRecipe, updateRecipes}) => {
-  // const [recipes, setRecipes] = useState<Recipe[]>([]);
-  //  ("recipes", recipes)
-  //  ("singleRecipe after search and click", singleRecipe)
-
-  //will have to create function and savedRecipe -> find recipe that is saved then reset recipes to pass into saved recipe
-
+const HomePage: React.FC<homePageProps> = ({
+  updateSingleRecipe,
+  updateRecipes,
+}) => {
   return (
     <main>
-    <Header />
+      <Header />
       <main className='main-page'>
         <MainLogo />
-          <SearchInput updateSingleRecipe={updateSingleRecipe} updateRecipes={updateRecipes}/>
+        <h3>
+          Links from All Recipes, Food Network, A Wicked Whisk, and Taste of
+          Home are accepted
+        </h3>
+        <SearchInput
+          updateSingleRecipe={updateSingleRecipe}
+          updateRecipes={updateRecipes}
+        />
       </main>
     </main>
   );

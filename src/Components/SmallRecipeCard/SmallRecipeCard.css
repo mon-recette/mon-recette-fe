@@ -14,8 +14,9 @@
   font-family: 'Urbanist', sans-serif;
   opacity: .9;
   color: white;
-  width: 69%;
+  width: 80%;
   margin-left: 14px;
+  display: center;
 }
 
 .details-button::before {
@@ -48,3 +49,10 @@
   transform: scale(0.1, 1);
 }
 
+.small-recipe-img {
+  width: 20vw;
+}
+
+.small-recipe-card-name {
+  font-size: 2em
+}

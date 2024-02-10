@@ -2,10 +2,8 @@ import React, { useEffect } from 'react';
 import { SavedRecipesPageProps } from '../../types';
 import SavedRecipeCard from '../SavedRecipeCard/SavedRecipeCard';
 import Header from '../Header/Header';
-import ScrollToTopButton from '../ScrollToTopButton/ScrollToTopButton';
 import ReturnToSearchButton from '../ReturnToSearchButton/ReturnToSearchButton';
 import { getSavedRecipes } from '../apiCalls';
-import { SingleRecipe } from '../../types';
 import './SavedRecipesPage.css'
 
 const SavedRecipesPage: React.FC<SavedRecipesPageProps> = ({ recipes, savedRecipes, updateSavedRecipes, updateSeletedFilteredRecipe }) => {

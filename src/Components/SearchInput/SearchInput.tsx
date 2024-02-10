@@ -3,18 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import { getRecipeOrwebScrapeRecipe } from '../apiCalls';
 import { SearchInputProps, RecipesData, Recipe, isRecipesData, SingleRecipeData } from '../../types';
 import './SearchInput.css'
-//correct way to do it, is to not fetch everything (bc that slows down everything)
-//avoid if else
 
-//
 const SearchInput: 
 React.FC<SearchInputProps>
 = ({updateSingleRecipe, updateRecipes}) => {
   const navigate = useNavigate();
-  // const [recipes, setRecipes] = useState<Recipe[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [errorMessage, setErrorMessage] = useState<string>('');
-  // const [ error, setError ] = useState('')
   
   useEffect(() => {
   const fetchData = async () => {
@@ -35,8 +30,6 @@ React.FC<SearchInputProps>
     fetchData();
   }
 }, [searchTerm, navigate]);
-
-  
 
   const clickHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();

@@ -29,16 +29,7 @@ export interface filteredRecipePageProps {
 export interface SmallRecipeCardProps {
   recipes: RecipesData; 
   name: string;
-  // instructions: string;
   image_url: string | null;
-  // ingredients: string[];
-  // isSaved?: boolean;
-  // toggleSavedRecipes?: (recipe: {
-  //   name: string;
-  //   instructions: string;
-  //   image_url: string | null;
-  //   ingredients: string[];
-  // }) => void;
   updateSeletedFilteredRecipe: (
     recipe: RecipesData['data']['attributes']['recipes'][number],
   ) => void;

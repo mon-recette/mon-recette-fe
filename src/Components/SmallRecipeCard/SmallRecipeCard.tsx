@@ -42,14 +42,13 @@ const SmallRecipeCard: React.FC<SmallRecipeCardProps> = ({
 
   return (
     <div className='small-recipe-card'>
-      <h3>{name}</h3>
+      <h3 className='small-recipe-card-name'>{name}</h3>
       {image_url ? (
-        <img src={image_url} alt={`Image of ${name}`} width={150}className='small-recipe-card-img' />
+        <img src={image_url} alt={`Image of ${name}`} width={175}className='small-recipe-card-img' />
       ) : (
         <img src={CookingPot} alt="Cooking Pot" width={150} />
       )}
       <button type='submit' className='details-button' onClick={(event) => moreDetailClickHandler(event, name, recipes)}>More Details</button>
-      {/* <button>Save Button for a delete and post?</button> */} 
     </div>
   );
 };

@@ -30,7 +30,7 @@ body {
 
 .log_form {
   height: 400px;
-  width: 400px;
+  width: 350px;
   background-color: rgba(58, 58, 58, 0.618);
   position: absolute;
   transform: translate(-40%, -40%);
@@ -44,7 +44,6 @@ body {
 }
 .log_form * {
   font-family: 'Urbanist', sans-serif;
-  /* font-family: 'Urbanist', sans-serif; */
   font-weight: 200;
   color: #ffffff;
   letter-spacing: 0.5px;
