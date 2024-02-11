@@ -1,5 +1,7 @@
-import Ratatouille from '../../Images /Ratatouille.jpeg'
 import { useNavigate } from 'react-router-dom'
+import './ErrorPage.css'
+import Header from '../Header/Header'
+import MainLogo from '../MainLogo/MainLogo'
 
 const ErrorPage = () => {
 const navigate = useNavigate()
@@ -10,7 +12,8 @@ const handleBackToLogin = () => {
 
   return (
     <div className='error-page'>
-    <img src={Ratatouille} alt="ratatouille-image"/>
+      <Header/>
+      <MainLogo/>
     <h2>Oops! Something went wrong!</h2>
     <button className='back-btn' onClick={handleBackToLogin}>Go Back to Login!</button>
     </div>
