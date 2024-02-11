@@ -23,13 +23,6 @@ Grandma used to have a bin full of recipes written on index cards from her favor
 
 Enter Mon Recette. You can save and edit recipes from multiple websites. Grandma doesn't need to worry about losing or ruining her index cards, and you don't need to worry about having to visit multiple places to find that one recipe you are looking for, but couldn't remember if it belonged to this blog or that blog or allrecipes or foodnetwork, etc.
 
-
-## Preview
-
-https://github.com/mon-recette/mon-recette-fe/assets/138254468/cb2ecb34-09c3-432b-845d-76eb2ff0bd16
-
-
-
 ## Installation
 
 OS X & Linux:
@@ -62,22 +55,31 @@ We hope to add more complete functionality by incorporating AI to webscrape a mo
 Mon Recette will save all your recipes in one place. 
 
 ### Landing/Log In
+<img width="1385" alt="Screenshot 2024-02-10 at 12 20 57 PM" src="https://github.com/mon-recette/mon-recette-fe/assets/119434450/ebc2bbac-92bc-4784-a1eb-51fa83687b28">
 
-Users can create an account using their email.
+Users can create an account using their email (future extension) 
 Once an account has been made, the user will be able to login and see their User Dashboard.
 
 ### User dashboard
-![Mon Recette](/src/Images%20/VercelScreenshots/Dashboard.png)
+<img width="1381" alt="Screenshot 2024-02-10 at 9 51 32 AM" src="https://github.com/mon-recette/mon-recette-fe/assets/119434450/a8845065-b9c0-4a1f-abf8-3ef12db9edfc">
+
 Functionality here is very simple and straightforward. Either go to your saved recipes list, or search for a food item such as chicken (to find recipes for chicken) or paste in the url from a recipe you found at a different website.
 
 If searching for food terms, it will return a list of recipes with images you can browse.
-![Mon Recette](/src/Images%20/VercelScreenshots/Recipe-search.png)
+<img width="1325" alt="Screenshot 2024-02-10 at 7 43 28 AM" src="https://github.com/mon-recette/mon-recette-fe/assets/119434450/2a33d466-7ef2-4477-af84-c0670343d579">
+
+
+Opening up the more details page to see the recipe instructions and ingredients.
+<img width="1376" alt="Screenshot 2024-02-10 at 9 44 46 AM" src="https://github.com/mon-recette/mon-recette-fe/assets/119434450/1a3cbefa-9c4c-45cc-a642-25ba7bb30672">
 
 If pasting a url, it will return that recipe with the ingredients list and instructions side-by-side.
-![Mon Recette](/src/Images%20/VercelScreenshots/foodnetwork-grilled-cheese-recipe.png)
+![Screenshot 2024-02-10 at 12 13 46 PM](https://github.com/mon-recette/mon-recette-fe/assets/119434450/5a51db3e-8492-4e68-8a7b-ae6834a7a379)
+
 
 ### Saving a recipe
 When searching for recipes or pasting a recipe link, there will be a button to save the recipe. It will then show up in your "Saved Recipes" list which can be accessed in the navbar.
+<img width="1379" alt="Screenshot 2024-02-10 at 9 47 54 AM" src="https://github.com/mon-recette/mon-recette-fe/assets/119434450/de74127d-39ea-4269-a7ab-261eb159286e">
+
 
 ### Editing Recipes
 Feel like the recipe needs tweaking? We will be adding the ability to edit the recipe soon!
@@ -89,6 +91,9 @@ Feel like the recipe needs tweaking? We will be adding the ability to edit the r
 4. ![Individual recipe](/src/Images%20/wireframes/Individual-recipe.png)
 5. ![Saved list of recipes](/src/Images%20/wireframes/Individual-recipe.png)
 5. ![Error page](/src/Images%20/wireframes/Error.png)
+6. <img width="1165" alt="Screenshot 2024-02-10 at 7 07 52 AM" src="https://github.com/mon-recette/mon-recette-fe/assets/119434450/bac6c52c-fc5a-4430-be50-13daac1571d6">
+
+
 
 ## 🔧 Setup
 Download both our [front end](https://github.com/mon-recette/mon-recette-fe) and [back end](https://github.com/mon-recette/mon_recette_be) applications.
@@ -126,6 +131,11 @@ npx cypress run
 
 ### Testing
 Our application is tested using [Cypress](https://www.cypress.io/). 
+
+## Wins/challenges
+- Implementing typescript
+- Sending requests to the back end in order for them to return the data rather than all of the data being returned and then filtering through that on the front end side.
+
 
 
 ## Contributors
