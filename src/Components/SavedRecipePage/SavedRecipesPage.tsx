@@ -22,6 +22,8 @@ const SavedRecipesPage: React.FC<SavedRecipesPageProps> = ({ recipes, savedRecip
 
   const uniqueRecipes = Array.from(uniqueRecipeNamesSet).map((recipeName) => {
     const firstMatchingRecipe = savedRecipes.find((recipe) => recipe.name === recipeName);
+
+    console.log(savedRecipes)
   
     return (
       <SavedRecipeCard
