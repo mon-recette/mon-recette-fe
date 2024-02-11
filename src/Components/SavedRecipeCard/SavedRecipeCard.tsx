@@ -45,7 +45,7 @@ const SavedRecipeCard: React.FC<SavedRecipeCardProps> =
           )}
         </div>
       )}
-      <ScrollToTopButton />
+      {/* <ScrollToTopButton /> */}
     </div>
   );
 };
