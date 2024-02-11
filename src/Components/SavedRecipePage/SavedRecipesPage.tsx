@@ -13,7 +13,6 @@ const SavedRecipesPage: React.FC<SavedRecipesPageProps> = ({ recipes, savedRecip
     getSavedRecipes(id)
       .then((savedRecipeData) => {
         const allSavedRecipes = savedRecipeData.data.attributes.recipes;
-        // const userSpecificRecipes = allSavedRecipes.filter((recipe) => recipe.user_id === id);
         updateSavedRecipes(allSavedRecipes);
       });
   }, [id]);
@@ -22,8 +21,6 @@ const SavedRecipesPage: React.FC<SavedRecipesPageProps> = ({ recipes, savedRecip
 
   const uniqueRecipes = Array.from(uniqueRecipeNamesSet).map((recipeName) => {
     const firstMatchingRecipe = savedRecipes.find((recipe) => recipe.name === recipeName);
-
-    console.log(savedRecipes)
   
     return (
       <SavedRecipeCard

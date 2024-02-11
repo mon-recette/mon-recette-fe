@@ -9,11 +9,8 @@ const SavedRecipeCard: React.FC<SavedRecipeCardProps> =
     const [showDropdown, setShowDropdown] = useState(false);
 
     const toggleDropdown = () => {
-      console.log('Toggling dropdown');
       setShowDropdown(!showDropdown);
     };
-
-    console.log(showDropdown)
   
   return (
     <div className='small-recipe-card'>
