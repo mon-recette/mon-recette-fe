@@ -2,16 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getRecipeOrwebScrapeRecipe } from '../apiCalls';
 import { SearchInputProps, RecipesData, Recipe, isRecipesData, SingleRecipeData } from '../../types';
-import './SearchInput.css'
+import './SearchInput.css';
 
-const SearchInput: 
-React.FC<SearchInputProps>
-= ({updateSingleRecipe, updateRecipes}) => {
+const SearchInput: React.FC<SearchInputProps> = ({ updateSingleRecipe, updateRecipes }) => {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [errorMessage, setErrorMessage] = useState<string>('');
-  
-  useEffect(() => {
+
   const fetchData = async () => {
     try {
       const results = await getRecipeOrwebScrapeRecipe(searchTerm);
@@ -26,11 +23,6 @@ React.FC<SearchInputProps>
     }
   };
 
-  if (searchTerm.trim() !== '') {
-    fetchData();
-  }
-}, [searchTerm, navigate]);
-
   const clickHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     if (searchTerm === '') {
@@ -38,12 +30,28 @@ React.FC<SearchInputProps>
       return;
     }
 
+    fetchData();
     if (searchTerm.startsWith('https://')) {
       navigate(`/home/${encodeURIComponent(searchTerm)}`);
     } else {
       navigate('/filteredrecipes');
     }
   };
+
+  const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      fetchData();
+      if (searchTerm.startsWith('https://')) {
+        navigate(`/home/${encodeURIComponent(searchTerm)}`);
+      } else {
+        navigate('/filteredrecipes');
+      }
+    }
+  };
+
+  useEffect(() => {
+  }, []); 
 
   return (
     <form className='search-bar'>
@@ -53,8 +61,9 @@ React.FC<SearchInputProps>
         placeholder='Enter link or search term'
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value.toLowerCase())}
+        onKeyPress={handleKeyPress}
       />
-      <button type="submit" className='search-button' onClick={(event) => clickHandler(event)}>
+      <button type="submit" className='search-button' onClick={clickHandler}>
         Search ingredient!
       </button>
       {errorMessage && <h2 className='error-message'>{`${errorMessage}`}</h2>}
