@@ -16,7 +16,7 @@
   opacity: .9;
   color: white;
   width: 200px;
-
+  margin: auto;
 }
 
 .show_details_btn::before {
