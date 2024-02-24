@@ -106,3 +106,4 @@ export const isRecipesData = (obj: any): obj is RecipesData => (
   'attributes' in obj.data &&
   'recipes' in obj.data.attributes
 );
+
