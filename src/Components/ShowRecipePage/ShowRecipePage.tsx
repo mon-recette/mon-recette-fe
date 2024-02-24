@@ -43,21 +43,34 @@ const ShowRecipePage: React.FC<ShowRecipePageProps> = ({singleRecipe, postData, 
         <Header />
         <BackToSearchBtn />
         <h2>{singleRecipe?.data.attributes.name}</h2>
-        { singleRecipe?.image_url && <img src={singleRecipe?.image_url || ''}alt="Recipe" />}
-        <div className='scroll'>
+        {singleRecipe?.image_url && (
+          <img
+            src={singleRecipe?.image_url || ""}
+            alt={singleRecipe?.data.attributes.name || "Recipe Image"}
+          />
+        )}
+        <div className="scroll">
           <section>
             <h3>Ingredients</h3>
-            {singleRecipe?.data.attributes.ingredients.map((ingredient: string, index: number) => (
-              <div key={index}>{ingredient}</div>
-            ))}
+            {singleRecipe?.data.attributes.ingredients.map(
+              (ingredient: string, index: number) => (
+                <div key={index}>{ingredient}</div>
+              )
+            )}
           </section>
           <section>
             <h3>Instructions</h3>
             {renderInstructions()}
-        <button className='saved_btn' type="submit"  onClick={()=> addToSavedRecipe()}>Save Recipe</button>
+            <button
+              className="saved_btn"
+              type="submit"
+              onClick={() => addToSavedRecipe()}
+            >
+              Save Recipe
+            </button>
           </section>
         </div>
-        { savedMessage && <h3>{savedMessage}</h3>}
+        {savedMessage && <h3>{savedMessage}</h3>}
       </div>
     );
   };

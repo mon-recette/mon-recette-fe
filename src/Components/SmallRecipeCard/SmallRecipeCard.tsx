@@ -41,15 +41,15 @@ const SmallRecipeCard: React.FC<SmallRecipeCardProps> = ({
   };
 
   return (
-    <div className='small-recipe-card'>
+    <section aria-label='Recipe Details' className='small-recipe-card'>
       <h3 className='small-recipe-card-name'>{name}</h3>
       {image_url ? (
         <img src={image_url} alt={`Image of ${name}`} width={175}className='small-recipe-card-img' />
       ) : (
         <img src={CookingPot} alt="Cooking Pot" width={150} />
       )}
-      <button type='submit' className='details-button' onClick={(event) => moreDetailClickHandler(event, name, recipes)}>More Details</button>
-    </div>
+      <button type='button' className='details-button' onClick={(event) => moreDetailClickHandler(event, name, recipes)}>More Details</button>
+    </section>
   );
 };
 

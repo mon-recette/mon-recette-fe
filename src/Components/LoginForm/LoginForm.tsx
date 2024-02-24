@@ -54,7 +54,9 @@ const LoginForm = () => {
         type='text'
         placeholder='Enter your email...'
         value={username}
-        onChange={e => setUsername(e.target.value)}></input>
+        onChange={e => setUsername(e.target.value)}
+        required
+      />
       <label htmlFor='password'>Password</label>
       <input
         data-test='password'
@@ -62,7 +64,9 @@ const LoginForm = () => {
         type='password'
         placeholder='Enter password...'
         value={password}
-        onChange={e => setPassword(e.target.value)}></input>
+        onChange={e => setPassword(e.target.value)}
+        required
+      />
       <button
         className='log_button'
         tabIndex={0}
@@ -74,7 +78,7 @@ const LoginForm = () => {
       </button>{' '}
       <div className='big_break'></div>
       {errorMessage && (
-        <h2 data-test='search-error-message' className='error-message'>
+        <h2 data-test='search-error-message' className='error-message' role='alert' aria-live='polite'>
           {errorMessage}
         </h2>
       )}
