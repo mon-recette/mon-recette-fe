@@ -43,7 +43,7 @@ const ShowSingleFilteredRecipePage: React.FC<ShowSingleFilteredRecipePageProps> 
             ))}
           </section>
           <section>
-            <h2>Instructions</h2>
+            <h2 className='instructions-text'>Instructions</h2>
             {selectedFilteredRecipe?.instructions}
           </section>
         </div>
