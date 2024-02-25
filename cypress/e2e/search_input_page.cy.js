@@ -1,6 +1,6 @@
 describe('Should display the home page with search', () => {
   beforeEach(() => {
-    cy.intercept('GET', 'http://localhost:3000/api/v1/recipes?search=chicken', {
+    cy.intercept('GET', 'https://mon-recette-be-8176efe67145.herokuapp.com/api/v1/searches?term=chicken', {
       statusCode: 200,
       fixture: 'chicken_search.json',
     }).as('searchRequest');
@@ -35,7 +35,7 @@ describe('Should display the home page with search', () => {
   });
 
   it('should be able to search for an ingredient and display recipes', () => {
-    cy.intercept('GET', 'http://localhost:3000/api/v1/recipes?search=chicken', {
+    cy.intercept('GET', 'https://mon-recette-be-8176efe67145.herokuapp.com/api/v1/searches?term=chicken', {
       statusCode: 200,
       fixture: 'chicken_search.json',
     }).as('searchRequest');
