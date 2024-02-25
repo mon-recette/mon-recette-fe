@@ -13,7 +13,6 @@ const SavedRecipesPage: React.FC<SavedRecipesPageProps> = ({ recipes, savedRecip
     getSavedRecipes(id)
       .then((savedRecipeData) => {
         const allSavedRecipes = savedRecipeData.data.attributes.recipes;
-        // const userSpecificRecipes = allSavedRecipes.filter((recipe) => recipe.user_id === id);
         updateSavedRecipes(allSavedRecipes);
       });
   }, [id]);

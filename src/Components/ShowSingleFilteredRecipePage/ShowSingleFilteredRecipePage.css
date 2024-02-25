@@ -6,11 +6,11 @@ div.scroll {
   overflow-x: hidden;
   overflow-y: auto;
   text-align: center;
-  margin-left: 300px;
+  margin-left: 275px;
+  margin-top: 5px;
   border-radius: 8px;
   color: white;
   backdrop-filter: blur(16px);
-  
 }
 
 img.filtered-page-img {

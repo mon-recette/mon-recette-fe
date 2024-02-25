@@ -9,11 +9,8 @@ const SavedRecipeCard: React.FC<SavedRecipeCardProps> =
     const [showDropdown, setShowDropdown] = useState(false);
 
     const toggleDropdown = () => {
-      console.log('Toggling dropdown');
       setShowDropdown(!showDropdown);
     };
-
-    console.log(showDropdown)
   
   return (
     <div className='small-recipe-card'>
@@ -38,14 +35,14 @@ const SavedRecipeCard: React.FC<SavedRecipeCardProps> =
             <div>{instructions}</div>
           )}
 
-          {image_url ? (
+          {/* {image_url ? (
             <img className='saved-card-img' src={image_url} alt={`Image of ${name}`} />
           ) : (
-            <img src={CookingPot} alt="Cooking Pot" width={550} />
-          )}
+            <img src={CookingPot} alt="Cooking Pot" className='saved-page-cooking-pot-img' />
+          )} */}
         </div>
       )}
-      <ScrollToTopButton />
+      {/* <ScrollToTopButton /> */}
     </div>
   );
 };
