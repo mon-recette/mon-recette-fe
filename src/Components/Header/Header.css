@@ -65,3 +65,18 @@ a {
 .navbar a:hover::before {
   width: 100%;
 }
+
+@media screen and (max-width: 750px) {
+  .header_logo {
+    font-size: 1.7em
+  }
+
+  .nav_links {
+    font-size: .5em;
+    margin-left: 6em;
+  }
+
+  .header {
+    height: 10vh
+  }
+}
