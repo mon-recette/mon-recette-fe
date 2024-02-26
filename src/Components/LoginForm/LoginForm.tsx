@@ -54,55 +54,44 @@ const LoginForm = () => {
   }
 
   return (
-    <div>
-        <form className='log_form'>
-          <h1 className='form_heading'>Sign In</h1>
-          <label htmlFor='username'>Email</label>
-          <input
-            data-test='username'
-            tabIndex={0}
-            type='text'
-            placeholder='Enter your email...'
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-          <label htmlFor='password'>Password</label>
-          <input
-            data-test='password'
-            tabIndex={0}
-            type='password'
-            placeholder='Enter password...'
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <button
-            className='log_button'
-            tabIndex={0}
-            data-test='submit-button'
-            type='submit'
-            value='submit'
-            onClick={(event) => navigateLogin(event)}
-          >
-            Sign in
-          </button>{' '}
-          <button
-            className='log_button'
-            tabIndex={0}
-            data-test='signup-button'
-            type='button'
-            value='signup'
-            onClick={toggleSignup}
-          >
-            Sign up
-          </button>{' '}
-          <div className='big_break'></div>
-          {errorMessage && (
-            <h2 data-test='search-error-message' className='error-message'>
-              {errorMessage}
-            </h2>
-          )}
-        </form>
-    </div>
+    <form className='log_form'>
+      <h1 className='form_heading'>Sign In</h1>
+      <label htmlFor='username'>Email</label>
+      <input
+        data-test='username'
+        tabIndex={0}
+        type='text'
+        placeholder='Enter your email...'
+        value={username}
+        onChange={e => setUsername(e.target.value)}
+        required
+      />
+      <label htmlFor='password'>Password</label>
+      <input
+        data-test='password'
+        tabIndex={0}
+        type='password'
+        placeholder='Enter password...'
+        value={password}
+        onChange={e => setPassword(e.target.value)}
+        required
+      />
+      <button
+        className='log_button'
+        tabIndex={0}
+        data-test='submit-button'
+        type='submit'
+        value='submit'
+        onClick={event => navigateLogin(event)}>
+        Sign in
+      </button>{' '}
+      <div className='big_break'></div>
+      {errorMessage && (
+        <h2 data-test='search-error-message' className='error-message' role='alert' aria-live='polite'>
+          {errorMessage}
+        </h2>
+      )}
+    </form>
   );
 };
 

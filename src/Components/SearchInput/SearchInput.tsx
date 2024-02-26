@@ -62,13 +62,16 @@ const SearchInput: React.FC<SearchInputProps> = ({ updateSingleRecipe, updateRec
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value.toLowerCase())}
         onKeyPress={handleKeyPress}
+        aria-label="Search"
       />
       <button type="submit" className='search-button' onClick={clickHandler}>
         Search ingredient!
       </button>
-      {errorMessage && <h2 className='error-message'>{`${errorMessage}`}</h2>}
+      {errorMessage && <h2 className='error-message' role='alert'>{`${errorMessage}`}</h2>}
     </form>
   );
 };
 
 export default SearchInput;
+
+
