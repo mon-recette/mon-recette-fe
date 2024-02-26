@@ -13,7 +13,7 @@ describe('Should visit saved recipes', () => {
       .url()
       .should('include', '/home');
 
-    cy.intercept('GET', '/api/saved', { fixture: 'saved_recipes.json' }).as(
+    cy.intercept('GET', 'https://mon-recette-be-8176efe67145.herokuapp.com/api/v1/recipes?user_id=1', { fixture: 'saved_recipes.json' }).as(
       'getSavedRecipes',
     );
 
@@ -27,7 +27,7 @@ describe('Should visit saved recipes', () => {
     cy.get('.saved-recipes-page').should('exist');
     cy.get('.scroll-saved-page').should('exist');
     cy.get('.scroll-saved-page > :nth-child(1)').within(() => {
-      cy.get('h3').should('contain', "Another Wings")
+      cy.get('h3').should('contain', "Maybe Another Wings")
       .get('.show_details_btn').should('exist')
       .click()
       cy.get('.dropdown').should('contain', 'Ingredients')
@@ -41,8 +41,6 @@ describe('Should visit saved recipes', () => {
       cy.get('.dropdown').should('contain', '3. Return to oven and bake until cheese is melted, about 15 minutes.')
       cy.get('.dropdown').should('contain', '3. Return to oven and bake until cheese is melted, about 15 minutes.')
       cy.get('.dropdown').should('contain', '4. Serve with optional toppings as desired.')
-      
-      
     })
   });
 
@@ -76,4 +74,13 @@ describe('Should visit saved recipes', () => {
       'No saved recipes found! Add some!',
     ).should('exist');
   });
+
+  it('takes you back to search page', () => {
+    cy.visit('http://localhost:3000/saved');
+    cy.get('.return-btn-box')
+      .find('button')
+      .click()
+      .url()
+      .should('include', '/home');
+  })
 });
