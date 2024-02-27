@@ -48,22 +48,3 @@ export const postAllSavedRecipes = (newRecipe: postDataProp): Promise<any> => {
         throw error;
       });
   }
-
-  export const postAuthToken = (newRecipe: postDataProp): Promise<any> => {
-
-    return fetch('https://mon-recette-be-8176efe67145.herokuapp.com/api/v1/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(newRecipe),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Failed to fetch data');
-        }
-        return response.json(); 
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-        throw error;
-      });
-  }
