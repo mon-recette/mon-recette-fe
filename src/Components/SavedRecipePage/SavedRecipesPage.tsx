@@ -39,7 +39,7 @@ const SavedRecipesPage: React.FC<SavedRecipesPageProps> = ({ recipes, savedRecip
     <main className='saved-recipes-page'>
       <Header />
       <ReturnToSearchButton />
-      <div className='scroll-saved-page'>
+      <div aria-label="Saved Recipes" className='scroll-saved-page'>
       {uniqueRecipes.length > 0 ? (
         uniqueRecipes
       ) : (

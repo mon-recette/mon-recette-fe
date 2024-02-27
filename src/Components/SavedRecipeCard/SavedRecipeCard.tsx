@@ -13,20 +13,23 @@ const SavedRecipeCard: React.FC<SavedRecipeCardProps> =
     };
   
   return (
-    <div className='small-recipe-card'>
-      <h3>{name}</h3>
-      <button className='show_details_btn' onClick={toggleDropdown}>
+    <section className='small-recipe-card'>
+      <h4>{name}</h4>
+      <button className='show_details_btn' 
+      onClick={toggleDropdown}
+      aria-expanded={showDropdown}>
       {showDropdown ? 'Close Details' : 'Show Details'}
       </button>
       {showDropdown === true && (
-        <div className='dropdown'>
-          <h4>Ingredients</h4>
+        <div className='dropdown'
+          aria-hidden={!showDropdown}>
+          <h5>Ingredients</h5>
           <ul className='no_style'>
             {ingredients.map((ingredient, index) => (
               <li key={index}>{ingredient}</li>
             ))}
           </ul>
-          <h4>Instructions</h4>
+          <h6>Instructions</h6>
           {Array.isArray(instructions) ? (
             instructions.map((instruction, index) => (
               <div key={index}>{index + 1}. {instruction}</div>
@@ -43,7 +46,7 @@ const SavedRecipeCard: React.FC<SavedRecipeCardProps> =
         </div>
       )}
       {/* <ScrollToTopButton /> */}
-    </div>
+    </section>
   );
 };
 
