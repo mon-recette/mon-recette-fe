@@ -85,16 +85,6 @@ const LoginForm = () => {
           >
             Sign in
           </button>{' '}
-          <button
-            className='log_button'
-            tabIndex={0}
-            data-test='signup-button'
-            type='button'
-            value='signup'
-            onClick={toggleSignup}
-          >
-            Sign up
-          </button>{' '}
           <div className='big_break'></div>
           {errorMessage && (
             <h2 data-test='search-error-message' className='error-message'>

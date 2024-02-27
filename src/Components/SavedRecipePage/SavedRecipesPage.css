@@ -1,12 +1,12 @@
 div.scroll-saved-page {
   padding: 4px;
   background-color: rgba(30, 30, 30, 0.597);
-  width: 850px;
+  /* width: 850px; */
   height: 475px;
   overflow-x: hidden;
   overflow-y: auto;
   text-align: center;
-  margin-left: 275px;
+  /* margin-left: 275px; */
   border-radius: 8px;
   color: white;
   backdrop-filter: blur(16px);
