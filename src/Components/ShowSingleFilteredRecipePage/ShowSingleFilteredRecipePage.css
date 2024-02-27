@@ -1,12 +1,11 @@
 div.scroll {
-  padding: 4px;
   background-color: rgba(30, 30, 30, 0.597);
-  width: 850px;
-  height: 475px;
+  width: 50vw;
+  height: 600px;
   overflow-x: hidden;
   overflow-y: auto;
   text-align: center;
-  margin-left: 275px;
+  margin-left: 23%;
   margin-top: 5px;
   border-radius: 8px;
   color: white;
@@ -15,4 +14,8 @@ div.scroll {
 
 img.filtered-page-img {
   width: 30%
+}
+
+h2 {
+  font-size: 1.5em
 }

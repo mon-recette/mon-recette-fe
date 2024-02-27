@@ -16,7 +16,7 @@ const HomePage: React.FC<homePageProps> = ({
       <Header />
       <main className='main-page'>
         <MainLogo />
-        <h3>
+        <h3 className='link-list'>
           Links from All Recipes, Food Network, A Wicked Whisk, and Taste of
           Home are accepted
         </h3>

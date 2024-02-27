@@ -1,10 +1,14 @@
-import './ShowRecipePage.css'
-import Header from '../Header/Header'
-import BackToSearchBtn from '../BackToSearchBtn/BackToSearchBtn'
-import { ShowRecipePageProps, postDataProp } from '../../types'
-import { useState } from 'react'
+import './ShowRecipePage.css';
+import Header from '../Header/Header';
+import BackToSearchBtn from '../BackToSearchBtn/BackToSearchBtn';
+import { ShowRecipePageProps, postDataProp } from '../../types';
+import { useState } from 'react';
 
-const ShowRecipePage: React.FC<ShowRecipePageProps> = ({singleRecipe, postData, updateSavedRecipes}) => {
+const ShowRecipePage: React.FC<ShowRecipePageProps> = ({
+  singleRecipe,
+  postData,
+  updateSavedRecipes,
+}) => {
   const [savedMessage, setSavedMessage] = useState('');
 
   const addToSavedRecipe = () => {
@@ -17,19 +21,24 @@ const ShowRecipePage: React.FC<ShowRecipePageProps> = ({singleRecipe, postData, 
         instructions: singleRecipe.data.attributes.instructions || [],
       };
       postData(newRecipe);
-      updateSavedRecipes([newRecipe]); 
+      updateSavedRecipes([newRecipe]);
       setSavedMessage('Recipe has been saved');
     } else {
-      console.error("Unable to save recipe - data attributes not available:", singleRecipe);
+      console.error(
+        'Unable to save recipe - data attributes not available:',
+        singleRecipe,
+      );
     }
   };
 
   const renderInstructions = () => {
     const instructions = singleRecipe?.data.attributes.instructions;
-  
+
     if (Array.isArray(instructions)) {
       return instructions.map((instruction, index) => (
-        <div key={index}>{index + 1}. {instruction}</div>
+        <div key={index}>
+          {index + 1}. {instruction}
+        </div>
       ));
     } else if (typeof instructions === 'string') {
       return <div>{instructions}</div>;
@@ -38,44 +47,37 @@ const ShowRecipePage: React.FC<ShowRecipePageProps> = ({singleRecipe, postData, 
     }
   };
 
-    return (
-      <div>
-        <Header />
-        <BackToSearchBtn />
-        <h2>{singleRecipe?.data.attributes.name}</h2>
-        {singleRecipe?.image_url && (
-          <img
-            src={singleRecipe?.image_url || ""}
-            alt={singleRecipe?.data.attributes.name || "Recipe Image"}
-          />
-        )}
-        <div className="scroll">
-          <section>
-            <h3>Ingredients</h3>
-            {singleRecipe?.data.attributes.ingredients.map(
-              (ingredient: string, index: number) => (
-                <div key={index}>{ingredient}</div>
-              )
-            )}
-          </section>
-          <section>
-            <h3>Instructions</h3>
-            {renderInstructions()}
-            <button
-              className="saved_btn"
-              type="submit"
-              onClick={() => addToSavedRecipe()}
-            >
-              Save Recipe
-            </button>
-          </section>
-        </div>
-        {savedMessage && <h3>{savedMessage}</h3>}
+  return (
+    <div>
+      <Header />
+      <BackToSearchBtn />
+      <button
+        className='saved_btn'
+        type='submit'
+        onClick={() => addToSavedRecipe()}>
+        Save Recipe
+      </button>
+      <h2>{singleRecipe?.data.attributes.name}</h2>
+      {singleRecipe?.image_url && (
+        <img src={singleRecipe?.image_url || ''} alt='Recipe' />
+      )}
+      <div className='scroll'>
+        <section>
+          <h3>Ingredients</h3>
+          {singleRecipe?.data.attributes.ingredients.map(
+            (ingredient: string, index: number) => (
+              <div key={index}>{ingredient}</div>
+            ),
+          )}
+        </section>
+        <section>
+          <h3>Instructions</h3>
+          {renderInstructions()}
+        </section>
       </div>
-    );
-  };
+      {savedMessage && <h3>{savedMessage}</h3>}
+    </div>
+  );
+};
 
-export default ShowRecipePage
-
-
-  
+export default ShowRecipePage;
