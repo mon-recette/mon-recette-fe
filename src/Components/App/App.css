@@ -50,3 +50,10 @@ h3{
   color: white;
   text-shadow: -1px -1px 0 #005d098d, 1px -1px 0 #005d098d, -1px 1px 0 #005d098d, 1px 1px 0 #005d098d;
 }
+
+h1 {
+  font-family: 'Urbanist', sans-serif;
+  color: white;
+  text-shadow: -1px -1px 0 #005d098d, 1px -1px 0 #005d098d, -1px 1px 0 #005d098d, 1px 1px 0 #005d098d;
+  font-size: 1.17em;
+}

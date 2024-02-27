@@ -16,10 +16,10 @@ const HomePage: React.FC<homePageProps> = ({
       <Header />
       <main className='main-page'>
         <MainLogo />
-        <h3>
+        <h1 className='home-line'>
           Links from All Recipes, Food Network, A Wicked Whisk, and Taste of
           Home are accepted
-        </h3>
+        </h1>
         <SearchInput
           updateSingleRecipe={updateSingleRecipe}
           updateRecipes={updateRecipes}
