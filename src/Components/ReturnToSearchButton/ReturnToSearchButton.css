@@ -7,7 +7,7 @@
   border: none;
   background-color: rgb(2, 77, 8);
   border-radius: 30px;
-  font-size: 1.5em;
+  font-size: 1.7em;
   font-family: 'Urbanist', sans-serif;
   opacity: .9;
   color: white
@@ -42,10 +42,9 @@
   transform: scale(0.1, 1);
 }
 
-
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 375px) {
   .return-to-search-btn {
-    font-size: 1.2em
+    font-size: 1.4em
   }
-
 }
+

@@ -10,7 +10,7 @@
   font-family: 'Urbanist', sans-serif;
   opacity: .9;
   color: white;
-  width: 11%
+  width: 15%
 }
 
 .back-to-search-btn::before {
@@ -40,4 +40,11 @@
 .back-to-search-btn:hover::after {
   opacity: 0;
   transform: scale(0.1, 1);
+}
+
+@media screen and (max-width: 375px) {
+  .back-to-search-btn {
+    font-size: .7em
+  }
+
 }
