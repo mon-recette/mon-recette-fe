@@ -4,6 +4,17 @@
   align-items: center;
 }
 
+/* {
+  font-family: 'Urbanist', sans-serif;
+  color: white;
+  text-shadow: -1px -1px 0 #005d098d, 1px -1px 0 #005d098d, -1px 1px 0 #005d098d, 1px 1px 0 #005d098d;
+} */
+.main-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .link-list  {
   font-size: 1.9em;
 }
