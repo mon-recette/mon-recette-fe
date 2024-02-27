@@ -27,7 +27,7 @@ describe('Should visit saved recipes', () => {
     cy.get('.saved-recipes-page').should('exist');
     cy.get('.scroll-saved-page').should('exist');
     cy.get('.scroll-saved-page > :nth-child(1)').within(() => {
-      cy.get('h4').should('contain', "Another Wings")
+      cy.get('h4').should('contain', "Maybe Another Wings")
       .get('.show_details_btn').should('exist')
       .click()
       cy.get('.dropdown').should('contain', 'Ingredients')
