@@ -41,3 +41,11 @@
   opacity: 0;
   transform: scale(0.1, 1);
 }
+
+
+@media screen and (max-width: 750px) {
+  .return-to-search-btn {
+    font-size: 1.2em
+  }
+
+}

@@ -21,14 +21,14 @@ const FilteredRecipePage
     <main className='filtered-recipe-page'>
       <Header />
       <ReturnToSearchButton /> 
-      <div className='big_break'></div>
-      <div className='media-scroll'>
+      <div className='big_break' role='separator' aria-hidden='true'></div>
+      <section className='media-scroll'>
         {displayFilteredRecipes.length > 0 ? (
           displayFilteredRecipes
           ) : (
             <p>No recipes found</p>
             )}
-      </div>
+      </section>
             <div className='scroll-to-see-more-text'>Scroll To See More </div>
     </main>
   );

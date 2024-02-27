@@ -20,13 +20,8 @@
 }
 
 .small-recipe-card {
-  padding: var(--_spacer);
-  background: var(--surface-2);
-  border-radius: var(--radius-2);
   display: grid;
-  gap: var(--_spacer);
-  box-shadow: var(--shadow-15);
-  color: white;
+  gap: 25px;
   align-items: center;
   align-content: center;
   justify-content: space-around;
@@ -40,11 +35,26 @@
   scroll-snap-align: start;
 }
 
-h3 {
-  font-size: 1.5em
+.small-recipe-card-name {
+  font-size: 1.7em
+}
+
+.small-recipe-card-img {
+  width: 15vw;
 }
 
 .scroll-to-see-more-text {
   color: white;
   font-size: 1.5em
+}
+
+@media screen and (max-width: 750px) {
+  
+  .small-recipe-card-name {
+    font-size: 1.3em
+  }
+
+  .scroll-to-see-more-text {
+    font-size: 1.2em;
+  }
 }
