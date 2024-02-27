@@ -1,11 +1,11 @@
 div.scroll {
   background-color: rgba(30, 30, 30, 0.597);
-  width: 50vw;
+  width: 80vw;
   height: 600px;
   overflow-x: hidden;
   overflow-y: auto;
   text-align: center;
-  margin-left: 23%;
+  margin-left: 10%;
   margin-top: 5px;
   border-radius: 8px;
   color: white;

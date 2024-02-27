@@ -44,7 +44,7 @@ a {
 
 .navbar a {
   font-family: 'La Belle Aurore', cursive;
-  font-size: 12px;
+  font-size: 17px;
   color: #ffffff;
   font-weight: bolder;
   text-decoration: none;
@@ -85,5 +85,8 @@ a {
 @media screen and (max-width: 375px) {
   .header_logo {
     font-size: 1.5em
+  }
+  .navbar a {
+    font-size: 12px
   }
 }

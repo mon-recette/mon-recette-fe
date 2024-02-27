@@ -1,11 +1,12 @@
 import './LoginPage.css';
 import LoginForm from '../LoginForm/LoginForm';
-import Header from '../Header/Header';
+import MainLogo from '../MainLogo/MainLogo';
+
 const LoginPage = () => {
 
   return (
     <div>
-      <Header />
+      <MainLogo /> 
         <div className="background">
           <div className="shape"></div>
             <section className='logo-signin'>

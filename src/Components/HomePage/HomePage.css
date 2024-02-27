@@ -4,6 +4,8 @@
   align-items: center;
 }
 
-.link-list  {
-  font-size: 1.9em;
+@media screen and (max-width: 375px) {
+  h3.link-list {
+    font-size: 2em;
+  }
 }
