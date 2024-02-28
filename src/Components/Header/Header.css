@@ -15,7 +15,8 @@
   background-color: rgba(58, 58, 58, 0.618);
   backdrop-filter: blur(10px);
   justify-content: space-between;
-  height: 3em;
+  height: 2.5em;
+  width: 100%;
 }
 
 a {
@@ -29,7 +30,7 @@ a {
 .nav_links li {
   display: inline-block;
   padding: 0px 5px;
-  font-size: 1.4em;
+  font-size: 150%;
 }
 
 .navbar {
@@ -38,7 +39,7 @@ a {
 
 .navbar a {
   font-family: 'La Belle Aurore', cursive;
-  font-size: 1.4em;
+  font-size: 140%;
   color: #ffffff;
   font-weight: bolder;
   text-decoration: none;
@@ -62,33 +63,60 @@ a {
 }
 
 .saved-recipes {
-  margin-left: 30em;
+  margin-left: 25em;
 }
 
 .logout {
-  margin-left: 2em;
+  margin-left: 3em;
 }
 
-@media screen and (max-width: 750px) {
-  .header_logo {
-    font-size: 1.7em
-  }
-
-  .nav_links {
-    font-size: .5em;
-    margin-left: 6em;
-  }
-
-  .header {
-    height: 10vh
-  }
+.home {
+  font-size: 1em;
 }
 
-@media screen and (max-width: 375px) {
-  .header_logo {
-    font-size: 1.5em
-  }
-  .navbar a {
-    font-size: 12px
-  }
+@media screen and (max-width: 1024px) {
+  
+.saved-recipes {
+  margin: 0;
 }
+
+.logout {
+  margin: 0;
+}
+
+.home {
+  margin: 0;
+}
+
+.nav_links li {
+  display: inline-block;
+  padding: 0px 5px;
+  font-size: 70%;
+  height: 25%;
+}
+
+.header {
+  width: 118%;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

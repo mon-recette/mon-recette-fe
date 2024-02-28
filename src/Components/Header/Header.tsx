@@ -6,7 +6,7 @@ const Header = () => {
     <header className="header">
       <nav className="navbar">
         <ul className="nav_links">
-          <li className="header_logo">
+          <li className="home">
             <Link to="/home" aria-label="Home">
               Mon Recette
             </Link>
