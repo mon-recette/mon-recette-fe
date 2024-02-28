@@ -88,4 +88,7 @@ a {
   .header_logo {
     font-size: 1.5em
   }
+  .navbar a {
+    font-size: 12px
+  }
 }
