@@ -67,7 +67,7 @@ const postData = (newRecipe: SingleRecipe) => {
           }
         />
         <Route path='/home/:searchQuery' element={<ShowRecipePage singleRecipe={singleRecipe} postData={postData} updateSavedRecipes={updateSavedRecipes}/>}/> 
-        <Route path='/filteredRecipes/:clickedRecipe' element={<ShowSingleFilteredRecipePage selectedFilteredRecipe={selectedFilteredRecipe} postData={postData}/>} /> //add savedRecipe button
+        <Route path='/filteredRecipes/:clickedRecipe' element={<ShowSingleFilteredRecipePage selectedFilteredRecipe={selectedFilteredRecipe} postData={postData}/>} /> 
         <Route path='/*' element={<ErrorPage/>} />
       </Routes>
     </div>

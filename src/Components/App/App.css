@@ -51,8 +51,8 @@ h3{
   font-size: 1.9em;
   text-shadow: -1px -1px 0 #005d098d, 1px -1px 0 #005d098d, -1px 1px 0 #005d098d, 1px 1px 0 #005d098d;
 }
+
 @media screen and (max-width: 375px) {
   h3 {
     font-size: 1.3em;
   }
-}
