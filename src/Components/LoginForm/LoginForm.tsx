@@ -60,6 +60,7 @@ const LoginForm = () => {
       <input
         data-test='username'
         tabIndex={0}
+        id='username'
         type='text'
         placeholder='Enter your email...'
         value={username}
@@ -69,6 +70,7 @@ const LoginForm = () => {
       <label htmlFor='password'>Password</label>
       <input
         data-test='password'
+        id='password'
         tabIndex={0}
         type='password'
         placeholder='Enter password...'
