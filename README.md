@@ -149,3 +149,12 @@ Nathan Trautenberg: [GitHub](https://github.com/WagglyDessert) [LinkedIn](https:
 Amy Siu: [GitHub](https://github.com/amysiu1028) [LinkedIn](https://www.linkedin.com/in/amy-siu-206a71a8/)
 
 Jen Nguyen [GitHub](https://github.com/Jnguyen615) [LinkedIn](https://www.linkedin.com/in/jennifer-nguyen0615/)
+
+## Part 2
+
+[Zen McMillan](https://github.com/zenmcmillan)
+
+### Accessibility 
+
+n this addition to the project I ensured that a visually impaired user could use the application and that it was intuitive with a screen reader. I ensured that a user could be used with just the keyboard and that the user could tab through the application. Semantic HTML was used. Arial labels were added when deemed necessary. Alt attributes were made more descriptive as well.  The WAVE test for accessibility was conducted and all errors were fixed to enhance the screen reading experience. The lighthouse test was also conducted to improve accessibility even more particularly for the navigation bar so that the screen reader would read it properly as a list.
+
