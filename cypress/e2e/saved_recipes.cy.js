@@ -59,14 +59,14 @@ describe('Should visit saved recipes', () => {
       .url()
       .should('include', '/home');
 
-    // Intercept the API request before navigating to saved recipes
-    cy.intercept('GET', '/api/saved', {
-      fixture: 'empty_saved_recipes.json',
-    }).as('getEmptySavedRecipes');
+      
+      // Intercept the API request before navigating to saved recipes
+      cy.intercept('GET', 'https://mon-recette-be-8176efe67145.herokuapp.com/api/v1/recipes?user_id=1', { fixture: 'empty_saved_recipes.json' }).as('getEmptySavedRecipes');
 
-    // Navigate to saved recipes
-    cy.get('.header').find('li').contains('Saved Recipes').click();
 
+      // Navigate to saved recipes
+      cy.get('.header').find('li').contains('Saved Recipes').click();
+      
     // Should display a message when no saved recipes are found
     cy.get('.saved-recipes-page').should('exist');
     cy.contains(
@@ -76,7 +76,10 @@ describe('Should visit saved recipes', () => {
   });
 
   it('takes you back to search page', () => {
+    cy.intercept('GET', 'https://mon-recette-be-8176efe67145.herokuapp.com/api/v1/recipes?user_id=1', { fixture: 'empty_saved_recipes.json' }).as('getEmptySavedRecipes');
+
     cy.visit('http://localhost:3000/saved');
+
     cy.get('.return-btn-box')
       .find('button')
       .click()

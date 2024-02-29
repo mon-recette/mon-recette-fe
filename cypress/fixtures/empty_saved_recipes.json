@@ -1,1 +1,10 @@
-{}
+{
+  "data": {
+      "id": "null",
+      "type": "user_recipes",
+      "attributes": {
+          "user_id": 2,
+          "recipes": []
+      }
+  }
+}

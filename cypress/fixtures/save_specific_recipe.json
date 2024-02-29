@@ -1,0 +1,25 @@
+{
+  "user_id": 1,
+  "name": "Test Nacho Wings",
+  "ingredients": [
+              "24 chicken wing sections",
+              "1/2 cup butter, melted",
+              "1 package (",
+              "15-1/2 ounces) nacho-flavored tortilla chips, crushed",
+              "2 cups shredded Mexican cheese blend or  shredded cheddar cheese",
+              "1 can (",
+              "4 ounces) chopped green chiles",
+              "1 cup chopped green onions",
+              "Optional toppings: Seeded jalapeno slices, salsa, sour cream and guacamole"
+          ],
+  "instructions": [
+      "Preheat oven to 350°.",
+      "Dip wing sections in butter, then roll in crushed nacho chips.",
+      "Bake in a greased 15x10x1-in.",
+      "baking pan until juices run clear, 45-50 minutes.",
+      "Remove from oven.",
+      "Top with cheese, chiles, green onions and, if desired, jalapeno slices.",
+      "Return to oven and bake until cheese is melted, about 15 minutes.",
+      "Serve with optional toppings as desired."
+  ]
+}

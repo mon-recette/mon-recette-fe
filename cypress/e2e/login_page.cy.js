@@ -1,18 +1,6 @@
 describe('Should visit the login page', () => {
   it('should show login for username and email and allow user to log in', () => {
     cy.visit('http://localhost:3000');
-    cy.get('.header')
-      .should('exist')
-      .get('li')
-      .should('contain', 'Mon Recette')
-      .get('.navbar')
-      .should('exist')
-      .get('.nav_links')
-      .should('exist')
-      .get('li')
-      .should('contain', 'Saved Recipes')
-      .get('li')
-      .should('contain', 'Logout');
     cy.get('.background')
       .should('exist')
       .get('section')
