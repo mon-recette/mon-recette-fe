@@ -47,7 +47,6 @@ describe('Should visit saved recipes', () => {
   it('displays a message when no saved recipes are found', () => {
     cy.visit('http://localhost:3000');
 
-    // login
     cy.get('.background')
       .get('section')
       .get('input[type=text]')
@@ -59,15 +58,12 @@ describe('Should visit saved recipes', () => {
       .url()
       .should('include', '/home');
 
-    // Intercept the API request before navigating to saved recipes
     cy.intercept('GET', '/api/saved', {
       fixture: 'empty_saved_recipes.json',
     }).as('getEmptySavedRecipes');
 
-    // Navigate to saved recipes
     cy.get('.header').find('li').contains('Saved Recipes').click();
 
-    // Should display a message when no saved recipes are found
     cy.get('.saved-recipes-page').should('exist');
     cy.contains(
       '.saved-recipes-page',
@@ -84,3 +80,4 @@ describe('Should visit saved recipes', () => {
       .should('include', '/home');
   })
 });
+
