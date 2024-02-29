@@ -36,6 +36,12 @@ describe('Should display ingredients and instructions', () => {
       .should('contain', 'Mix them together')
       .should('contain', 'Remove and serve with your favorite sauce.')
 
+    cy.intercept('POST', 'https://mon-recette-be-8176efe67145.herokuapp.com/api/v1/recipes'
+    , {
+        statusCode: 201,
+        fixture: 'save_specific_recipe.json',
+      }).as('saveReciepe');
+
     cy.get('.scroll')
       .children()
       .next()
