@@ -47,7 +47,6 @@ describe('Should visit saved recipes', () => {
   it('displays a message when no saved recipes are found', () => {
     cy.visit('http://localhost:3000');
 
-    // login
     cy.get('.background')
       .get('section')
       .get('input[type=text]')
@@ -87,3 +86,4 @@ describe('Should visit saved recipes', () => {
       .should('include', '/home');
   })
 });
+
